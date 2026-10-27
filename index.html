@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KAINCHI CLUB | Bespoke Streetwear & Custom Couture</title>
+  <title>KAINCHI CLUB | Luxury Streetwear & Bespoke Couture</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,6 @@
           },
           fontFamily: {
             serif: ['Cinzel', 'serif'],
-            playfair: ['Playfair Display', 'serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif']
           }
         }
@@ -52,960 +51,336 @@
     .realistic-shadow {
       filter: drop-shadow(0 25px 35px rgba(0,0,0,0.95));
     }
-    .kc-watermark-subtle {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0;
-      opacity: 0.025;
-      color: #fbf7ee;
-    }
   </style>
 </head>
 <body class="selection:bg-kc-red selection:text-white">
 
-  <!-- BACKGROUND WATERMARK -->
-  <div class="kc-watermark-subtle" aria-hidden="true">
-    <svg style="position:absolute; top: 10%; right: -50px; width: 500px; height: 500px; transform: rotate(-15deg);" viewBox="0 0 100 100" fill="currentColor">
-      <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="currentColor" stroke-width="3"/>
-      <circle cx="50" cy="16" r="4" fill="currentColor"/>
-      <path d="M56 60 L78 18 M66 60 L88 24" stroke="currentColor" stroke-width="3.5"/>
-      <circle cx="52" cy="72" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
-      <circle cx="70" cy="74" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
-    </svg>
-  </div>
+  <!-- 1. TOP NAVIGATION -->
+  <header class="bg-kc-cream text-kc-dark border-b border-kc-borderLight py-3.5 px-6 sm:px-10 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 border border-kc-maroon rounded-full flex items-center justify-center p-1.5 bg-kc-lightCream shadow-sm group-hover:scale-105 transition">
+          <svg viewBox="0 0 100 100" class="w-full h-full text-kc-crimson fill-current">
+            <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="#9e1818" stroke-width="4"/>
+            <circle cx="50" cy="16" r="4" fill="#9e1818"/>
+            <path d="M56 60 L75 22 M66 60 L85 28" stroke="#9e1818" stroke-width="4.5" stroke-linecap="round"/>
+            <circle cx="52" cy="72" r="9" fill="none" stroke="#9e1818" stroke-width="4.5"/>
+            <circle cx="70" cy="74" r="9" fill="none" stroke="#9e1818" stroke-width="4.5"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-black tracking-[0.2em] text-kc-maroon block leading-none">KAINCHI CLUB</span>
+        </div>
+      </a>
 
-  <div class="relative z-10">
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-wider text-kc-dark/80">
+        <a href="#" class="text-kc-crimson hover:text-kc-red transition">Home</a>
+        <a href="#categorySection" class="hover:text-kc-crimson transition">Shop</a>
+        <a href="#studioSection" class="hover:text-kc-crimson transition">Customize</a>
+        <a href="#artworkSection" class="hover:text-kc-crimson transition">Artwork</a>
+        <a href="#aboutSection" class="hover:text-kc-crimson transition">About</a>
+      </nav>
 
-    <!-- 1. TOP NAVIGATION -->
-    <header class="bg-kc-cream text-kc-dark border-b border-kc-borderLight py-3.5 px-6 sm:px-10 sticky top-0 z-50 shadow-md">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" class="flex items-center space-x-3 group">
-          <div class="w-10 h-10 border border-kc-maroon rounded-full flex items-center justify-center p-1.5 bg-kc-lightCream shadow-sm group-hover:scale-105 transition">
-            <svg viewBox="0 0 100 100" class="w-full h-full text-kc-crimson fill-current">
-              <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="#9e1818" stroke-width="4"/>
-              <circle cx="50" cy="16" r="4" fill="#9e1818"/>
-              <path d="M56 60 L75 22 M66 60 L85 28" stroke="#9e1818" stroke-width="4.5" stroke-linecap="round"/>
-              <circle cx="52" cy="72" r="9" fill="none" stroke="#9e1818" stroke-width="4.5"/>
-              <circle cx="70" cy="74" r="9" fill="none" stroke="#9e1818" stroke-width="4.5"/>
-            </svg>
-          </div>
-          <div>
-            <span class="font-serif text-xl sm:text-2xl font-black tracking-[0.2em] text-kc-maroon block leading-none">KAINCHI CLUB</span>
-          </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://wa.me/918863075356?text=Hi%20Kainchi%20Club,%20I%20want%20to%20order%20a%20bespoke%20piece" target="_blank" class="bg-kc-dark text-kc-cream hover:bg-kc-maroon transition px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center space-x-2 shadow">
+          <i class="fab fa-whatsapp text-sm text-green-400"></i>
+          <span>WhatsApp Studio</span>
         </a>
-
-        <nav class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-wider text-kc-dark/80">
-          <a href="#" class="text-kc-crimson hover:text-kc-red transition">Home</a>
-          <a href="#categorySection" class="hover:text-kc-crimson transition">Shop</a>
-          <a href="#studioSection" class="hover:text-kc-crimson transition">Customize</a>
-          <a href="#artworkSection" class="hover:text-kc-crimson transition">Artwork</a>
-          <a href="#aboutSection" class="hover:text-kc-crimson transition">About</a>
-        </nav>
-
-        <div class="flex items-center space-x-4">
-          <button onclick="document.getElementById('artworkSearchInput').focus()" class="text-kc-dark/70 hover:text-kc-crimson text-sm"><i class="fas fa-search"></i></button>
-          <a href="https://wa.me/918863075356?text=Hi%20Kainchi%20Club,%20I%20have%20an%20inquiry" target="_blank" class="bg-kc-dark text-kc-cream hover:bg-kc-maroon transition px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center space-x-2 shadow">
-            <i class="fab fa-whatsapp text-sm text-green-400"></i>
-            <span>Contact Us</span>
-          </a>
-        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- 2. REALISTIC HERO SHOWCASE (Matching Reference Image) -->
-    <section class="relative bg-gradient-to-r from-[#110f0f] via-[#1a1212] to-[#110f0f] border-b border-kc-borderDark py-12 lg:py-20 px-6 sm:px-12 overflow-hidden">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-        
-        <!-- Left Hero Typography -->
-        <div class="lg:col-span-5 text-left space-y-5">
-          <span class="text-xs uppercase tracking-[0.35em] text-kc-gold font-bold block">Custom Clothing & Prints</span>
-          <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-black text-kc-cream tracking-tight leading-none">
-            WEAR YOUR<br>
-            <span class="text-kc-red font-serif italic">OWN ART.</span>
-          </h1>
-          <p class="text-kc-cream/70 text-sm sm:text-base font-light leading-relaxed max-w-md">
-            Premium Streetwear. Custom Prints. Endless Possibilities. Hand-crafted on heavyweight French terry fleece and luxury combed cotton.
-          </p>
-
-          <div class="flex items-center space-x-4 pt-2">
-            <a href="#studioSection" class="bg-kc-red hover:bg-kc-crimson text-white px-7 py-3.5 rounded-md font-bold text-xs uppercase tracking-widest transition shadow-lg flex items-center space-x-2">
-              <span>Customize Yours</span>
-              <i class="fas fa-arrow-right text-xs"></i>
-            </a>
-            <a href="#categorySection" class="border border-white/30 text-kc-cream hover:border-kc-gold hover:text-kc-gold px-7 py-3.5 rounded-md font-bold text-xs uppercase tracking-widest transition">
-              Explore Collection
-            </a>
-          </div>
-
-          <div class="pt-8 border-t border-white/10 flex flex-wrap gap-6 text-[11px] text-kc-cream/60">
-            <div class="flex items-center space-x-2"><i class="fas fa-shield-halved text-kc-gold"></i><span>Premium Fabrics</span></div>
-            <div class="flex items-center space-x-2"><i class="fas fa-certificate text-kc-gold"></i><span>High Quality Prints</span></div>
-            <div class="flex items-center space-x-2"><i class="fas fa-globe text-kc-gold"></i><span>Worldwide Shipping</span></div>
-          </div>
-        </div>
-
-        <!-- Right Realistic Apparel Mockup Cluster (Matching Reference) -->
-        <div class="lg:col-span-7 relative flex items-center justify-center min-h-[460px]">
-          <div class="relative w-full max-w-xl h-[440px] flex items-center justify-center">
-            
-            <!-- Centerpiece: Lord Shiva Tandav Hoodie -->
-            <div class="relative z-20 realistic-shadow transform hover:scale-105 transition duration-300">
-              <div class="w-64 sm:w-72 h-80 sm:h-96 rounded-2xl bg-[#141212] border border-white/15 p-4 flex flex-col items-center justify-between shadow-2xl relative overflow-hidden">
-                <svg viewBox="0 0 200 240" class="w-full h-full">
-                  <path d="M50 30 L80 45 L120 45 L150 30 L190 60 L165 115 L145 105 L145 230 L55 230 L55 105 L35 115 L10 60 Z" fill="#181515" stroke="#2b2626" stroke-width="3"/>
-                  <path d="M80 45 Q100 75 120 45 Q100 25 80 45 Z" fill="#0d0c0c"/>
-                  <path d="M68 175 L132 175 L124 215 L76 215 Z" fill="#121010" stroke="#221e1e" stroke-width="2"/>
-                  <circle cx="100" cy="115" r="42" fill="#201a1a" stroke="#d4af37" stroke-width="2"/>
-                  <path d="M100 80 L100 150 M80 95 Q100 120 120 95 M70 90 Q85 135 100 135 Q115 135 130 90" stroke="#d4af37" stroke-width="3" fill="none" stroke-linecap="round"/>
-                  <ellipse cx="100" cy="142" rx="10" ry="5" fill="#9e1818"/>
-                </svg>
-                <div class="absolute bottom-3 bg-black/80 backdrop-blur px-3 py-1 rounded-full border border-kc-gold/30 text-center">
-                  <span class="text-kc-gold text-[10px] font-bold block leading-none">SHIVA TANDAV</span>
-                  <span class="text-[8px] text-white/70 tracking-widest uppercase">350 GSM Fleece</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Left Overlapping: Distressed Denim Jacket -->
-            <div class="hidden sm:block absolute left-2 top-8 z-10 realistic-shadow transform -rotate-6 hover:rotate-0 transition duration-300">
-              <div class="w-44 h-56 rounded-xl bg-[#1e2638] border border-white/10 p-2 relative overflow-hidden shadow-xl">
-                <svg viewBox="0 0 100 120" class="w-full h-full">
-                  <path d="M25 15 L40 22 L60 22 L75 15 L95 30 L85 60 L75 55 L75 115 L25 115 L25 55 L15 60 L5 30 Z" fill="#243048" stroke="#182030" stroke-width="2"/>
-                  <line x1="50" y1="22" x2="50" y2="115" stroke="#d4af37" stroke-width="1.5"/>
-                  <circle cx="50" cy="65" r="16" fill="#d4af37" opacity="0.6"/>
-                </svg>
-                <span class="absolute bottom-1 left-2 text-[8px] text-kc-gold font-bold">Denim Atelier</span>
-              </div>
-            </div>
-
-            <!-- Right Overlapping: Mountain Boxy Tee -->
-            <div class="hidden sm:block absolute right-2 top-6 z-10 realistic-shadow transform rotate-6 hover:rotate-0 transition duration-300">
-              <div class="w-44 h-56 rounded-xl bg-[#fbf7ee] border border-white/10 p-2 relative overflow-hidden shadow-xl">
-                <svg viewBox="0 0 100 120" class="w-full h-full">
-                  <path d="M28 15 L42 22 L58 22 L72 15 L92 30 L82 55 L72 50 L72 115 L28 115 L28 50 L18 55 L8 30 Z" fill="#f5efe0" stroke="#ded8c8" stroke-width="2"/>
-                  <circle cx="50" cy="55" r="18" fill="#c52222"/>
-                  <polygon points="50,42 35,68 65,68" fill="#141212"/>
-                </svg>
-                <span class="absolute bottom-1 right-2 text-[8px] text-kc-charcoal font-bold">240 GSM Tee</span>
-              </div>
-            </div>
-
-            <!-- Front Base: Cap -->
-            <div class="absolute bottom-0 right-14 z-30 transform translate-y-3 hover:translate-y-0 transition duration-300">
-              <div class="w-28 h-20 bg-[#121111] rounded-xl border border-kc-gold/30 p-2 flex items-center justify-center shadow-2xl">
-                <svg viewBox="0 0 100 70" class="w-20 h-14">
-                  <path d="M20 45 Q50 15 80 45 L90 55 L10 55 Z" fill="#1c1919" stroke="#333" stroke-width="2"/>
-                  <path d="M10 55 Q50 65 90 55 L98 60 Q50 72 2 60 Z" fill="#0a0a0a"/>
-                  <text x="50" y="42" font-family="Cinzel" font-size="12" font-weight="900" fill="#d4af37" text-anchor="middle">KC</text>
-                </svg>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 3. SHOP BY CATEGORY -->
-    <section id="categorySection" class="py-14 px-6 sm:px-10 max-w-7xl mx-auto">
-      <div class="bg-kc-cream text-kc-dark rounded-3xl p-8 sm:p-10 shadow-2xl border border-kc-borderLight">
-        
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8">
-          <div>
-            <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-maroon tracking-tight">Shop by Category</h2>
-            <p class="text-xs sm:text-sm text-kc-dark/60 mt-1">Find the perfect piece. Customize it your way.</p>
-          </div>
-          <a href="#studioSection" class="mt-3 sm:mt-0 text-xs font-bold text-kc-crimson hover:underline flex items-center space-x-1">
-            <span>View All</span>
-            <i class="fas fa-arrow-right text-[10px]"></i>
-          </a>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3.5">
-          
-          <!-- 1. Heavy Boxy Tee -->
-          <div onclick="selectProductForStudio('boxytee')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-20" viewBox="0 0 100 110">
-                <path d="M30 20 L44 26 L56 26 L70 20 L90 32 L80 50 L70 46 L70 100 L30 100 L30 46 L20 50 L10 32 Z" fill="#242121" stroke="#383434" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Heavy Boxy Tee</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 2. Oversized T-Shirt -->
-          <div onclick="selectProductForStudio('oversized')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-20" viewBox="0 0 100 110">
-                <path d="M28 20 L42 26 L58 26 L72 20 L92 34 L82 54 L70 48 L70 100 L30 100 L30 48 L18 54 L8 34 Z" fill="#fbf7ee" stroke="#ded8c8" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Oversized T-Shirt</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 3. Fleece Hoodie -->
-          <div onclick="selectProductForStudio('hoodie')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-20" viewBox="0 0 100 110">
-                <path d="M30 18 L42 28 L58 28 L70 18 L90 32 L80 56 L70 52 L70 100 L30 100 L30 52 L20 56 L10 32 Z" fill="#1b1818" stroke="#333" stroke-width="2"/>
-                <path d="M42 28 Q50 42 58 28 Z" fill="#9e1818"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Fleece Hoodie</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 4. Zip-up Hoodie -->
-          <div onclick="selectProductForStudio('ziphoodie')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-20" viewBox="0 0 100 110">
-                <path d="M30 18 L42 28 L58 28 L70 18 L90 32 L80 56 L70 52 L70 100 L30 100 L30 52 L20 56 L10 32 Z" fill="#302d2d" stroke="#444" stroke-width="2"/>
-                <line x1="50" y1="28" x2="50" y2="100" stroke="#d4af37" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Zip-up Hoodie</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 5. Sweatshirt -->
-          <div onclick="selectProductForStudio('sweatshirt')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-20" viewBox="0 0 100 110">
-                <path d="M30 20 L44 26 L56 26 L70 20 L90 32 L80 56 L70 52 L70 100 L30 100 L30 52 L20 56 L10 32 Z" fill="#5c0c0c" stroke="#3d0707" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Sweatshirt</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 6. Bomber / Varsity Jacket -->
-          <div onclick="selectProductForStudio('bomber')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-20" viewBox="0 0 100 110">
-                <path d="M30 22 L44 28 L56 28 L70 22 L90 34 L80 56 L70 50 L70 96 L30 96 L30 50 L20 56 L10 34 Z" fill="#1c1919" stroke="#333" stroke-width="2"/>
-                <path d="M20 34 L30 50 L30 96 L20 56 Z" fill="#fbf7ee"/>
-                <path d="M80 34 L70 50 L70 96 L80 56 Z" fill="#fbf7ee"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Bomber Jacket</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-          <!-- 7. Cap -->
-          <div onclick="selectProductForStudio('cap')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 flex flex-col justify-between text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
-            <div class="h-28 bg-[#181616] rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
-              <svg class="w-16 h-14" viewBox="0 0 100 70">
-                <path d="M20 45 Q50 15 80 45 L90 55 L10 55 Z" fill="#141212" stroke="#333" stroke-width="2"/>
-                <path d="M10 55 Q50 65 90 55 L98 60 Q50 72 2 60 Z" fill="#0a0a0a"/>
-                <circle cx="50" cy="40" r="3" fill="#d4af37"/>
-              </svg>
-            </div>
-            <div>
-              <h4 class="font-serif text-[11px] font-bold leading-tight">Cap</h4>
-              <span class="text-[9px] text-kc-red font-semibold block mt-1">Shop Now &rarr;</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. CUSTOMIZATION STUDIO (Artwork Always Printed Directly on Back/Chest of Hoodie, Never on Faces) -->
-    <section id="studioSection" class="py-12 px-6 sm:px-10 max-w-7xl mx-auto">
-      <div class="text-left mb-6">
-        <span class="text-xs uppercase tracking-[0.3em] text-kc-gold font-bold block">Design. Preview. Make it Yours.</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-cream">Customization Studio</h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-kc-cardDark border border-kc-borderDark rounded-2xl p-6 shadow-2xl">
-        
-        <!-- Controls Column (4 Cols) -->
-        <div class="lg:col-span-4 space-y-5 text-xs">
-          
-          <!-- Gender & Fit -->
-          <div>
-            <div class="flex space-x-2 mb-2">
-              <button onclick="setStudioGender('men')" id="btnGenderMen" class="flex-1 py-1.5 rounded-full bg-kc-maroon text-white font-bold border border-kc-red">Men</button>
-              <button onclick="setStudioGender('women')" id="btnGenderWomen" class="flex-1 py-1.5 rounded-full bg-black/60 text-stone-400 font-bold border border-white/10 hover:text-white">Women</button>
-            </div>
-            <div class="grid grid-cols-4 gap-1 text-[10px] text-center font-semibold">
-              <button onclick="setStudioFrame('slim')" class="frame-btn py-1 rounded bg-black/40 border border-white/10 hover:border-kc-red">Slim</button>
-              <button onclick="setStudioFrame('regular')" class="frame-btn py-1 rounded bg-black/40 border border-white/10 hover:border-kc-red">Regular</button>
-              <button onclick="setStudioFrame('athletic')" class="frame-btn active py-1 rounded bg-kc-maroon text-white border border-kc-red">Athletic</button>
-              <button onclick="setStudioFrame('plus')" class="frame-btn py-1 rounded bg-black/40 border border-white/10 hover:border-kc-red">Plus Size</button>
-            </div>
-          </div>
-
-          <!-- Garment Selection -->
-          <div>
-            <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Select Garment</span>
-            <div class="grid grid-cols-4 gap-2">
-              <button onclick="selectProductForStudio('boxytee')" id="btnGarm_boxytee" class="garm-choice-btn py-2 px-1 rounded-lg bg-black/40 border border-white/10 text-center hover:border-kc-red">
-                <i class="fas fa-tshirt block text-base text-kc-gold mb-1"></i>
-                <span class="text-[9px] block">T-Shirt</span>
-              </button>
-              <button onclick="selectProductForStudio('hoodie')" id="btnGarm_hoodie" class="garm-choice-btn active py-2 px-1 rounded-lg bg-kc-maroon border border-kc-red text-center">
-                <i class="fas fa-vest-patches block text-base text-white mb-1"></i>
-                <span class="text-[9px] block">Hoodie</span>
-              </button>
-              <button onclick="selectProductForStudio('bomber')" id="btnGarm_bomber" class="garm-choice-btn py-2 px-1 rounded-lg bg-black/40 border border-white/10 text-center hover:border-kc-red">
-                <i class="fas fa-user-ninja block text-base text-kc-gold mb-1"></i>
-                <span class="text-[9px] block">Jacket</span>
-              </button>
-              <button onclick="selectProductForStudio('sweatshirt')" id="btnGarm_sweatshirt" class="garm-choice-btn py-2 px-1 rounded-lg bg-black/40 border border-white/10 text-center hover:border-kc-red">
-                <i class="fas fa-shirt block text-base text-kc-gold mb-1"></i>
-                <span class="text-[9px] block">Sweatshirt</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Fabric Color -->
-          <div>
-            <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Select Colour</span>
-            <div class="flex space-x-2">
-              <button onclick="setStudioColor('#181515', 'Jet Black')" class="w-7 h-7 rounded-full bg-[#181515] border-2 border-kc-red shadow hover:scale-110 transition"></button>
-              <button onclick="setStudioColor('#9e1818', 'Crimson Red')" class="w-7 h-7 rounded-full bg-[#9e1818] border border-white/20 shadow hover:scale-110 transition"></button>
-              <button onclick="setStudioColor('#fbf7ee', 'Vintage Cream')" class="w-7 h-7 rounded-full bg-[#fbf7ee] border border-white/20 shadow hover:scale-110 transition"></button>
-              <button onclick="setStudioColor('#1e293b', 'Deep Navy')" class="w-7 h-7 rounded-full bg-[#1e293b] border border-white/20 shadow hover:scale-110 transition"></button>
-            </div>
-          </div>
-
-          <!-- Size Selection -->
-          <div>
-            <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Select Size</span>
-            <div class="grid grid-cols-5 gap-1 text-center font-bold">
-              <button onclick="setStudioSize('S')" class="size-btn py-1.5 rounded bg-black/40 border border-white/10 hover:border-kc-red">S</button>
-              <button onclick="setStudioSize('M')" class="size-btn active py-1.5 rounded bg-kc-maroon border border-kc-red">M</button>
-              <button onclick="setStudioSize('L')" class="size-btn py-1.5 rounded bg-black/40 border border-white/10 hover:border-kc-red">L</button>
-              <button onclick="setStudioSize('XL')" class="size-btn py-1.5 rounded bg-black/40 border border-white/10 hover:border-kc-red">XL</button>
-              <button onclick="setStudioSize('XXL')" class="size-btn py-1.5 rounded bg-black/40 border border-white/10 hover:border-kc-red">XXL</button>
-            </div>
-          </div>
-
-          <!-- Placement Controls -->
-          <div class="pt-2 border-t border-white/10">
-            <div class="flex justify-between items-center mb-1">
-              <span class="text-[10px] font-bold text-kc-gold uppercase tracking-wider">Placement Zone</span>
-              <button onclick="clearDecal()" class="text-[9px] text-kc-red font-bold hover:underline">Remove Art</button>
-            </div>
-            <select id="selectPlacement" onchange="setStudioView(this.value)" class="w-full border border-white/20 rounded p-1.5 text-xs bg-black/60 text-white font-semibold">
-              <option value="back" selected>Back Center (Full Tapestry)</option>
-              <option value="front">Front Center (Chest Statement)</option>
-            </select>
-
-            <div class="mt-3 grid grid-cols-2 gap-2 text-[10px]">
-              <div>
-                <span class="text-stone-400 block mb-0.5">Scale: <b id="valStudioScale">100%</b></span>
-                <input type="range" min="50" max="150" value="100" oninput="adjustDecalScale(this.value)" class="w-full accent-kc-red">
-              </div>
-              <div>
-                <span class="text-stone-400 block mb-0.5">Position Up/Down</span>
-                <input type="range" min="-40" max="40" value="0" oninput="adjustDecalY(this.value)" class="w-full accent-kc-red">
-              </div>
-            </div>
-          </div>
-
-          <!-- Order Action -->
-          <div class="pt-2">
-            <button onclick="dispatchStudioWhatsAppOrder()" class="w-full bg-kc-crimson hover:bg-kc-red text-white py-3.5 rounded-lg font-serif font-bold text-xs uppercase tracking-widest transition shadow-xl flex items-center justify-center space-x-2">
-              <i class="fab fa-whatsapp text-sm"></i>
-              <span id="labelStudioAddToCart">Add to Cart &bull; ₹2,499</span>
-            </button>
-          </div>
-
-        </div>
-
-        <!-- Garment Mockup Viewport (5 Cols - Always Fits Perfectly on the Clothes) -->
-        <div class="lg:col-span-5 relative bg-[#121010] border border-white/10 rounded-xl overflow-hidden flex flex-col items-center justify-center min-h-[500px]">
-          
-          <div class="absolute top-3 left-4 right-4 z-20 flex justify-between items-center text-[10px] text-stone-400 font-bold border-b border-white/10 pb-2">
-            <div class="flex space-x-3">
-              <span class="text-kc-red">Design</span>
-              <span class="hover:text-white cursor-pointer" onclick="document.getElementById('artworkSection').scrollIntoView({behavior:'smooth'})">Artwork</span>
-              <span class="hover:text-white cursor-pointer" onclick="setStudioView('back')">Placement</span>
-              <span class="hover:text-white cursor-pointer" onclick="dispatchStudioWhatsAppOrder()">Review</span>
-            </div>
-            <button onclick="setStudioView('back')" class="text-stone-400 hover:text-white text-[10px]"><i class="fas fa-undo mr-1"></i> Reset View</button>
-          </div>
-
-          <!-- Garment Silhouette (Artwork Bounded to Cloth Only) -->
-          <div id="livingModelViewport" class="relative w-full h-[460px] flex items-center justify-center overflow-hidden">
-            
-            <svg id="apparelMannequinSvg" class="w-72 h-[420px] filter drop-shadow-2xl" viewBox="0 0 200 280">
-              <!-- Head & Neck -->
-              <path id="modelHeadBack" d="M85 20 Q100 8 115 20 Q122 35 115 48 Q100 55 85 48 Z" fill="#2c221e"/>
-              <path d="M92 48 L108 48 L110 65 L90 65 Z" fill="#bfa393"/>
-              
-              <!-- Torso Contour -->
-              <path id="clothTorso" d="M60 62 L88 66 L112 66 L140 62 L185 95 L160 160 L140 148 L142 270 L58 270 L60 148 L40 160 L15 95 Z" fill="#181515" stroke="#2b2626" stroke-width="2.5"/>
-              
-              <!-- Hood Draping -->
-              <path id="clothHood" d="M82 65 Q100 95 118 65 Q100 52 82 65 Z" fill="#100e0e" stroke="#221e1e" stroke-width="2"/>
-              
-              <!-- Cuffs & Hem -->
-              <rect x="58" y="258" width="84" height="12" fill="#121010" opacity="0.6"/>
-            </svg>
-
-            <!-- Decal Overlay (Chest or Back Torso Only) -->
-            <div id="appliedDecalOverlay" class="absolute z-10 pointer-events-none flex items-center justify-center" style="top: 52%; left: 50%; transform: translate(-50%, -50%) scale(1); width: 140px; height: 140px;">
-              <div id="appliedDecalGraphic" class="w-full h-full flex items-center justify-center">
-                <!-- Injected via selectArtwork -->
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Angle Toggle Buttons -->
-          <div class="absolute right-3 top-16 z-20 flex flex-col space-y-1.5 text-[9px] font-bold">
-            <button onclick="setStudioView('front')" id="btnViewFront" class="w-8 h-8 rounded bg-black/70 border border-white/20 text-white hover:border-kc-red flex items-center justify-center">
-              <span>Fr</span>
-            </button>
-            <button onclick="setStudioView('back')" id="btnViewBack" class="w-8 h-8 rounded bg-kc-maroon border border-kc-red text-white flex items-center justify-center shadow">
-              <span>Bk</span>
-            </button>
-          </div>
-
-          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 bg-black/80 backdrop-blur border border-white/15 px-4 py-1.5 rounded-full flex items-center space-x-3 text-xs text-white">
-            <span class="text-[10px] font-bold text-kc-gold" id="labelCurrentAngle">Back Placement</span>
-          </div>
-
-        </div>
-
-        <!-- Quick Sidebar (3 Cols) -->
-        <div class="lg:col-span-3 bg-black/40 border border-white/10 rounded-xl p-3 flex flex-col justify-between">
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="font-serif text-xs font-bold text-kc-cream">Artwork Library</span>
-              <a href="#artworkSection" class="text-[9px] text-kc-red font-bold hover:underline">View All &rarr;</a>
-            </div>
-
-            <div class="relative mb-2">
-              <i class="fas fa-search absolute left-2.5 top-2 text-[10px] text-stone-500"></i>
-              <input type="text" oninput="filterQuickArts(this.value)" placeholder="Search artwork..." class="w-full bg-black/60 border border-white/10 rounded-md pl-7 pr-2 py-1 text-[10px] text-white focus:outline-none focus:border-kc-red">
-            </div>
-
-            <div id="quickArtList" class="grid grid-cols-2 gap-2 max-h-[350px] overflow-y-auto custom-scroll p-1">
-              <!-- Dynamically Populated -->
-            </div>
-          </div>
-
-          <div class="pt-2 border-t border-white/10 text-center">
-            <span class="text-[9px] text-stone-400 block">Click any art above to print onto garment</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 5. CURATED ARTWORK LIBRARY SECTION -->
-    <section id="artworkSection" class="py-14 px-6 sm:px-10 max-w-7xl mx-auto">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6">
-        <div>
-          <span class="text-xs uppercase tracking-[0.3em] text-kc-gold font-bold block">Curated Prints for Every Vibe</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-cream">Artwork Library</h2>
-        </div>
-
-        <div class="mt-3 sm:mt-0 flex items-center space-x-3 w-full sm:w-auto">
-          <div class="relative w-full sm:w-64">
-            <i class="fas fa-search absolute left-3 top-2.5 text-xs text-stone-500"></i>
-            <input type="text" id="artworkSearchInput" oninput="applyCombinedFilters()" placeholder="Search artwork..." class="w-full bg-kc-cardDark border border-white/15 rounded-full pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-kc-red">
-          </div>
-          <button onclick="resetVaultFilters()" class="text-xs font-bold text-kc-red hover:underline whitespace-nowrap">View All &rarr;</button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Filter Column -->
-        <div class="lg:col-span-3 bg-kc-cream text-kc-dark rounded-2xl p-5 shadow-xl border border-kc-borderLight text-xs space-y-5">
-          <div>
-            <h4 class="font-serif font-bold text-sm text-kc-maroon mb-2.5">Categories</h4>
-            <div class="space-y-1.5">
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="checkbox" value="nature" onchange="toggleVaultFilter('nature')" class="category-check accent-kc-crimson">
-                <span class="font-medium">Nature & Scenic <span class="text-[10px] text-stone-500">(30)</span></span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="checkbox" value="wildlife" onchange="toggleVaultFilter('wildlife')" class="category-check accent-kc-crimson">
-                <span class="font-medium">Wildlife & Animals <span class="text-[10px] text-stone-500">(30)</span></span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="checkbox" value="racing" onchange="toggleVaultFilter('racing')" class="category-check accent-kc-crimson">
-                <span class="font-medium">Automotive & Racing <span class="text-[10px] text-stone-500">(30)</span></span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="checkbox" value="divine" checked onchange="toggleVaultFilter('divine')" class="category-check accent-kc-crimson">
-                <span class="font-bold text-kc-crimson">Divine & Spiritual <span class="text-[10px] text-kc-crimson">(30)</span></span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="checkbox" value="streetwear" onchange="toggleVaultFilter('streetwear')" class="category-check accent-kc-crimson">
-                <span class="font-medium">Streetwear & Typography <span class="text-[10px] text-stone-500">(30)</span></span>
-              </label>
-              <label class="flex items-center space-x-2 cursor-pointer">
-                <input type="checkbox" value="abstract" onchange="toggleVaultFilter('abstract')" class="category-check accent-kc-crimson">
-                <span class="font-medium">Abstract & Artistic <span class="text-[10px] text-stone-500">(30)</span></span>
-              </label>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-kc-dark/10">
-            <h4 class="font-serif font-bold text-sm text-kc-maroon mb-2.5">Compatible With</h4>
-            <div class="space-y-1.5 text-stone-700">
-              <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" checked class="accent-kc-crimson"> <span>T-Shirt</span></label>
-              <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" checked class="accent-kc-crimson"> <span>Hoodie</span></label>
-              <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" checked class="accent-kc-crimson"> <span>Jacket</span></label>
-              <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" checked class="accent-kc-crimson"> <span>Cap</span></label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Artwork Grid -->
-        <div class="lg:col-span-9">
-          <div id="mainVaultGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            <!-- Injected via JavaScript -->
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 6. PREMIUM ARTWORKS BANNER -->
-    <section class="py-12 px-6 sm:px-10 max-w-7xl mx-auto">
-      <div class="relative bg-gradient-to-r from-[#1c1414] via-[#241717] to-[#121111] border border-kc-borderDark rounded-3xl p-8 sm:p-12 overflow-hidden shadow-2xl">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-5 flex justify-center">
-            <div class="w-full max-w-xs h-72 bg-[#121010] rounded-2xl border border-white/15 p-4 flex items-center justify-center shadow-2xl relative">
-              <svg viewBox="0 0 200 240" class="w-56 h-64">
-                <path d="M50 30 L80 45 L120 45 L150 30 L190 60 L165 115 L145 105 L145 230 L55 230 L55 105 L35 115 L10 60 Z" fill="#1e1818" stroke="#333" stroke-width="3"/>
-                <circle cx="100" cy="120" r="45" fill="#5c0c0c"/>
-                <path d="M100 85 L100 155 M80 100 Q100 125 120 100" stroke="#d4af37" stroke-width="4" fill="none"/>
-              </svg>
-              <span class="absolute bottom-3 bg-black/80 px-3 py-1 rounded text-[10px] text-kc-gold font-bold">Artisan Cut</span>
-            </div>
-          </div>
-
-          <div class="lg:col-span-7 space-y-4">
-            <span class="text-xs uppercase tracking-[0.3em] text-kc-gold font-bold block">Premium Artworks</span>
-            <h2 class="font-serif text-3xl sm:text-5xl font-black text-kc-cream leading-tight">
-              FOR REAL CLOTHES.
-            </h2>
-            <p class="text-kc-cream/70 text-xs sm:text-sm font-light max-w-lg leading-relaxed">
-              Choose from 180+ original designs across 6 curated categories. Printed on high-density organic cotton fabrics with wash-durable resilience.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3 text-xs text-kc-cream/80">
-              <div class="flex items-center space-x-2.5">
-                <i class="fas fa-gem text-kc-gold text-base"></i>
-                <div>
-                  <span class="font-bold block text-white text-[11px]">High-Resolution Prints</span>
-                  <span class="text-[9px] text-stone-400">4K Vector Definition</span>
-                </div>
-              </div>
-              <div class="flex items-center space-x-2.5">
-                <i class="fas fa-layer-group text-kc-gold text-base"></i>
-                <div>
-                  <span class="font-bold block text-white text-[11px]">Multiple Placements</span>
-                  <span class="text-[9px] text-stone-400">Front, back & sleeves</span>
-                </div>
-              </div>
-              <div class="flex items-center space-x-2.5">
-                <i class="fas fa-tshirt text-kc-gold text-base"></i>
-                <div>
-                  <span class="font-bold block text-white text-[11px]">350+ GSM Quality</span>
-                  <span class="text-[9px] text-stone-400">Heavy French fleece</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <a href="#artworkSection" class="inline-block bg-kc-crimson hover:bg-kc-red text-white px-7 py-3 rounded-md font-bold text-xs uppercase tracking-widest transition shadow">
-                Explore Artwork Library &rarr;
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. FOOTER -->
-    <footer id="aboutSection" class="bg-kc-cream text-kc-dark border-t border-kc-borderLight py-10 px-6 sm:px-10">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center space-x-3">
-          <div class="w-8 h-8 rounded-full border border-kc-maroon flex items-center justify-center text-kc-crimson">
-            <i class="fas fa-cut text-sm"></i>
-          </div>
-          <div>
-            <span class="font-serif text-lg font-black tracking-[0.2em] text-kc-maroon block leading-none">KAINCHI CLUB</span>
-            <span class="text-[8px] tracking-[0.3em] text-kc-dark/60 uppercase block font-bold">Custom Clothing Brand</span>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase tracking-wider text-kc-dark/70">
-          <a href="#" class="hover:text-kc-crimson transition">Shop</a>
-          <a href="#studioSection" class="hover:text-kc-crimson transition">Customize</a>
-          <a href="#artworkSection" class="hover:text-kc-crimson transition">Artwork</a>
-          <a href="#aboutSection" class="hover:text-kc-crimson transition">About</a>
-          <a href="https://wa.me/918863075356" target="_blank" class="hover:text-kc-crimson transition">Contact</a>
-        </div>
-
-        <div>
-          <a href="https://wa.me/918863075356" target="_blank" class="bg-kc-dark text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-kc-crimson transition flex items-center space-x-1.5 shadow">
-            <i class="fab fa-whatsapp text-sm text-green-400"></i>
-            <span>Chat on WhatsApp</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="max-w-7xl mx-auto mt-6 pt-4 border-t border-kc-dark/10 text-center text-[10px] text-kc-dark/50">
-        &copy; 2026 Kainchi Club. All rights reserved. Master Cutter Line: +91 8863075356 &bull; kainchiclub@gmail.com
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- JAVASCRIPT: LOGIC & ARTWORK DATA -->
-  <script>
-    const masterArtworks = [
-      {
-        id: "KC-001",
-        category: "divine",
-        name: "Lord Shiva Portrait",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#1c1616" stroke="#d4af37" stroke-width="3"/><circle cx="100" cy="100" r="65" fill="#5c0c0c" opacity="0.8"/><path d="M100 30 L100 170 M70 50 Q100 95 130 50" stroke="#d4af37" stroke-width="6" fill="none" stroke-linecap="round"/><ellipse cx="100" cy="138" rx="14" ry="8" fill="#9e1818"/></svg>`
-      },
-      {
-        id: "KC-002",
-        category: "divine",
-        name: "Sacred Trishul Aura",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#141212" stroke="#d4af37" stroke-width="3"/><path d="M100 20 L100 180 M60 45 Q100 90 140 45" stroke="#d4af37" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="100" cy="65" r="14" fill="#9e1818"/></svg>`
-      },
-      {
-        id: "KC-003",
-        category: "divine",
-        name: "Krishna Flute Radiance",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#141212" stroke="#d4af37" stroke-width="3"/><line x1="30" y1="160" x2="170" y2="40" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/><circle cx="70" cy="125" r="5" fill="#fbf7ee"/><circle cx="100" cy="100" r="5" fill="#fbf7ee"/><circle cx="130" cy="75" r="5" fill="#fbf7ee"/><path d="M150 40 Q170 10 185 35 Q170 60 150 40 Z" fill="#047857"/></svg>`
-      },
-      {
-        id: "KC-004",
-        category: "divine",
-        name: "Om Mandala Cosmic",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#141212" stroke="#d4af37" stroke-width="3"/><text x="100" y="130" font-family="serif" font-size="90" font-weight="900" fill="#d4af37" text-anchor="middle">ॐ</text><circle cx="100" cy="100" r="70" stroke="#9e1818" stroke-width="3" fill="none"/></svg>`
-      },
-      {
-        id: "KC-005",
-        category: "divine",
-        name: "Mahadev Calligraphy",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><rect width="200" height="200" rx="30" fill="#141212" stroke="#d4af37" stroke-width="4"/><text x="100" y="90" font-family="Cinzel" font-size="28" font-weight="900" fill="#d4af37" text-anchor="middle">MAHADEV</text><text x="100" y="130" font-family="Cinzel" font-size="24" font-weight="900" fill="#fbf7ee" text-anchor="middle">TANDAV</text></svg>`
-      },
-      {
-        id: "KC-006",
-        category: "divine",
-        name: "Shiva Tandav Motion",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#1c1414" stroke="#d4af37" stroke-width="4"/><circle cx="100" cy="100" r="70" fill="none" stroke="#c52222" stroke-width="5"/><circle cx="100" cy="100" r="30" fill="#d4af37"/></svg>`
-      },
-      {
-        id: "KC-007",
-        category: "divine",
-        name: "Dhyana Buddha Peace",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#141212" stroke="#d4af37" stroke-width="3"/><path d="M70 140 Q100 80 130 140 Z" fill="#d4af37"/><circle cx="100" cy="75" r="20" fill="#d4af37"/></svg>`
-      },
-      {
-        id: "KC-008",
-        category: "divine",
-        name: "Maa Durga Simhavahini",
-        badge: "Spiritual",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#5c0c0c" stroke="#d4af37" stroke-width="3"/><polygon points="100,30 120,80 170,100 120,120 100,170 80,120 30,100 80,80" fill="#d4af37"/></svg>`
-      },
-      {
-        id: "KC-009",
-        category: "wildlife",
-        name: "Royal Bengal Tiger",
-        badge: "Apex Wildlife",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#141212" stroke="#d4af37" stroke-width="3"/><circle cx="100" cy="100" r="60" fill="#b45309"/><ellipse cx="80" cy="95" rx="6" ry="4" fill="#fff"/><ellipse cx="120" cy="95" rx="6" ry="4" fill="#fff"/><path d="M85 130 Q100 140 115 130" stroke="#000" stroke-width="3" fill="none"/></svg>`
-      },
-      {
-        id: "KC-010",
-        category: "racing",
-        name: "Apex Le Mans GT",
-        badge: "Racing",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#141212" stroke="#d4af37" stroke-width="3"/><path d="M25 125 Q60 120 85 85 Q130 80 165 110 L180 125 Z" fill="#9e1818"/><circle cx="60" cy="130" r="16" fill="#333"/><circle cx="145" cy="130" r="16" fill="#333"/></svg>`
-      },
-      {
-        id: "KC-011",
-        category: "nature",
-        name: "Mountain Vista Sun",
-        badge: "Scenic",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><circle cx="100" cy="100" r="90" fill="#110f0f" stroke="#d4af37" stroke-width="3"/><circle cx="100" cy="75" r="30" fill="#c52222"/><polygon points="100,65 50,145 150,145" fill="#fbf7ee"/></svg>`
-      },
-      {
-        id: "KC-012",
-        category: "streetwear",
-        name: "Neo Tokyo Kanji Club",
-        badge: "Streetwear",
-        svg: `<svg viewBox="0 0 200 200" class="w-full h-full"><rect width="200" height="200" rx="30" fill="#141212" stroke="#c52222" stroke-width="4"/><text x="100" y="80" font-family="Cinzel" font-size="34" font-weight="900" fill="#d4af37" text-anchor="middle">東京</text><text x="100" y="130" font-family="Cinzel" font-size="28" font-weight="900" fill="#fbf7ee" text-anchor="middle">CLUB</text></svg>`
-      }
-    ];
-
-    let currentGarment = 'hoodie';
-    let currentGender = 'men';
-    let currentFrame = 'athletic';
-    let currentAngle = 'back';
-    let currentStudioSize = 'M';
-    let currentStudioColor = '#181515';
-    let currentActiveArtwork = masterArtworks[0];
-    let decalScale = 100;
-    let decalY = 0;
-    let activeCategories = ['divine'];
-
-    const garmentPrices = {
-      boxytee: { name: 'Heavy Boxy Tee', price: 1499 },
-      oversized: { name: 'Oversized T-Shirt', price: 1699 },
-      hoodie: { name: 'Fleece Hoodie', price: 2499 },
-      ziphoodie: { name: 'Zip-up Hoodie', price: 2899 },
-      sweatshirt: { name: 'Sweatshirt', price: 2199 },
-      bomber: { name: 'Bomber / Varsity Jacket', price: 3999 },
-      cap: { name: 'Cap', price: 999 }
-    };
-
-    function updateStudioVisuals() {
-      const torso = document.getElementById('clothTorso');
-      const hood = document.getElementById('clothHood');
-      const headBack = document.getElementById('modelHeadBack');
-      const decalOverlay = document.getElementById('appliedDecalOverlay');
-      const decalGraphic = document.getElementById('appliedDecalGraphic');
-      const angleLabel = document.getElementById('labelCurrentAngle');
-
-      torso.setAttribute('fill', currentStudioColor);
-
-      if (currentAngle === 'front') {
-        angleLabel.innerText = 'Front Placement';
-        hood.style.display = 'none';
-        headBack.setAttribute('d', 'M85 20 Q100 8 115 20 Q125 40 115 50 Q100 58 85 50 Z');
-        decalOverlay.style.top = '48%';
-      } else {
-        angleLabel.innerText = 'Back Placement';
-        hood.style.display = 'block';
-        headBack.setAttribute('d', 'M85 20 Q100 8 115 20 Q122 35 115 48 Q100 55 85 48 Z');
-        decalOverlay.style.top = '52%';
-      }
-
-      document.getElementById('btnViewFront').className = currentAngle === 'front' 
-        ? 'w-8 h-8 rounded bg-kc-maroon border border-kc-red text-white flex items-center justify-center shadow'
-        : 'w-8 h-8 rounded bg-black/70 border border-white/20 text-white hover:border-kc-red flex items-center justify-center';
+  <!-- 2. HERO SECTION -->
+  <section class="relative bg-gradient-to-r from-[#110f0f] via-[#1a1212] to-[#110f0f] border-b border-kc-borderDark py-12 lg:py-20 px-6 sm:px-12 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
       
-      document.getElementById('btnViewBack').className = currentAngle === 'back' 
-        ? 'w-8 h-8 rounded bg-kc-maroon border border-kc-red text-white flex items-center justify-center shadow'
-        : 'w-8 h-8 rounded bg-black/70 border border-white/20 text-white hover:border-kc-red flex items-center justify-center';
+      <div class="lg:col-span-5 text-left space-y-5">
+        <span class="text-xs uppercase tracking-[0.35em] text-kc-gold font-bold block">Custom Clothing & Prints</span>
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-black text-kc-cream tracking-tight leading-none">
+          WEAR YOUR<br>
+          <span class="text-kc-red font-serif italic">OWN ART.</span>
+        </h1>
+        <p class="text-kc-cream/70 text-sm sm:text-base font-light leading-relaxed max-w-md">
+          Premium Streetwear. Custom Prints. Endless Possibilities. Hand-crafted on heavyweight French terry fleece and luxury combed cotton.
+        </p>
 
-      if (currentActiveArtwork) {
-        decalGraphic.innerHTML = currentActiveArtwork.svg;
-        decalOverlay.style.display = 'flex';
-        decalOverlay.style.transform = `translate(-50%, calc(-50% + ${decalY}px)) scale(${decalScale / 100})`;
+        <div class="flex items-center space-x-4 pt-2">
+          <a href="#studioSection" class="bg-kc-red hover:bg-kc-crimson text-white px-7 py-3.5 rounded-md font-bold text-xs uppercase tracking-widest transition shadow-lg flex items-center space-x-2">
+            <span>Customize Yours</span>
+            <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+          <a href="#categorySection" class="border border-white/30 text-kc-cream hover:border-kc-gold hover:text-kc-gold px-7 py-3.5 rounded-md font-bold text-xs uppercase tracking-widest transition">
+            Explore Collection
+          </a>
+        </div>
+      </div>
+
+      <!-- Real Clothing Hero Showcase -->
+      <div class="lg:col-span-7 relative flex items-center justify-center min-h-[460px]">
+        <div class="relative w-full max-w-xl h-[440px] flex items-center justify-center">
+          <div class="relative z-20 realistic-shadow transform hover:scale-105 transition duration-300">
+            <img src="images/hero-hoodie.png" onerror="this.src='https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80'" alt="Streetwear Hoodie" class="w-72 sm:w-80 h-96 object-contain rounded-2xl drop-shadow-2xl">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. SHOP BY CATEGORY -->
+  <section id="categorySection" class="py-14 px-6 sm:px-10 max-w-7xl mx-auto">
+    <div class="bg-kc-cream text-kc-dark rounded-3xl p-8 sm:p-10 shadow-2xl border border-kc-borderLight">
+      
+      <div class="flex justify-between items-end mb-8">
+        <div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-maroon tracking-tight">Shop by Category</h2>
+          <p class="text-xs sm:text-sm text-kc-dark/60 mt-1">Find the perfect piece. Customize it your way.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4">
+        
+        <!-- Boxy Tee (Krishna Print) -->
+        <div onclick="selectCategory('boxytee')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
+          <div class="h-44 rounded-lg overflow-hidden mb-2 bg-[#141212] flex items-center justify-center">
+            <img src="images/cat-boxy-tee.png" onerror="this.src='https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=400&q=80'" class="h-full w-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h4 class="font-serif text-xs font-bold">240 GSM Boxy Tee</h4>
+          <span class="text-[10px] text-kc-red font-semibold">Customize &rarr;</span>
+        </div>
+
+        <!-- Fleece Hoodie (Lightning Print) -->
+        <div onclick="selectCategory('hoodie')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
+          <div class="h-44 rounded-lg overflow-hidden mb-2 bg-[#141212] flex items-center justify-center">
+            <img src="images/cat-hoodie.png" onerror="this.src='https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=400&q=80'" class="h-full w-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h4 class="font-serif text-xs font-bold">350 GSM Fleece Hoodie</h4>
+          <span class="text-[10px] text-kc-red font-semibold">Customize &rarr;</span>
+        </div>
+
+        <!-- Sweatshirt -->
+        <div onclick="selectCategory('sweatshirt')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
+          <div class="h-44 rounded-lg overflow-hidden mb-2 bg-[#141212] flex items-center justify-center">
+            <img src="images/cat-sweatshirt.png" onerror="this.src='https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=400&q=80'" class="h-full w-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h4 class="font-serif text-xs font-bold">French Terry Sweatshirt</h4>
+          <span class="text-[10px] text-kc-red font-semibold">Customize &rarr;</span>
+        </div>
+
+        <!-- Tapestry Denim -->
+        <div onclick="selectCategory('denim')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
+          <div class="h-44 rounded-lg overflow-hidden mb-2 bg-[#141212] flex items-center justify-center">
+            <img src="images/cat-denim.png" onerror="this.src='https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=400&q=80'" class="h-full w-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h4 class="font-serif text-xs font-bold">Tapestry Flared Denim</h4>
+          <span class="text-[10px] text-kc-red font-semibold">Customize &rarr;</span>
+        </div>
+
+        <!-- Bomber Jacket -->
+        <div onclick="selectCategory('bomber')" class="group bg-kc-dark text-kc-cream rounded-xl p-3 text-center cursor-pointer hover:ring-2 hover:ring-kc-red transition shadow">
+          <div class="h-44 rounded-lg overflow-hidden mb-2 bg-[#141212] flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80" class="h-full w-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h4 class="font-serif text-xs font-bold">Varsity Bomber Jacket</h4>
+          <span class="text-[10px] text-kc-red font-semibold">Customize &rarr;</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. REAL LIVING MODEL CUSTOMIZATION STUDIO -->
+  <section id="studioSection" class="py-12 px-6 sm:px-10 max-w-7xl mx-auto">
+    <div class="text-left mb-6">
+      <span class="text-xs uppercase tracking-[0.3em] text-kc-gold font-bold block">Design. Preview. Make it Yours.</span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-cream">Real Model Fitting Studio</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-kc-cardDark border border-kc-borderDark rounded-2xl p-6 shadow-2xl">
+      
+      <!-- Left Config Controls -->
+      <div class="lg:col-span-4 space-y-5 text-xs">
+        <div>
+          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Model Gender & Frame</span>
+          <div class="flex space-x-2">
+            <button onclick="setGender('men')" id="btnMen" class="flex-1 py-1.5 rounded-full bg-kc-maroon text-white font-bold border border-kc-red">Men's Fit</button>
+            <button onclick="setGender('women')" id="btnWomen" class="flex-1 py-1.5 rounded-full bg-black/60 text-stone-400 font-bold border border-white/10">Women's Fit</button>
+          </div>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Garment Selection</span>
+          <select id="selectGarmentChoice" onchange="selectCategory(this.value)" class="w-full bg-black/60 border border-white/20 rounded p-2 text-white font-semibold">
+            <option value="hoodie">350 GSM Fleece Hoodie (₹2,499)</option>
+            <option value="boxytee">240 GSM Boxy Tee (₹1,499)</option>
+            <option value="sweatshirt">French Terry Sweatshirt (₹2,199)</option>
+            <option value="denim">Tapestry Flared Denim (₹3,499)</option>
+          </select>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Placement Zone</span>
+          <div class="flex space-x-2">
+            <button onclick="setPlacement('back')" id="btnZoneBack" class="flex-1 py-1.5 rounded bg-kc-maroon text-white font-bold border border-kc-red">Back Tapestry</button>
+            <button onclick="setPlacement('front')" id="btnZoneFront" class="flex-1 py-1.5 rounded bg-black/60 text-stone-400 font-bold border border-white/10">Front Chest</button>
+          </div>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-1">Print Sizing</span>
+          <input type="range" min="50" max="150" value="100" oninput="resizePrint(this.value)" class="w-full accent-kc-red">
+        </div>
+
+        <div class="pt-4">
+          <button onclick="orderViaWhatsApp()" class="w-full bg-kc-crimson hover:bg-kc-red text-white py-3.5 rounded-lg font-serif font-bold text-xs uppercase tracking-widest transition shadow-xl flex items-center justify-center space-x-2">
+            <i class="fab fa-whatsapp text-sm"></i>
+            <span id="btnOrderPrice">Order On WhatsApp &bull; ₹2,499</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Center Real Model Viewport (Guaranteed on Fabric, Never Faces) -->
+      <div class="lg:col-span-8 relative bg-[#121010] border border-white/10 rounded-xl overflow-hidden flex items-center justify-center min-h-[480px]">
+        <div class="relative w-full h-[480px] flex items-center justify-center">
+          
+          <!-- Real Model Photo -->
+          <img id="livingModel" src="images/model-back.png" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80'" class="h-full w-auto object-cover filter drop-shadow-2xl">
+
+          <!-- Precise Print Area (Centered Strictly on Back/Chest Fabric) -->
+          <div id="printWrapper" class="absolute pointer-events-none flex items-center justify-center" style="top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1); width: 170px; height: 170px;">
+            <img id="activeArtwork" src="images/art-krishna.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=500&q=80'" class="w-full h-full object-contain filter drop-shadow-lg">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. ARTWORK LIBRARY (Real Curated Streetwear Graphics) -->
+  <section id="artworkSection" class="py-14 px-6 sm:px-10 max-w-7xl mx-auto border-t border-kc-borderDark">
+    <div class="text-left mb-8">
+      <span class="text-xs uppercase tracking-[0.3em] text-kc-gold font-bold block">Curated Prints</span>
+      <h2 class="font-serif text-3xl font-extrabold text-kc-cream">Artwork Library</h2>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      
+      <div onclick="applyArt('Lord Krishna Sudarshan', 'images/art-krishna.png')" class="group bg-kc-cardDark border border-white/10 rounded-xl p-3 cursor-pointer hover:border-kc-red transition">
+        <div class="h-44 rounded-lg overflow-hidden mb-2 bg-black/60 flex items-center justify-center">
+          <img src="images/art-krishna.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=500&q=80'" class="h-full w-full object-contain group-hover:scale-105 transition">
+        </div>
+        <span class="text-[9px] text-kc-red font-bold uppercase block">Spiritual</span>
+        <h4 class="font-serif text-xs font-bold text-white">Lord Krishna Sudarshan</h4>
+      </div>
+
+      <div onclick="applyArt('Apex Le Mans GT', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80')" class="group bg-kc-cardDark border border-white/10 rounded-xl p-3 cursor-pointer hover:border-kc-red transition">
+        <div class="h-44 rounded-lg overflow-hidden mb-2 bg-black/60 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" class="h-full w-full object-cover group-hover:scale-105 transition">
+        </div>
+        <span class="text-[9px] text-kc-red font-bold uppercase block">Racing</span>
+        <h4 class="font-serif text-xs font-bold text-white">Apex Le Mans GT</h4>
+      </div>
+
+      <div onclick="applyArt('Royal Bengal Tiger', 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=500&q=80')" class="group bg-kc-cardDark border border-white/10 rounded-xl p-3 cursor-pointer hover:border-kc-red transition">
+        <div class="h-44 rounded-lg overflow-hidden mb-2 bg-black/60 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=500&q=80" class="h-full w-full object-cover group-hover:scale-105 transition">
+        </div>
+        <span class="text-[9px] text-kc-red font-bold uppercase block">Wildlife</span>
+        <h4 class="font-serif text-xs font-bold text-white">Royal Bengal Tiger</h4>
+      </div>
+
+      <div onclick="applyArt('Mountain Sunset Vista', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=80')" class="group bg-kc-cardDark border border-white/10 rounded-xl p-3 cursor-pointer hover:border-kc-red transition">
+        <div class="h-44 rounded-lg overflow-hidden mb-2 bg-black/60 flex items-center justify-center">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=80" class="h-full w-full object-cover group-hover:scale-105 transition">
+        </div>
+        <span class="text-[9px] text-kc-red font-bold uppercase block">Nature</span>
+        <h4 class="font-serif text-xs font-bold text-white">Mountain Sunset Vista</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. FOOTER -->
+  <footer id="aboutSection" class="bg-kc-cream text-kc-dark border-t border-kc-borderLight py-10 px-6 sm:px-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-serif text-lg font-black tracking-[0.2em] text-kc-maroon block">KAINCHI CLUB</span>
+        <span class="text-[9px] text-kc-dark/60 uppercase block">Custom Clothing Brand</span>
+      </div>
+      <div>
+        <a href="https://wa.me/918863075356" target="_blank" class="bg-kc-dark text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-kc-crimson transition flex items-center space-x-2">
+          <i class="fab fa-whatsapp text-green-400"></i>
+          <span>Order via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentArtTitle = 'Lord Krishna Sudarshan';
+    let currentGarmentTitle = '350 GSM Fleece Hoodie';
+    let currentPrice = '₹2,499';
+    let currentZone = 'back';
+
+    function setGender(g) {
+      document.getElementById('btnMen').className = g === 'men' ? 'flex-1 py-1.5 rounded-full bg-kc-maroon text-white font-bold border border-kc-red' : 'flex-1 py-1.5 rounded-full bg-black/60 text-stone-400 font-bold border border-white/10';
+      document.getElementById('btnWomen').className = g === 'women' ? 'flex-1 py-1.5 rounded-full bg-kc-maroon text-white font-bold border border-kc-red' : 'flex-1 py-1.5 rounded-full bg-black/60 text-stone-400 font-bold border border-white/10';
+      const model = document.getElementById('livingModel');
+      if (g === 'women') {
+        model.src = 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80';
       } else {
-        decalOverlay.style.display = 'none';
+        model.src = currentZone === 'back' ? 'images/model-back.png' : 'images/model-front.png';
       }
     }
 
-    function setStudioView(angle) {
-      currentAngle = angle;
-      document.getElementById('selectPlacement').value = angle;
-      updateStudioVisuals();
+    function selectCategory(cat) {
+      const select = document.getElementById('selectGarmentChoice');
+      select.value = cat;
+      const prices = { hoodie: '₹2,499', boxytee: '₹1,499', sweatshirt: '₹2,199', denim: '₹3,499', bomber: '₹3,999' };
+      const titles = { hoodie: '350 GSM Fleece Hoodie', boxytee: '240 GSM Boxy Tee', sweatshirt: 'French Terry Sweatshirt', denim: 'Tapestry Flared Denim', bomber: 'Varsity Bomber' };
+      currentPrice = prices[cat] || '₹2,499';
+      currentGarmentTitle = titles[cat] || 'Custom Piece';
+      document.getElementById('btnOrderPrice').innerText = `Order On WhatsApp • ${currentPrice}`;
+      document.getElementById('studioSection').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function setStudioGender(g) {
-      currentGender = g;
-      document.getElementById('btnGenderMen').className = g === 'men' ? 'flex-1 py-1.5 rounded-full bg-kc-maroon text-white font-bold border border-kc-red' : 'flex-1 py-1.5 rounded-full bg-black/60 text-stone-400 font-bold border border-white/10';
-      document.getElementById('btnGenderWomen').className = g === 'women' ? 'flex-1 py-1.5 rounded-full bg-kc-maroon text-white font-bold border border-kc-red' : 'flex-1 py-1.5 rounded-full bg-black/60 text-stone-400 font-bold border border-white/10';
-      updateStudioVisuals();
-    }
-
-    function setStudioFrame(f) {
-      currentFrame = f;
-      document.querySelectorAll('.frame-btn').forEach(b => {
-        b.classList.remove('bg-kc-maroon', 'border-kc-red', 'active', 'text-white');
-        b.classList.add('bg-black/40', 'border-white/10');
-      });
-      event.currentTarget.classList.add('bg-kc-maroon', 'border-kc-red', 'active', 'text-white');
-      updateStudioVisuals();
-    }
-
-    function selectProductForStudio(cat) {
-      currentGarment = cat;
-      document.querySelectorAll('.garm-choice-btn').forEach(b => {
-        b.classList.remove('bg-kc-maroon', 'border-kc-red', 'active');
-        b.classList.add('bg-black/40', 'border-white/10');
-      });
-      const btn = document.getElementById('btnGarm_' + cat);
-      if (btn) {
-        btn.classList.add('bg-kc-maroon', 'border-kc-red', 'active');
-        btn.classList.remove('bg-black/40', 'border-white/10');
+    function setPlacement(zone) {
+      currentZone = zone;
+      document.getElementById('btnZoneBack').className = zone === 'back' ? 'flex-1 py-1.5 rounded bg-kc-maroon text-white font-bold border border-kc-red' : 'flex-1 py-1.5 rounded bg-black/60 text-stone-400 font-bold border border-white/10';
+      document.getElementById('btnZoneFront').className = zone === 'front' ? 'flex-1 py-1.5 rounded bg-kc-maroon text-white font-bold border border-kc-red' : 'flex-1 py-1.5 rounded bg-black/60 text-stone-400 font-bold border border-white/10';
+      const model = document.getElementById('livingModel');
+      const wrapper = document.getElementById('printWrapper');
+      if (zone === 'front') {
+        model.src = 'images/model-front.png';
+        wrapper.style.top = '46%';
+      } else {
+        model.src = 'images/model-back.png';
+        wrapper.style.top = '52%';
       }
-      const price = garmentPrices[cat] ? garmentPrices[cat].price : 2499;
-      document.getElementById('labelStudioAddToCart').innerText = `Add to Cart • ₹${price.toLocaleString('en-IN')}`;
-      document.getElementById('studioSection').scrollIntoView({ behavior: 'smooth' });
-      updateStudioVisuals();
     }
 
-    function setStudioColor(hex, name) {
-      currentStudioColor = hex;
-      updateStudioVisuals();
+    function resizePrint(val) {
+      document.getElementById('printWrapper').style.transform = `translate(-50%, -50%) scale(${val / 100})`;
     }
 
-    function setStudioSize(s) {
-      currentStudioSize = s;
-      document.querySelectorAll('.size-btn').forEach(b => {
-        b.classList.remove('bg-kc-maroon', 'border-kc-red', 'active');
-        b.classList.add('bg-black/40', 'border-white/10');
-      });
-      event.currentTarget.classList.add('bg-kc-maroon', 'border-kc-red', 'active');
-    }
-
-    function adjustDecalScale(val) {
-      decalScale = parseInt(val);
-      document.getElementById('valStudioScale').innerText = decalScale + '%';
-      updateStudioVisuals();
-    }
-
-    function adjustDecalY(val) {
-      decalY = parseInt(val);
-      updateStudioVisuals();
-    }
-
-    function clearDecal() {
-      currentActiveArtwork = null;
-      updateStudioVisuals();
-    }
-
-    function applyArtworkToStudio(art) {
-      currentActiveArtwork = art;
-      updateStudioVisuals();
+    function applyArt(name, src) {
+      currentArtTitle = name;
+      document.getElementById('activeArtwork').src = src;
       document.getElementById('studioSection').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function dispatchStudioWhatsAppOrder() {
-      const gInfo = garmentPrices[currentGarment] || { name: 'Fleece Hoodie', price: 2499 };
-      const artName = currentActiveArtwork ? currentActiveArtwork.name : 'Clean Custom Silhouette';
-
-      const msg = `*KAINCHI CLUB — BESPOKE STREETWEAR ORDER*%0A` +
-        `----------------------------------------%0A` +
-        `*Garment:* ${gInfo.name}%0A` +
-        `*Model Fit:* ${currentGender.toUpperCase()} (${currentFrame.toUpperCase()} FIT)%0A` +
-        `*Size:* ${currentStudioSize}%0A` +
-        `*Print Position:* ${currentAngle.toUpperCase()} PLACEMENT%0A` +
-        `*Selected Artwork:* ${artName}%0A` +
-        `*Order Value:* ₹${gInfo.price.toLocaleString('en-IN')}%0A` +
-        `----------------------------------------%0A` +
-        `Master Cutter, please confirm production schedule and measurements.`;
-
+    function orderViaWhatsApp() {
+      const msg = `*KAINCHI CLUB BESPOKE ORDER*%0A` +
+        `--------------------------------%0A` +
+        `*Garment:* ${currentGarmentTitle}%0A` +
+        `*Selected Artwork:* ${currentArtTitle}%0A` +
+        `*Print Zone:* ${currentZone.toUpperCase()} VIEW%0A` +
+        `*Valuation:* ${currentPrice}%0A` +
+        `--------------------------------%0A` +
+        `Please confirm size measurements and dispatch date.`;
       window.open(`https://wa.me/918863075356?text=${msg}`, '_blank');
     }
-
-    function toggleVaultFilter(cat) {
-      if (activeCategories.includes(cat)) {
-        activeCategories = activeCategories.filter(c => c !== cat);
-      } else {
-        activeCategories.push(cat);
-      }
-      applyCombinedFilters();
-    }
-
-    function applyCombinedFilters() {
-      const q = document.getElementById('artworkSearchInput').value.toLowerCase().trim();
-      const allItems = masterArtworks;
-
-      const filtered = allItems.filter(art => {
-        const matchesCategory = (activeCategories.length === 0 || activeCategories.includes(art.category));
-        const matchesQuery = art.name.toLowerCase().includes(q) || art.id.toLowerCase().includes(q);
-        return matchesCategory && matchesQuery;
-      });
-
-      renderMainVaultGrid(filtered);
-    }
-
-    function resetVaultFilters() {
-      activeCategories = [];
-      document.querySelectorAll('.category-check').forEach(cb => cb.checked = false);
-      document.getElementById('artworkSearchInput').value = '';
-      renderMainVaultGrid(masterArtworks);
-    }
-
-    function renderMainVaultGrid(list) {
-      const grid = document.getElementById('mainVaultGrid');
-      grid.innerHTML = '';
-
-      if (list.length === 0) {
-        grid.innerHTML = `<div class="col-span-full py-12 text-center text-stone-500 text-xs">No artwork matches your current filter criteria.</div>`;
-        return;
-      }
-
-      list.forEach(art => {
-        const card = document.createElement('div');
-        card.className = 'group bg-kc-cardDark border border-white/10 rounded-xl p-3 flex flex-col justify-between hover:border-kc-red hover:shadow-xl transition cursor-pointer';
-        card.onclick = () => applyArtworkToStudio(art);
-
-        card.innerHTML = `
-          <div class="w-full h-36 bg-black/60 rounded-lg flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition overflow-hidden">
-            ${art.svg}
-          </div>
-          <div>
-            <span class="text-[9px] font-bold text-kc-red uppercase tracking-wider block">${art.badge}</span>
-            <h4 class="font-serif text-xs font-bold text-kc-cream truncate">${art.name}</h4>
-            <button class="mt-2 w-full py-1.5 bg-black/60 group-hover:bg-kc-red text-white text-[9px] font-bold uppercase rounded transition">
-              Apply to Garment &uarr;
-            </button>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function renderQuickSidebar(list) {
-      const listDiv = document.getElementById('quickArtList');
-      listDiv.innerHTML = '';
-      list.forEach(art => {
-        const item = document.createElement('div');
-        item.className = 'bg-black/60 border border-white/10 rounded p-1.5 cursor-pointer hover:border-kc-red transition flex flex-col items-center text-center';
-        item.onclick = () => applyArtworkToStudio(art);
-        item.innerHTML = `
-          <div class="w-full h-16 rounded overflow-hidden mb-1 flex items-center justify-center">${art.svg}</div>
-          <span class="text-[9px] font-semibold text-stone-300 truncate w-full block">${art.name}</span>
-        `;
-        listDiv.appendChild(item);
-      });
-    }
-
-    function filterQuickArts(q) {
-      const filtered = masterArtworks.filter(a => a.name.toLowerCase().includes(q.toLowerCase()));
-      renderQuickSidebar(filtered);
-    }
-
-    // Init
-    applyCombinedFilters();
-    renderQuickSidebar(masterArtworks);
-    updateStudioVisuals();
   </script>
 </body>
 </html>
