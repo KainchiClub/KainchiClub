@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KAINCHI CLUB | Bespoke Streetwear & Custom Couture</title>
+  <title>KAINCHI CLUB | 3D Bespoke Streetwear Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js & Controls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
@@ -43,52 +48,25 @@
       color: #141212;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
-      position: relative;
     }
-
-    /* Subtle luxury brand watermark layer (Zero dots, organic scattered sizes) */
     .kc-brand-watermark-layer {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; overflow: hidden;
     }
     .kc-watermark-item {
-      position: absolute;
-      opacity: 0.035;
-      color: #641010;
-      transform-origin: center;
+      position: absolute; opacity: 0.035; color: #641010;
     }
-
-    .custom-scroll::-webkit-scrollbar {
-      height: 6px;
-      width: 6px;
-    }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: #c52222;
-      border-radius: 4px;
-    }
-    .kc-shadow {
-      box-shadow: 0 16px 40px rgba(100, 16, 16, 0.09);
-    }
-    .craft-puff {
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.55)) drop-shadow(0 -1px 2px rgba(255,255,255,0.4));
-      transform: scale(1.02);
-    }
-    .craft-embroidery {
-      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.8));
-    }
+    .custom-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #c52222; border-radius: 4px; }
+    .kc-shadow { box-shadow: 0 16px 40px rgba(100, 16, 16, 0.09); }
+    #viewport3d { width: 100%; height: 100%; touch-action: none; }
   </style>
 </head>
 <body class="selection:bg-kc-red selection:text-white">
 
-  <!-- LUXURY WATERMARK LAYER (Understated brand watermark) -->
+  <!-- LUXURY WATERMARK LAYER -->
   <div class="kc-brand-watermark-layer" aria-hidden="true">
-    <!-- Large top-right watermark -->
     <svg class="kc-watermark-item" style="top: 8%; right: -60px; width: 440px; height: 440px; transform: rotate(-15deg);" viewBox="0 0 100 100" fill="currentColor">
       <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="currentColor" stroke-width="3"/>
       <path d="M40 28 L60 28 M40 36 L60 36 M40 44 L60 44" stroke="currentColor" stroke-width="2"/>
@@ -96,43 +74,29 @@
       <path d="M56 60 L78 18 M66 60 L88 24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
       <circle cx="52" cy="72" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
       <circle cx="70" cy="74" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
-      <path d="M35 50 Q20 58 32 72 Q42 82 25 90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
-
-    <!-- Mid-left medium watermark -->
-    <svg class="kc-watermark-item" style="top: 48%; left: -50px; width: 320px; height: 320px; transform: rotate(25deg);" viewBox="0 0 100 100" fill="currentColor">
-      <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="currentColor" stroke-width="3"/>
-      <circle cx="52" cy="72" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
-      <circle cx="70" cy="74" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
-      <path d="M56 60 L78 18 M66 60 L88 24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-    </svg>
-
-    <!-- Lower-right gentle watermark -->
-    <svg class="kc-watermark-item" style="bottom: 6%; right: 4%; width: 220px; height: 220px; transform: rotate(-8deg);" viewBox="0 0 100 100" fill="currentColor">
+    <svg class="kc-watermark-item" style="top: 50%; left: -50px; width: 320px; height: 320px; transform: rotate(20deg);" viewBox="0 0 100 100" fill="currentColor">
       <circle cx="52" cy="72" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
       <circle cx="70" cy="74" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
-      <path d="M56 60 L78 18 M66 60 L88 24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-      <path d="M35 50 Q20 58 32 72 Q42 82 25 90" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M56 60 L78 18 M66 60 L88 24" stroke="currentColor" stroke-width="3.5"/>
     </svg>
   </div>
 
-  <!-- MAIN PAGE CONTENT (Z-Index 10 for clean layering) -->
   <div class="relative z-10">
 
     <!-- TOP RUNNING TICKER -->
     <div class="bg-kc-maroon text-kc-cream py-2 px-4 text-center text-xs tracking-[0.25em] uppercase font-semibold border-b border-kc-red/30 flex items-center justify-center space-x-3">
       <i class="fas fa-cut text-kc-gold"></i>
-      <span>KAINCHI CLUB COUTURE • 3D FIT SIMULATOR • COMPLETE FULL-WRAP ARTWORKS • PAN-INDIA DOORSTEP DISPATCH</span>
+      <span>KAINCHI CLUB COUTURE • GENUINE 3D WEBGL STUDIO • MULTI-ZONE UV PROJECTION • PAN-INDIA DISPATCH</span>
       <i class="fas fa-cut text-kc-gold"></i>
     </div>
 
     <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 bg-kc-cream/95 backdrop-blur-md border-b border-kc-red/20 shadow-sm">
       <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
-        
         <a href="#" class="flex items-center space-x-3.5 group">
           <div class="w-12 h-12 rounded-full border-2 border-kc-red bg-kc-lightCream flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition">
-            <svg viewBox="0 0 100 100" class="w-full h-full text-kc-red fill-current" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 100 100" class="w-full h-full text-kc-red fill-current">
               <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="#c52222" stroke-width="4"/>
               <path d="M40 28 L60 28 M40 36 L60 36 M40 44 L60 44" stroke="#c52222" stroke-width="2.5"/>
               <circle cx="50" cy="16" r="4" fill="#c52222"/>
@@ -140,281 +104,245 @@
               <path d="M56 60 L75 22 M66 60 L85 28" stroke="#c52222" stroke-width="4.5" stroke-linecap="round"/>
               <circle cx="52" cy="72" r="9" fill="none" stroke="#c52222" stroke-width="4.5"/>
               <circle cx="70" cy="74" r="9" fill="none" stroke="#c52222" stroke-width="4.5"/>
-              <path d="M35 50 Q20 58 32 72 Q42 82 25 90" fill="none" stroke="#c52222" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
           </div>
           <div>
             <span class="font-serif text-2xl tracking-[0.2em] font-extrabold text-kc-maroon block leading-none">KAINCHI CLUB</span>
-            <span class="text-[9px] tracking-[0.4em] text-kc-red uppercase block font-semibold mt-1">bespoke clothing brand</span>
+            <span class="text-[9px] tracking-[0.4em] text-kc-red uppercase block font-semibold mt-1">bespoke 3d studio</span>
           </div>
         </a>
 
         <div class="hidden lg:flex space-x-8 text-xs tracking-widest uppercase font-bold text-kc-charcoal/80">
-          <a href="#simulator" class="hover:text-kc-red transition">3D Fitting Studio</a>
-          <a href="#artvault" class="hover:text-kc-red transition">Full-Wrap Vault</a>
-          <a href="#combos" class="hover:text-kc-red transition">Ensembles</a>
+          <a href="#studio" class="hover:text-kc-red transition">3D Customizer</a>
+          <a href="#artvault" class="hover:text-kc-red transition">Art Vault</a>
           <a href="#unboxing" class="hover:text-kc-red transition">Unboxing</a>
           <a href="#contact" class="hover:text-kc-red transition">Concierge</a>
         </div>
 
-        <a href="https://wa.me/918863075356?text=Hello%20Kainchi%20Club,%20I%20would%20like%20to%20customize%20a%20bespoke%20piece" target="_blank" class="bg-kc-red text-white px-5 py-2.5 rounded font-bold text-xs tracking-widest uppercase hover:bg-kc-crimson transition shadow-md flex items-center space-x-2">
+        <a href="https://wa.me/918863075356?text=Hello%20Kainchi%20Club,%20I%20want%20to%20customize%20a%20piece" target="_blank" class="bg-kc-red text-white px-5 py-2.5 rounded font-bold text-xs tracking-widest uppercase hover:bg-kc-crimson transition shadow-md flex items-center space-x-2">
           <i class="fab fa-whatsapp text-sm"></i>
-          <span>WhatsApp Studio</span>
+          <span>Direct Concierge</span>
         </a>
       </div>
     </nav>
 
     <!-- HERO STATEMENT -->
-    <section class="py-14 px-6 text-center border-b border-kc-red/10 relative overflow-hidden">
+    <section class="py-12 px-6 text-center border-b border-kc-red/10 relative">
       <div class="max-w-4xl mx-auto">
         <span class="text-xs uppercase tracking-[0.35em] text-kc-red font-bold inline-block mb-3 border border-kc-red/30 px-4 py-1.5 rounded-full bg-white/80 shadow-sm">
-          3D Fitting Engine • Full Coverage Artworks
+          WebGL Interactive Engine • Multi-Print Zones
         </span>
-        <h1 class="font-serif text-4xl sm:text-6xl font-black text-kc-maroon tracking-tight mb-4">
-          BE THE CANVAS. WE WEAVE THE SOUL.
+        <h1 class="font-serif text-3xl sm:text-5xl font-black text-kc-maroon tracking-tight mb-3">
+          GENUINE 3D BESPOKE STUDIO
         </h1>
-        <p class="text-kc-charcoal/70 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed mb-6">
-          Tailored completely to your vision. Shoulder-to-sleeve cherry blossom branches, sacred Sudarshan Chakra prints, or flared tapestry denim—visualize your bespoke garment on live model profiles with full 360° perspective.
+        <p class="text-kc-charcoal/70 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed mb-4">
+          Rotate your piece in genuine 3D space. Apply distinct artworks across chest, back, and sleeves with surface UV binding and full layer controls.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#simulator" class="bg-kc-maroon text-white px-8 py-3.5 rounded font-bold text-xs uppercase tracking-widest hover:bg-kc-red transition shadow-lg">
-            Launch 3D Virtual Studio <i class="fas fa-arrow-down ml-2"></i>
-          </a>
-        </div>
       </div>
     </section>
 
-    <!-- ADVANCED 3D BODY FIT & FULL-WRAP SIMULATOR -->
-    <section id="simulator" class="py-12 px-4 sm:px-6 max-w-7xl mx-auto">
-      
-      <div class="text-center max-w-3xl mx-auto mb-8">
-        <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Interactive Mannequin & Fit Engine</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-maroon">Kainchi Club Fitting Room</h2>
-        <p class="text-xs sm:text-sm text-kc-charcoal/60 mt-1">
-          Adjust body frame, gender fit, hood position, and viewing angles to preview your piece in real time.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- 3D STUDIO SECTION -->
+    <section id="studio" class="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
-        <!-- LEFT: 3D MANNEQUIN CANVAS (5 Cols) -->
-        <div class="lg:col-span-5 sticky top-24 bg-white border border-kc-red/20 rounded-2xl p-6 flex flex-col items-center kc-shadow">
+        <!-- LEFT: 3D VIEWPORT CONTAINER (7 Cols) -->
+        <div class="lg:col-span-7 bg-white border border-kc-red/20 rounded-2xl p-4 flex flex-col items-center kc-shadow relative">
           
-          <!-- Controls: Gender + 3D View Angles + Cap On/Off -->
-          <div class="w-full space-y-2 mb-3">
-            <div class="flex justify-between items-center text-xs font-bold">
-              <div class="flex space-x-1 bg-kc-lightCream p-1 rounded-full border border-kc-red/20">
-                <button id="btnModelMen" onclick="setGender('men')" class="px-3 py-1 rounded-full bg-kc-maroon text-white">Men's Fit</button>
-                <button id="btnModelWomen" onclick="setGender('women')" class="px-3 py-1 rounded-full text-kc-charcoal/70 hover:text-kc-red">Women's Fit</button>
-              </div>
-              
-              <button id="btnHoodCap" onclick="toggleHoodCap()" class="px-3 py-1 rounded-full border border-kc-red text-kc-red text-[11px] font-bold bg-white hover:bg-kc-red hover:text-white transition">
-                <i class="fas fa-hat-cowboy mr-1"></i> <span id="labelHoodCap">Cap Off</span>
-              </button>
+          <!-- Viewport Header Toolbar -->
+          <div class="w-full flex flex-wrap justify-between items-center gap-2 mb-3">
+            <div class="flex items-center space-x-1.5 bg-stone-100 p-1 rounded-lg text-xs font-bold">
+              <button onclick="setCameraView('front')" class="px-3 py-1 rounded bg-white shadow-sm text-kc-red hover:bg-kc-red hover:text-white transition">Front</button>
+              <button onclick="setCameraView('back')" class="px-3 py-1 rounded hover:bg-white transition">Back</button>
+              <button onclick="setCameraView('left')" class="px-3 py-1 rounded hover:bg-white transition">L-Sleeve</button>
+              <button onclick="setCameraView('right')" class="px-3 py-1 rounded hover:bg-white transition">R-Sleeve</button>
+              <button onclick="resetCameraView()" class="px-2.5 py-1 rounded hover:bg-white text-stone-500" title="Reset View"><i class="fas fa-undo"></i></button>
             </div>
 
-            <!-- 360 Rotation Angles -->
-            <div class="flex justify-center space-x-2 bg-stone-100 p-1 rounded-lg text-[11px] font-semibold text-kc-charcoal/80">
-              <button id="btnAngFront" onclick="setAngle('front')" class="px-3 py-1 rounded bg-white font-bold shadow-sm text-kc-red">Front View</button>
-              <button id="btnAngSide" onclick="setAngle('side')" class="px-3 py-1 rounded hover:bg-white transition">Side (45°)</button>
-              <button id="btnAngBack" onclick="setAngle('back')" class="px-3 py-1 rounded hover:bg-white transition">Back View</button>
-            </div>
+            <!-- Mannequin Visibility Toggle -->
+            <button id="toggleMannequinBtn" onclick="toggleMannequin()" class="px-3 py-1 rounded-lg border border-kc-red/30 text-[11px] font-bold text-kc-maroon bg-kc-lightCream hover:bg-kc-red hover:text-white transition">
+              <i class="fas fa-user mr-1"></i> Avatar: Visible
+            </button>
           </div>
 
-          <!-- 3D Viewport Screen -->
-          <div id="mannequinViewport" class="relative w-80 h-[480px] bg-gradient-to-b from-stone-200 via-stone-100 to-stone-200 border border-kc-red/20 rounded-xl flex items-center justify-center overflow-hidden cursor-move select-none shadow-inner">
+          <!-- WebGL 3D Canvas Viewport -->
+          <div class="relative w-full h-[520px] bg-gradient-to-b from-stone-200 via-stone-100 to-stone-200 border border-kc-red/20 rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
+            <div id="viewport3d"></div>
             
-            <!-- Mannequin Realistic Anatomy Contour -->
-            <svg id="mannequinHumanSvg" class="absolute w-full h-full p-2 pointer-events-none transition-all duration-300" viewBox="0 0 300 460" fill="none">
-              <ellipse id="modelHead" cx="150" cy="45" rx="19" ry="24" fill="#a89280"/>
-              <path id="modelNeck" d="M143 68 L157 68 L160 88 L140 88 Z" fill="#968170"/>
-              <path id="modelBodyPath" d="M110 88 L190 88 L218 135 L205 270 L175 440 L160 440 L152 270 L148 270 L140 440 L125 440 L95 270 L82 135 Z" fill="#bfaea0"/>
-            </svg>
-
-            <!-- Hood Cap Layer (Visible when Cap is ON) -->
-            <svg id="hoodCapOverlay" class="absolute z-10 w-full h-full p-2 pointer-events-none hidden" viewBox="0 0 300 460" fill="none">
-              <path d="M125 30 Q150 15 175 30 Q190 60 178 88 L122 88 Q110 60 125 30 Z" fill="#141212" stroke="#000" stroke-width="2.5"/>
-            </svg>
-
-            <!-- Top Garment (Hoodie / Tee / Jacket) Layer -->
-            <svg id="topGarmentSvg" class="relative z-10 w-full h-full p-2 filter drop-shadow-xl" viewBox="0 0 300 460" fill="none">
-              <path id="svgTopBody" d="M90 85 L120 110 L180 110 L210 85 L275 125 L245 190 L215 175 L215 285 L85 285 L85 175 L55 190 L25 125 Z" fill="#141212" stroke="#000" stroke-width="3"/>
-              <path id="svgTopCollar" d="M120 110 Q150 145 180 110 Q150 85 120 110 Z" fill="#201d1d" opacity="0.7"/>
-            </svg>
-
-            <!-- Bottom Garment (Denim Jeans / Cargo) Layer -->
-            <svg id="bottomGarmentSvg" class="absolute bottom-0 z-10 w-full h-full p-2 filter drop-shadow-md" viewBox="0 0 300 460" fill="none">
-              <path id="svgBottomBody" d="M88 280 L212 280 L220 330 L235 445 L165 445 L150 325 L135 445 L65 445 L80 330 Z" fill="#1e293b" stroke="#0f172a" stroke-width="2.5"/>
-              <path d="M98 295 L120 295 L115 325 L95 325 Z M180 295 L202 295 L205 325 L185 325 Z" stroke="#334155" stroke-width="2" fill="none"/>
-            </svg>
-
-            <!-- DRAGGABLE FULL-WRAP ARTWORK CONTAINER -->
-            <div id="dragArtwork" class="absolute z-20 cursor-move select-none flex flex-col items-center justify-center p-1 rounded" style="left: 65px; top: 120px; width: 170px;">
-              <div id="renderedArtContent" class="text-center craft-puff w-full">
-                <svg viewBox="0 0 100 100" class="w-full h-32 filter drop-shadow-2xl">
-                  <circle cx="50" cy="50" r="44" fill="none" stroke="#d4af37" stroke-width="3.5"/>
-                  <circle cx="50" cy="50" r="32" fill="#c52222" opacity="0.85"/>
-                  <path d="M50 2 L54 18 L50 14 L46 18 Z M50 98 L54 82 L50 86 L46 82 Z M2 50 L18 54 L14 50 L18 46 Z M98 50 L82 54 L86 50 L82 46 Z" fill="#d4af37"/>
-                  <path d="M50 24 Q58 36 50 48 Q42 60 50 72" stroke="#d4af37" stroke-width="2.5" fill="none"/>
-                  <circle cx="50" cy="50" r="8" fill="#fcf8f2"/>
-                </svg>
-              </div>
-              <span id="renderedCustomText" class="mt-1 font-serif text-[11px] font-black text-kc-gold tracking-[0.2em] block uppercase drop-shadow">
-                KAINCHI CLUB
-              </span>
+            <div id="canvas3dNotice" class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded border border-kc-red/20 text-[11px] text-kc-charcoal/80 pointer-events-none shadow-sm">
+              <i class="fas fa-cube text-kc-red mr-1.5"></i> Left Click / 1 Finger: Rotate | Right Click / 2 Fingers: Pan | Scroll: Zoom
             </div>
 
-            <div class="absolute bottom-2 left-2 z-30 text-[10px] text-kc-charcoal/70 bg-white/90 backdrop-blur px-2.5 py-1 rounded border border-kc-red/20 shadow-sm pointer-events-none">
-              <i class="fas fa-arrows-alt text-kc-red mr-1"></i> Drag artwork across chest, sleeves, or denim flare
+            <div id="loaderOverlay" class="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center transition-opacity duration-300 pointer-events-none opacity-0">
+              <div class="w-10 h-10 border-4 border-kc-red border-t-transparent rounded-full animate-spin mb-2"></div>
+              <span class="text-xs font-bold text-kc-maroon">Projecting Texture Onto 3D Mesh...</span>
             </div>
           </div>
 
-          <!-- Live Price & Specs Bar -->
-          <div class="w-full mt-4 pt-4 border-t border-kc-red/10 flex justify-between items-center text-xs">
+          <!-- Summary Strip -->
+          <div class="w-full mt-4 pt-3 border-t border-kc-red/10 flex justify-between items-center text-xs">
             <div>
-              <span class="text-kc-red font-bold uppercase text-[10px] block">Selected Ensemble</span>
-              <span id="labelSpecGarment" class="font-bold text-kc-charcoal">Fleece Hoodie + Tapestry Denim</span>
+              <span class="text-kc-red font-bold uppercase text-[10px] block">Selected Piece</span>
+              <span id="labelSpecSummary" class="font-bold text-kc-charcoal">Heavyweight Boxy Tee (Men Athletic)</span>
             </div>
             <div class="text-right">
-              <span class="text-kc-red font-bold uppercase text-[10px] block">Estimated Tailored Quote</span>
-              <span id="labelLivePrice" class="text-xl font-black text-kc-maroon">₹4,899</span>
+              <span class="text-kc-red font-bold uppercase text-[10px] block">Estimated Base + Finish</span>
+              <span id="labelPriceQuote" class="text-xl font-black text-kc-maroon">₹1,849</span>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: STUDIO SELECTION CONTROLS (7 Cols) -->
-        <div class="lg:col-span-7 bg-white border border-kc-red/20 rounded-2xl p-6 sm:p-8 space-y-6 kc-shadow">
+        <!-- RIGHT: SELECTION & LAYER CONTROLS (5 Cols) -->
+        <div class="lg:col-span-5 bg-white border border-kc-red/20 rounded-2xl p-5 sm:p-6 space-y-6 kc-shadow">
           
-          <!-- 1. Body Frame & Size Selector -->
+          <!-- 1. Garment & Avatar Setup -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">1. Body Frame & Physique</label>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <button onclick="setBodyFrame('athletic')" class="frame-btn active border-2 border-kc-red bg-kc-lightCream p-2.5 rounded text-center text-xs font-bold">
-                Athletic / Broad
+            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">1. Garment & Avatar Spec</label>
+            <div class="grid grid-cols-2 gap-2 mb-3">
+              <button onclick="setGarmentType('tshirt')" id="btnGarmentTee" class="border-2 border-kc-red bg-kc-lightCream p-2.5 rounded-lg text-center text-xs font-bold">
+                <i class="fas fa-tshirt block text-base text-kc-red mb-1"></i> Heavy Boxy Tee
               </button>
-              <button onclick="setBodyFrame('slim')" class="frame-btn border border-kc-red/20 p-2.5 rounded text-center text-xs font-semibold">
-                Slim / Tailored
-              </button>
-              <button onclick="setBodyFrame('regular')" class="frame-btn border border-kc-red/20 p-2.5 rounded text-center text-xs font-semibold">
-                Regular / Classic
-              </button>
-              <button onclick="setBodyFrame('heavy')" class="frame-btn border border-kc-red/20 p-2.5 rounded text-center text-xs font-semibold">
-                Relaxed / Plus Fit
+              <button onclick="setGarmentType('hoodie')" id="btnGarmentHoodie" class="border border-kc-red/20 p-2.5 rounded-lg text-center text-xs font-bold hover:border-kc-red">
+                <i class="fas fa-vest-patches block text-base text-kc-red mb-1"></i> Fleece Hoodie
               </button>
             </div>
-          </div>
 
-          <!-- 2. Garment Combo (Upperwear & Bottomwear) -->
-          <div id="combos">
-            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">2. Garment Ensemble (Topwear + Bottomwear)</label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="grid grid-cols-2 gap-2 text-xs">
               <div>
-                <span class="text-[11px] font-semibold text-kc-charcoal/70 block mb-1">Top Silhouette:</span>
-                <select id="selectTopWear" onchange="updateComboGarments()" class="w-full border border-kc-red/30 rounded p-2 text-xs font-semibold bg-kc-lightCream">
-                  <option value="hoodie">350 GSM Heavy Fleece Hoodie (₹2,499)</option>
-                  <option value="tee">240 GSM Boxy Street Tee (₹1,499)</option>
-                  <option value="jacket">Artisan Zip Bomber Jacket (₹3,999)</option>
-                  <option value="shirt">Relaxed Fit Atelier Shirt (₹1,999)</option>
+                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Model Gender</span>
+                <select id="selectGender" onchange="updateAvatarSpec()" class="w-full border border-kc-red/30 rounded p-1.5 text-xs bg-kc-lightCream font-semibold">
+                  <option value="men">Men's Athletic Frame</option>
+                  <option value="women">Women's Tailored Frame</option>
                 </select>
               </div>
               <div>
-                <span class="text-[11px] font-semibold text-kc-charcoal/70 block mb-1">Bottom Silhouette:</span>
-                <select id="selectBottomWear" onchange="updateComboGarments()" class="w-full border border-kc-red/30 rounded p-2 text-xs font-semibold bg-kc-lightCream">
-                  <option value="denim_flare">Tapestry Flared Denim Jeans (₹2,400)</option>
-                  <option value="denim_narrow">Tailored Narrow Fit Denim (₹2,100)</option>
-                  <option value="denim_baggy">Skater Baggy Cargo Denim (₹2,600)</option>
-                  <option value="none">None (Topwear Only)</option>
+                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Garment Size</span>
+                <select id="selectSize" onchange="updateSummary()" class="w-full border border-kc-red/30 rounded p-1.5 text-xs bg-kc-lightCream font-semibold">
+                  <option value="S">Small (S)</option>
+                  <option value="M" selected>Medium (M)</option>
+                  <option value="L">Large (L - Oversized)</option>
+                  <option value="XL">Extra Large (XL)</option>
+                  <option value="XXL">Double XL (XXL)</option>
                 </select>
               </div>
             </div>
           </div>
 
-          <!-- 3. Base Color Dyes -->
+          <!-- 2. Primary Fabric Color -->
           <div>
             <div class="flex justify-between items-center mb-2">
-              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">3. Primary Fabric Hue</label>
-              <span id="labelColorName" class="text-xs font-semibold text-kc-red">Jet Charcoal (#141212)</span>
+              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">2. Primary Fabric Dye</label>
+              <span id="labelColorCode" class="text-xs font-semibold text-kc-red">Jet Charcoal (#141212)</span>
             </div>
-            <div class="flex flex-wrap gap-2.5">
-              <button onclick="setBaseColor('#141212', 'Jet Charcoal')" title="Jet Charcoal" class="w-8 h-8 rounded-full border-2 border-kc-red bg-[#141212] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#641010', 'Heritage Maroon')" title="Heritage Maroon" class="w-8 h-8 rounded-full border border-gray-300 bg-[#641010] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#112920', 'Forest Emerald')" title="Forest Emerald" class="w-8 h-8 rounded-full border border-gray-300 bg-[#112920] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#fcf8f2', 'Warm Ivory Cream')" title="Warm Ivory Cream" class="w-8 h-8 rounded-full border border-gray-400 bg-[#fcf8f2] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#9b1818', 'Tailor Crimson Red')" title="Tailor Crimson Red" class="w-8 h-8 rounded-full border border-gray-300 bg-[#9b1818] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#1a2436', 'Midnight Navy')" title="Midnight Navy" class="w-8 h-8 rounded-full border border-gray-300 bg-[#1a2436] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#3a2c27', 'Vintage Cocoa')" title="Vintage Cocoa" class="w-8 h-8 rounded-full border border-gray-300 bg-[#3a2c27] shadow hover:scale-110 transition"></button>
-              <button onclick="setBaseColor('#ffffff', 'Optical White')" title="Optical White" class="w-8 h-8 rounded-full border border-gray-400 bg-[#ffffff] shadow hover:scale-110 transition"></button>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="setFabricColor('#141212', 'Jet Charcoal')" class="w-7 h-7 rounded-full border-2 border-kc-red bg-[#141212] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#641010', 'Heritage Maroon')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#641010] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#112920', 'Forest Emerald')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#112920] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#fcf8f2', 'Warm Ivory Cream')" class="w-7 h-7 rounded-full border border-gray-400 bg-[#fcf8f2] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#9b1818', 'Tailor Crimson Red')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#9b1818] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#1a2436', 'Midnight Navy')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#1a2436] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#3a2c27', 'Vintage Cocoa')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#3a2c27] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#ffffff', 'Optical White')" class="w-7 h-7 rounded-full border border-gray-400 bg-[#ffffff] shadow hover:scale-110 transition"></button>
             </div>
           </div>
 
-          <!-- 4. Full-Wrap Authentic Artwork Vault -->
+          <!-- 3. Active Print Zone & Multi-Artwork Placement -->
           <div id="artvault">
-            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">4. Curated Full-Coverage Artworks</label>
-            
-            <div class="flex space-x-2 overflow-x-auto pb-2 custom-scroll mb-3">
-              <button onclick="filterArtCategory('all')" class="cat-pill active px-3.5 py-1 bg-kc-red text-white text-[11px] font-bold rounded-full whitespace-nowrap">All Motifs</button>
-              <button onclick="filterArtCategory('divine')" class="cat-pill px-3.5 py-1 bg-kc-lightCream text-kc-charcoal text-[11px] font-semibold rounded-full whitespace-nowrap">Sacred & Sudarshan Chakra</button>
-              <button onclick="filterArtCategory('wrap')" class="cat-pill px-3.5 py-1 bg-kc-lightCream text-kc-charcoal text-[11px] font-semibold rounded-full whitespace-nowrap">Shoulder & Sleeve Wrap</button>
-              <button onclick="filterArtCategory('tapestry')" class="cat-pill px-3.5 py-1 bg-kc-lightCream text-kc-charcoal text-[11px] font-semibold rounded-full whitespace-nowrap">Renaissance & Angelic</button>
-              <button onclick="filterArtCategory('predator')" class="cat-pill px-3.5 py-1 bg-kc-lightCream text-kc-charcoal text-[11px] font-semibold rounded-full whitespace-nowrap">Predators & Serpent Wrap</button>
+            <div class="flex justify-between items-center mb-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">3. Print Zone & Layers</label>
+              <button onclick="clearActiveZoneArtwork()" class="text-[10px] text-kc-red font-bold hover:underline">Clear Zone</button>
             </div>
 
-            <div id="artGridContainer" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-56 overflow-y-auto custom-scroll p-1.5 border border-kc-red/15 rounded-lg bg-kc-lightCream/30">
-              <!-- Injected via JavaScript -->
+            <!-- Target Zone Dropdown -->
+            <div class="mb-3">
+              <select id="selectPrintZone" onchange="switchPrintZone()" class="w-full border border-kc-red/30 rounded p-2 text-xs font-bold bg-kc-lightCream">
+                <option value="front_center">Front Center (Main Statement)</option>
+                <option value="front_left_chest">Left Chest (Pocket / Crest)</option>
+                <option value="front_right_chest">Right Chest</option>
+                <option value="back_center">Back Center (Full Tapestry)</option>
+                <option value="left_sleeve">Left Sleeve</option>
+                <option value="right_sleeve">Right Sleeve</option>
+              </select>
             </div>
 
-            <!-- Custom Image Direct Upload -->
-            <div class="mt-3 p-3 bg-kc-lightCream border border-dashed border-kc-red/30 rounded flex items-center justify-between">
-              <div class="text-[11px] text-kc-charcoal/80">
-                <span class="font-bold text-kc-red block">Have your own sketch, artwork, or high-res photograph?</span>
-                Upload transparent PNG or vector files directly onto the garment.
-              </div>
-              <label class="bg-kc-maroon text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded cursor-pointer hover:bg-kc-red transition">
+            <!-- Artwork Search & Category Filter -->
+            <div class="flex gap-2 mb-2">
+              <input type="text" id="artworkSearchInput" oninput="filterArtworks()" placeholder="Search motifs..." class="w-full border border-kc-red/20 rounded p-1.5 text-xs">
+              <select id="artworkCategorySelect" onchange="filterArtworks()" class="border border-kc-red/20 rounded p-1.5 text-xs bg-white font-semibold">
+                <option value="all">All</option>
+                <option value="sacred">Sacred</option>
+                <option value="wrap">Branches & Yoke</option>
+                <option value="tapestry">Tapestry</option>
+                <option value="wildlife">Wildlife</option>
+              </select>
+            </div>
+
+            <!-- Artwork Grid Selection -->
+            <div id="artworkLibraryGrid" class="grid grid-cols-3 gap-2 max-h-40 overflow-y-auto custom-scroll p-1 border border-kc-red/15 rounded-lg bg-kc-lightCream/30">
+              <!-- Injected dynamically -->
+            </div>
+
+            <!-- Custom Device Upload -->
+            <div class="mt-2.5 p-2 bg-kc-lightCream border border-dashed border-kc-red/30 rounded flex items-center justify-between">
+              <span class="text-[10px] text-kc-charcoal/70 font-medium">Upload Transparent PNG/WebP:</span>
+              <label class="bg-kc-maroon text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded cursor-pointer hover:bg-kc-red transition">
                 Upload File
-                <input type="file" accept="image/*" class="hidden" onchange="uploadCustomArtwork(event)">
+                <input type="file" accept="image/png, image/webp, image/jpeg" class="hidden" onchange="handleDirectUpload(event)">
               </label>
             </div>
-          </div>
 
-          <!-- 5. Scale / Size Slider -->
-          <div>
-            <div class="flex justify-between items-center mb-1 text-xs">
-              <label class="font-bold uppercase tracking-wider text-kc-maroon">5. Artwork Scale & Sizing</label>
-              <span id="labelScale" class="text-kc-red font-bold">100%</span>
+            <!-- Zone Fine-Tuning Controls (Offset, Scale, Rotation) -->
+            <div class="mt-3 p-3 bg-stone-50 border border-stone-200 rounded-lg space-y-2 text-xs">
+              <div class="flex justify-between items-center text-[11px] font-bold text-kc-charcoal">
+                <span>Active Layer Controls</span>
+                <span id="activeZoneLabel" class="text-kc-red uppercase text-[10px]">Front Center</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <span class="text-[10px] text-stone-500 block">Scale: <b id="valScale">100%</b></span>
+                  <input type="range" min="30" max="220" value="100" oninput="adjustActiveTransform('scale', this.value)" class="w-full accent-kc-red">
+                </div>
+                <div>
+                  <span class="text-[10px] text-stone-500 block">Rotation: <b id="valRotate">0°</b></span>
+                  <input type="range" min="0" max="360" value="0" oninput="adjustActiveTransform('rotate', this.value)" class="w-full accent-kc-red">
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-2 pt-1">
+                <div>
+                  <span class="text-[10px] text-stone-500 block">Position X</span>
+                  <input type="range" min="-100" max="100" value="0" oninput="adjustActiveTransform('x', this.value)" class="w-full accent-kc-red">
+                </div>
+                <div>
+                  <span class="text-[10px] text-stone-500 block">Position Y</span>
+                  <input type="range" min="-100" max="100" value="0" oninput="adjustActiveTransform('y', this.value)" class="w-full accent-kc-red">
+                </div>
+              </div>
             </div>
-            <input type="range" min="50" max="250" value="100" oninput="changeArtworkScale(this.value)" class="w-full accent-kc-red cursor-pointer">
           </div>
 
-          <!-- 6. Craft Technique -->
+          <!-- 4. Craft Finish -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">6. Craft & Dimensional Finish</label>
-            <div class="grid grid-cols-3 gap-2">
-              <button onclick="setCraftMode('puff', 350, '3D Heavy Puff Print')" class="craft-btn active border-2 border-kc-red bg-kc-lightCream p-2 rounded text-center text-xs font-bold">
-                3D Heavy Puff (+₹350)
+            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">4. Dimensional Technique</label>
+            <div class="grid grid-cols-3 gap-1.5 text-xs">
+              <button onclick="setCraftFinish('puff', 350, '3D Heavy Puff Print')" class="craft-btn active border-2 border-kc-red bg-kc-lightCream p-2 rounded text-center font-bold">
+                3D Puff (+₹350)
               </button>
-              <button onclick="setCraftMode('embroidery', 650, 'Dense Thread Embroidery')" class="craft-btn border border-kc-red/20 p-2 rounded text-center text-xs font-medium">
+              <button onclick="setCraftFinish('embroidery', 650, 'High-Density Embroidery')" class="craft-btn border border-kc-red/20 p-2 rounded text-center font-medium">
                 Embroidery (+₹650)
               </button>
-              <button onclick="setCraftMode('screen', 250, 'HD Silk Screen')" class="craft-btn border border-kc-red/20 p-2 rounded text-center text-xs font-medium">
-                Silk Screen (+₹250)
+              <button onclick="setCraftFinish('screen', 250, 'HD Screen Print')" class="craft-btn border border-kc-red/20 p-2 rounded text-center font-medium">
+                Screen (+₹250)
               </button>
             </div>
           </div>
 
-          <!-- 7. Custom Name/Monogram Input -->
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-1">7. Custom Monogram / Name Placement</label>
-            <input type="text" id="inputCustomName" oninput="updateMonogramText(this.value)" placeholder="e.g. KAINCHI CLUB / YOUR NAME" class="w-full border border-kc-red/30 rounded p-2.5 text-xs focus:outline-none focus:border-kc-red">
-          </div>
-
-          <!-- ORDER VIA WHATSAPP ACTION BUTTON -->
+          <!-- WhatsApp Dispatch Button -->
           <div class="pt-2">
-            <button onclick="sendOrderToWhatsApp()" class="w-full bg-kc-maroon hover:bg-kc-red text-white py-4 rounded-lg font-serif font-bold text-xs uppercase tracking-[0.2em] transition shadow-lg flex items-center justify-center space-x-2">
+            <button onclick="dispatchOrderToWhatsApp()" class="w-full bg-kc-maroon hover:bg-kc-red text-white py-3.5 rounded-lg font-serif font-bold text-xs uppercase tracking-[0.2em] transition shadow-lg flex items-center justify-center space-x-2">
               <i class="fab fa-whatsapp text-lg"></i>
-              <span>Order Custom Piece Via WhatsApp</span>
+              <span>Review & Transmit Specification</span>
             </button>
             <p class="text-center text-[10px] text-kc-charcoal/60 mt-1.5">
-              Specifications routed directly to Master Cutter at <strong>+91 8863075356</strong>
+              Directly routes itemized CAD payload to Master Artisan at <strong>+91 8863075356</strong>
             </p>
           </div>
 
@@ -423,44 +351,38 @@
       </div>
     </section>
 
-    <!-- UNBOXING & BRAND IDENTITY SECTION -->
+    <!-- UNBOXING SECTION -->
     <section id="unboxing" class="py-16 px-6 bg-kc-lightCream border-t border-kc-red/20">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Bespoke Presentation</span>
-          <h2 class="font-serif text-3xl font-extrabold text-kc-maroon">The Kainchi Club Unboxing Experience</h2>
-          <p class="text-xs text-kc-charcoal/60 mt-1">Every custom parcel is individually assembled with Savile Row-grade care.</p>
+      <div class="max-w-6xl mx-auto text-center mb-10">
+        <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Bespoke Presentation</span>
+        <h2 class="font-serif text-3xl font-extrabold text-kc-maroon">The Kainchi Club Unboxing Experience</h2>
+      </div>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white p-6 rounded-lg border border-kc-red/20 shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-3 border border-kc-red/30">
+            <i class="fas fa-box"></i>
+          </div>
+          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">Heritage Rigid Keepsake Box</h3>
+          <p class="text-xs text-kc-charcoal/70 leading-relaxed">Embossed with our hallmark red scissors and thread spool motif on premium ivory board.</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-lg border border-kc-red/20 text-center shadow-sm">
-            <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-4 border border-kc-red/30">
-              <i class="fas fa-box"></i>
-            </div>
-            <h3 class="font-serif text-base font-bold text-kc-maroon mb-2">Heritage Rigid Keepsake Box</h3>
-            <p class="text-xs text-kc-charcoal/70 leading-relaxed">Debossed with the official Kainchi Club red scissors and thread spool motif on premium ivory board.</p>
+        <div class="bg-white p-6 rounded-lg border border-kc-red/20 shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-3 border border-kc-red/30">
+            <i class="fas fa-certificate"></i>
           </div>
-
-          <div class="bg-white p-6 rounded-lg border border-kc-red/20 text-center shadow-sm">
-            <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-4 border border-kc-red/30">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <h3 class="font-serif text-base font-bold text-kc-maroon mb-2">Fabric GSM & Authenticity Card</h3>
-            <p class="text-xs text-kc-charcoal/70 leading-relaxed">Includes genuine thread spool seal, 350 GSM cotton fleece verification, and tailor signature.</p>
+          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">GSM Verification Certificate</h3>
+          <p class="text-xs text-kc-charcoal/70 leading-relaxed">Genuine thread spool wax seal, fabric weight verification, and master cutter signature.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg border border-kc-red/20 shadow-sm">
+          <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-3 border border-kc-red/30">
+            <i class="fas fa-shipping-fast"></i>
           </div>
-
-          <div class="bg-white p-6 rounded-lg border border-kc-red/20 text-center shadow-sm">
-            <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-4 border border-kc-red/30">
-              <i class="fas fa-shipping-fast"></i>
-            </div>
-            <h3 class="font-serif text-base font-bold text-kc-maroon mb-2">Insured Doorstep Transit</h3>
-            <p class="text-xs text-kc-charcoal/70 leading-relaxed">Dispatched across India in weatherproof luxury protective outer mailers with full tracking.</p>
-          </div>
+          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">Insured Express Transit</h3>
+          <p class="text-xs text-kc-charcoal/70 leading-relaxed">Dispatched in weatherproof protective outer mailers with real-time door tracking.</p>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER & OFFICIAL CONCIERGE -->
+    <!-- FOOTER & CONCIERGE -->
     <footer id="contact" class="bg-kc-charcoal text-kc-cream py-14 px-6 border-t border-kc-red/40">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
@@ -469,368 +391,527 @@
             <span class="font-serif text-xl font-bold tracking-widest text-kc-cream">KAINCHI CLUB</span>
           </div>
           <p class="text-xs text-kc-cream/60 leading-relaxed">
-            High-end bespoke streetwear brand. Each piece is individually crafted, painted, and finished according to client specifications.
+            High-end bespoke streetwear brand. Each piece is cut and individually tailored with true precision.
           </p>
         </div>
-
         <div>
-          <h4 class="font-serif text-sm font-bold uppercase tracking-wider text-kc-gold mb-3">Master Cutter Desk</h4>
+          <h4 class="font-serif text-sm font-bold uppercase tracking-wider text-kc-gold mb-3">Master Cutter Studio</h4>
           <ul class="text-xs text-kc-cream/70 space-y-2">
             <li><i class="fab fa-whatsapp text-kc-red mr-2"></i> WhatsApp: <strong>+91 8863075356</strong></li>
             <li><i class="fas fa-envelope text-kc-red mr-2"></i> Official Email: <strong>kainchiclub@gmail.com</strong></li>
             <li><i class="fas fa-location-dot text-kc-red mr-2"></i> Purnea, Bihar, India (Pan-India Shipping)</li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-serif text-sm font-bold uppercase tracking-wider text-kc-gold mb-3">Bespoke Concierge</h4>
-          <p class="text-xs text-kc-cream/60 mb-3">Inquire about customized bridal trousseau, institutional batch orders, or bespoke styling:</p>
+          <p class="text-xs text-kc-cream/60 mb-3">Need personalized fitting advice or bridal/institutional orders?</p>
           <a href="https://wa.me/918863075356" class="inline-block bg-kc-red text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded hover:bg-kc-crimson transition">
             Direct WhatsApp Chat
           </a>
         </div>
       </div>
       <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-white/10 text-center text-[11px] text-kc-cream/40">
-        © 2026 KAINCHI CLUB. All Rights Reserved. Crafted with Savile Row precision.
+        © 2026 KAINCHI CLUB. All Rights Reserved. Cut with precision.
       </div>
     </footer>
-
   </div>
 
-  <!-- ADVANCED 3D SIMULATOR LOGIC & ART ENGINE -->
+  <!-- JAVASCRIPT: REAL THREE.JS 3D ENGINE & COMPOSITE UV DECALS -->
   <script>
-    // State Variables
-    let currentGender = 'men';
-    let currentAngle = 'front';
-    let isHoodCapOn = false;
-    let currentFrame = 'athletic';
-    let topPrice = 2499;
-    let bottomPrice = 2400;
+    // --- 1. STATE CONFIGURATION ---
+    let garmentType = 'tshirt';
+    let basePrice = 1499;
     let craftPrice = 350;
-    let topTitle = '350 GSM Fleece Hoodie';
-    let bottomTitle = 'Tapestry Flared Denim';
-    let currentColor = '#141212';
-    let currentColorName = 'Jet Charcoal';
-    let currentCraftTitle = '3D Heavy Puff Print';
-    let currentArtTitle = 'Shri Krishna Sudarshan Chakra';
+    let fabricColor = '#141212';
+    let fabricColorName = 'Jet Charcoal';
+    let craftTitle = '3D Heavy Puff Print';
+    let gender = 'men';
+    let garmentSize = 'M';
+    let mannequinVisible = true;
+    let activePrintZone = 'front_center';
 
-    // Full-Coverage Realistic Artwork Library
-    const curatedArtworks = [
-      {
-        id: 'krishna_full',
-        category: 'divine',
-        title: 'Shri Krishna Sudarshan',
-        badge: 'Full Cover Wrap',
-        svg: `<svg viewBox="0 0 100 100" class="w-full h-32 filter drop-shadow-xl"><circle cx="50" cy="50" r="44" fill="none" stroke="#d4af37" stroke-width="3.5"/><circle cx="50" cy="50" r="32" fill="#c52222" opacity="0.85"/><path d="M50 2 L54 18 L50 14 L46 18 Z M50 98 L54 82 L50 86 L46 82 Z M2 50 L18 54 L14 50 L18 46 Z M98 50 L82 54 L86 50 L82 46 Z" fill="#d4af37"/><path d="M50 24 Q58 36 50 48 Q42 60 50 72" stroke="#d4af37" stroke-width="2.5" fill="none"/><circle cx="50" cy="50" r="8" fill="#fcf8f2"/></svg>`
-      },
-      {
-        id: 'sakura_tree',
-        category: 'wrap',
-        title: 'Autumn Blossom Shoulder Tree',
-        badge: 'Chest to Sleeve',
-        svg: `<svg viewBox="0 0 140 90" class="w-full h-32"><path d="M10 80 Q50 60 70 30 Q100 15 130 10" stroke="#3d2b1f" stroke-width="4.5" fill="none"/><circle cx="75" cy="28" r="8" fill="#f43f5e"/><circle cx="95" cy="20" r="7" fill="#fb7185"/><circle cx="120" cy="14" r="8" fill="#fda4af"/><circle cx="55" cy="50" r="6" fill="#f43f5e"/></svg>`
-      },
-      {
-        id: 'anaconda_wrap',
-        category: 'predator',
-        title: '3D Anaconda Serpent Wrap',
-        badge: 'Full Body Wrap',
-        svg: `<svg viewBox="0 0 120 120" class="w-full h-36"><path d="M20 20 Q100 30 90 70 Q80 110 30 100 Q10 90 40 60 Q70 40 100 90" stroke="#15803d" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="20" cy="20" r="6" fill="#ca8a04"/><circle cx="23" cy="18" r="1.5" fill="#000"/></svg>`
-      },
-      {
-        id: 'lightning_storm',
-        category: 'wrap',
-        title: 'Storm Lightning Branching',
-        badge: 'Collar to Shoulder',
-        svg: `<svg viewBox="0 0 120 80" class="w-full h-28"><path d="M10 10 L40 25 L50 15 L75 45 L90 30 L115 50 M50 15 L65 30 M75 45 L85 65" stroke="#fcf8f2" stroke-width="3.5" fill="none" stroke-linecap="round" filter="drop-shadow(0 0 5px #d4af37)"/></svg>`
-      },
-      {
-        id: 'angel_tapestry',
-        category: 'tapestry',
-        title: 'Archangel Renaissance Tapestry',
-        badge: 'Denim Flare / Back',
-        svg: `<svg viewBox="0 0 100 100" class="w-full h-32"><path d="M10 50 Q30 15 50 40 Q70 15 90 50 Q60 65 50 90 Q40 65 10 50 Z" fill="#3a2c27" stroke="#d4af37" stroke-width="2.5"/><circle cx="50" cy="35" r="9" fill="#d4af37"/></svg>`
-      },
-      {
-        id: 'shiva_tandav',
-        category: 'divine',
-        title: 'Mahadev Trishul & Cosmic Damru',
-        badge: 'Divine Tandav',
-        svg: `<svg viewBox="0 0 100 100" class="w-full h-32"><path d="M50 8 L50 92 M40 18 Q50 32 60 18 M32 20 Q34 44 50 44 Q66 44 68 20" stroke="#d4af37" stroke-width="4.5" fill="none" stroke-linecap="round"/><ellipse cx="50" cy="52" rx="11" ry="6.5" fill="#c52222"/></svg>`
-      }
+    // Multi-Artwork Layer Registry across UV Print Zones
+    const zoneLayers = {
+      front_center: null,
+      front_left_chest: null,
+      front_right_chest: null,
+      back_center: null,
+      left_sleeve: null,
+      right_sleeve: null
+    };
+
+    // Authentic Artwork Vault
+    const artworkVault = [
+      { id: 'krishna_chakra', category: 'sacred', title: 'Sudarshan Chakra', icon: '☸️', type: 'vector_chakra' },
+      { id: 'trishul_damru', category: 'sacred', title: 'Mahadev Trishul', icon: '🔱', type: 'vector_trishul' },
+      { id: 'om_mandala', category: 'sacred', title: 'Vedic Mandala', icon: '🕉️', type: 'vector_mandala' },
+      { id: 'sakura_branch', category: 'wrap', title: 'Autumn Blossom', icon: '🌸', type: 'vector_sakura' },
+      { id: 'storm_lightning', category: 'wrap', title: 'Storm Lightning', icon: '⚡', type: 'vector_lightning' },
+      { id: 'archangel_tapestry', category: 'tapestry', title: 'Archangel Wings', icon: '🪽', type: 'vector_angel' },
+      { id: 'bengal_tiger', category: 'wildlife', title: 'Bengal Tiger', icon: '🐅', type: 'vector_tiger' },
+      { id: 'anaconda_wrap', category: 'wildlife', title: 'Serpent Coil', icon: '🐍', type: 'vector_serpent' }
     ];
 
-    function renderArtVault(cat = 'all') {
-      const container = document.getElementById('artGridContainer');
-      container.innerHTML = '';
-      const list = cat === 'all' ? curatedArtworks : curatedArtworks.filter(a => a.category === cat);
+    // --- 2. THREE.JS SCENE SETUP ---
+    const container = document.getElementById('viewport3d');
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf2efe9);
 
-      list.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'bg-white border border-kc-red/20 rounded-lg p-2.5 flex flex-col justify-between cursor-pointer hover:border-kc-red hover:shadow-md transition';
-        card.onclick = () => selectArtwork(item);
-        card.innerHTML = `
-          <div class="h-20 flex items-center justify-center bg-kc-lightCream/50 rounded overflow-hidden p-1">
-            ${item.svg}
-          </div>
-          <div class="mt-2">
-            <span class="text-[11px] font-bold block truncate text-kc-charcoal">${item.title}</span>
-            <span class="text-[9px] text-kc-red font-semibold block">${item.badge}</span>
-          </div>
-        `;
-        container.appendChild(card);
-      });
+    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
+    camera.position.set(0, 0.4, 2.8);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.minDistance = 1.2;
+    controls.maxDistance = 4.5;
+    controls.maxPolarAngle = Math.PI / 2 + 0.1;
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0xfffaed, 0.9);
+    keyLight.position.set(3, 4, 4);
+    keyLight.castShadow = true;
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0xe8f0ff, 0.45);
+    fillLight.position.set(-3, 2, -3);
+    scene.add(fillLight);
+
+    // Dynamic High-Res Composite Texture (2048 x 2048)
+    const textureCanvas = document.createElement('canvas');
+    textureCanvas.width = 2048;
+    textureCanvas.height = 2048;
+    const ctx = textureCanvas.getContext('2d');
+
+    const garmentTexture = new THREE.CanvasTexture(textureCanvas);
+    garmentTexture.flipY = false;
+
+    const garmentMaterial = new THREE.MeshStandardMaterial({
+      map: garmentTexture,
+      roughness: 0.65,
+      metalness: 0.05,
+      bumpScale: 0.02
+    });
+
+    const mannequinMaterial = new THREE.MeshStandardMaterial({
+      color: 0xc8b7a6,
+      roughness: 0.8,
+      metalness: 0.1
+    });
+
+    let garmentGroup = new THREE.Group();
+    let mannequinGroup = new THREE.Group();
+    scene.add(mannequinGroup);
+    scene.add(garmentGroup);
+
+    // --- 3. PROCEDURAL 3D ANATOMICAL & GARMENT GENERATION ---
+    function buildProceduralMannequin() {
+      while(mannequinGroup.children.length > 0) { 
+        mannequinGroup.remove(mannequinGroup.children[0]); 
+      }
+
+      // Torso core
+      const torsoGeo = new THREE.CylinderGeometry(0.32, 0.24, 0.95, 32);
+      const torso = new THREE.Mesh(torsoGeo, mannequinMaterial);
+      torso.position.y = 0.35;
+      mannequinGroup.add(torso);
+
+      // Neck
+      const neckGeo = new THREE.CylinderGeometry(0.1, 0.12, 0.22, 24);
+      const neck = new THREE.Mesh(neckGeo, mannequinMaterial);
+      neck.position.y = 0.9;
+      mannequinGroup.add(neck);
+
+      // Head
+      const headGeo = new THREE.SphereGeometry(0.18, 32, 24);
+      const head = new THREE.Mesh(headGeo, mannequinMaterial);
+      head.position.y = 1.12;
+      mannequinGroup.add(head);
+
+      // Shoulders & Arms
+      const shoulderWidth = gender === 'men' ? 0.46 : 0.38;
+      const leftArmGeo = new THREE.CylinderGeometry(0.09, 0.075, 0.7, 16);
+      const leftArm = new THREE.Mesh(leftArmGeo, mannequinMaterial);
+      leftArm.position.set(-shoulderWidth, 0.42, 0);
+      leftArm.rotation.z = 0.15;
+      mannequinGroup.add(leftArm);
+
+      const rightArm = new THREE.Mesh(leftArmGeo, mannequinMaterial);
+      rightArm.position.set(shoulderWidth, 0.42, 0);
+      rightArm.rotation.z = -0.15;
+      mannequinGroup.add(rightArm);
     }
 
-    function filterArtCategory(cat) {
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.remove('bg-kc-red', 'text-white');
-        btn.classList.add('bg-kc-lightCream', 'text-kc-charcoal');
-      });
-      event.currentTarget.classList.add('bg-kc-red', 'text-white');
-      event.currentTarget.classList.remove('bg-kc-lightCream', 'text-kc-charcoal');
-      renderArtVault(cat);
+    function buildProceduralGarment() {
+      while(garmentGroup.children.length > 0) { 
+        garmentGroup.remove(garmentGroup.children[0]); 
+      }
+
+      const isHoodie = garmentType === 'hoodie';
+      const scaleTorso = isHoodie ? 1.08 : 1.03;
+
+      // 3D Torso Mesh with clean UV Coordinates
+      const bodyGeo = new THREE.CylinderGeometry(0.34 * scaleTorso, 0.28 * scaleTorso, isHoodie ? 0.98 : 0.92, 48);
+      const bodyMesh = new THREE.Mesh(bodyGeo, garmentMaterial);
+      bodyMesh.position.y = 0.34;
+      bodyMesh.castShadow = true;
+      bodyMesh.receiveShadow = true;
+      garmentGroup.add(bodyMesh);
+
+      // Sleeves
+      const sleeveGeo = new THREE.CylinderGeometry(isHoodie ? 0.14 : 0.12, isHoodie ? 0.11 : 0.1, isHoodie ? 0.72 : 0.38, 24);
+      const leftSleeve = new THREE.Mesh(sleeveGeo, garmentMaterial);
+      leftSleeve.position.set(-0.46, isHoodie ? 0.4 : 0.58, 0);
+      leftSleeve.rotation.z = isHoodie ? 0.18 : 0.25;
+      garmentGroup.add(leftSleeve);
+
+      const rightSleeve = new THREE.Mesh(sleeveGeo, garmentMaterial);
+      rightSleeve.position.set(0.46, isHoodie ? 0.4 : 0.58, 0);
+      rightSleeve.rotation.z = isHoodie ? -0.18 : -0.25;
+      garmentGroup.add(rightSleeve);
+
+      // Hoodie Hood Assembly
+      if (isHoodie) {
+        const hoodGeo = new THREE.SphereGeometry(0.24, 32, 24, 0, Math.PI * 2, 0, Math.PI * 0.75);
+        const hood = new THREE.Mesh(hoodGeo, garmentMaterial);
+        hood.position.set(0, 0.88, -0.06);
+        hood.rotation.x = -0.3;
+        garmentGroup.add(hood);
+      } else {
+        // T-Shirt Ribbed Collar
+        const collarGeo = new THREE.TorusGeometry(0.14, 0.02, 16, 32);
+        const collar = new THREE.Mesh(collarGeo, garmentMaterial);
+        collar.position.set(0, 0.8, 0);
+        collar.rotation.x = Math.PI / 2;
+        garmentGroup.add(collar);
+      }
+
+      updateTextureMap();
     }
 
-    function selectArtwork(item) {
-      currentArtTitle = item.title;
-      document.getElementById('renderedArtContent').innerHTML = item.svg;
+    // --- 4. COMPOSITE 2D OFFSCREEN CANVAS TO 3D UV TEXTURE ---
+    function updateTextureMap() {
+      // 1. Fill Primary Fabric Color
+      ctx.fillStyle = fabricColor;
+      ctx.fillRect(0, 0, 2048, 2048);
+
+      // 2. Subtle Textile Fabric Weave Simulation
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.025)';
+      for (let i = 0; i < 2048; i += 8) {
+        ctx.fillRect(i, 0, 4, 2048);
+        ctx.fillRect(0, i, 2048, 4);
+      }
+
+      // 3. Project Each Active Zone Layer onto Cylinder UV Space
+      // Front Center UV: Center at (512, 1024)
+      renderArtworkToUV('front_center', 512, 1024, 600);
+      // Left Chest UV: (340, 750)
+      renderArtworkToUV('front_left_chest', 340, 750, 260);
+      // Right Chest UV: (680, 750)
+      renderArtworkToUV('front_right_chest', 680, 750, 260);
+      // Back Center UV: (1536, 1024)
+      renderArtworkToUV('back_center', 1536, 1024, 700);
+
+      garmentTexture.needsUpdate = true;
     }
 
-    function uploadCustomArtwork(e) {
+    function renderArtworkToUV(zoneKey, baseX, baseY, baseSize) {
+      const layer = zoneLayers[zoneKey];
+      if (!layer) return;
+
+      ctx.save();
+      const x = baseX + (layer.x * 2.5);
+      const y = baseY + (layer.y * 2.5);
+      const scale = (layer.scale / 100) * baseSize;
+
+      ctx.translate(x, y);
+      ctx.rotate((layer.rotate * Math.PI) / 180);
+
+      if (layer.imageElement) {
+        ctx.drawImage(layer.imageElement, -scale / 2, -scale / 2, scale, scale);
+      } else {
+        drawVectorArt(layer.type, scale);
+      }
+
+      ctx.restore();
+    }
+
+    function drawVectorArt(type, size) {
+      const s = size / 100;
+      ctx.scale(s, s);
+
+      if (type === 'vector_chakra') {
+        ctx.strokeStyle = '#d4af37';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(0, 0, 44, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = '#c52222';
+        ctx.beginPath();
+        ctx.arc(0, 0, 30, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#d4af37';
+        for (let i = 0; i < 8; i++) {
+          ctx.rotate(Math.PI / 4);
+          ctx.fillRect(-3, -48, 6, 14);
+        }
+      } else if (type === 'vector_trishul') {
+        ctx.strokeStyle = '#d4af37';
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(0, -45); ctx.lineTo(0, 45);
+        ctx.moveTo(-20, -25); ctx.quadraticCurveTo(0, -10, 20, -25);
+        ctx.stroke();
+      } else if (type === 'vector_lightning') {
+        ctx.strokeStyle = '#fcf8f2';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(-40, -40); ctx.lineTo(-10, -10); ctx.lineTo(5, -25); ctx.lineTo(40, 40);
+        ctx.stroke();
+      } else {
+        // Elegant Fallback Seal
+        ctx.fillStyle = '#d4af37';
+        ctx.font = 'bold 24px Cinzel';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('KAINCHI', 0, -8);
+        ctx.fillText('CLUB', 0, 16);
+      }
+    }
+
+    // --- 5. INTERFACE CONTROLS & EVENT HANDLERS ---
+    function setCameraView(view) {
+      const dist = garmentType === 'hoodie' ? 2.6 : 2.4;
+      if (view === 'front') animateCamera(0, 0.4, dist);
+      if (view === 'back') animateCamera(0, 0.4, -dist);
+      if (view === 'left') animateCamera(-dist, 0.4, 0);
+      if (view === 'right') animateCamera(dist, 0.4, 0);
+    }
+
+    function resetCameraView() {
+      animateCamera(0, 0.4, 2.8);
+    }
+
+    function animateCamera(x, y, z) {
+      camera.position.set(x, y, z);
+      controls.target.set(0, 0.4, 0);
+      controls.update();
+    }
+
+    function toggleMannequin() {
+      mannequinVisible = !mannequinVisible;
+      mannequinGroup.visible = mannequinVisible;
+      document.getElementById('toggleMannequinBtn').innerHTML = `<i class="fas fa-user mr-1"></i> Avatar: ${mannequinVisible ? 'Visible' : 'Hidden'}`;
+    }
+
+    function setGarmentType(type) {
+      garmentType = type;
+      basePrice = (type === 'hoodie') ? 2499 : 1499;
+
+      const btnTee = document.getElementById('btnGarmentTee');
+      const btnHoodie = document.getElementById('btnGarmentHoodie');
+      if (type === 'tshirt') {
+        btnTee.className = 'border-2 border-kc-red bg-kc-lightCream p-2.5 rounded-lg text-center text-xs font-bold';
+        btnHoodie.className = 'border border-kc-red/20 p-2.5 rounded-lg text-center text-xs font-bold hover:border-kc-red';
+      } else {
+        btnHoodie.className = 'border-2 border-kc-red bg-kc-lightCream p-2.5 rounded-lg text-center text-xs font-bold';
+        btnTee.className = 'border border-kc-red/20 p-2.5 rounded-lg text-center text-xs font-bold hover:border-kc-red';
+      }
+      buildProceduralGarment();
+      updateSummary();
+    }
+
+    function setFabricColor(hex, name) {
+      fabricColor = hex;
+      fabricColorName = name;
+      document.getElementById('labelColorCode').innerText = `${name} (${hex})`;
+      updateTextureMap();
+      updateSummary();
+    }
+
+    function updateAvatarSpec() {
+      gender = document.getElementById('selectGender').value;
+      buildProceduralMannequin();
+      updateSummary();
+    }
+
+    function switchPrintZone() {
+      activePrintZone = document.getElementById('selectPrintZone').value;
+      const formatted = activePrintZone.replace(/_/g, ' ');
+      document.getElementById('activeZoneLabel').innerText = formatted;
+
+      const current = zoneLayers[activePrintZone];
+      if (current) {
+        document.getElementById('valScale').innerText = current.scale + '%';
+        document.getElementById('valRotate').innerText = current.rotate + '°';
+      }
+    }
+
+    function assignArtworkToActiveZone(artItem) {
+      zoneLayers[activePrintZone] = {
+        title: artItem.title,
+        type: artItem.type,
+        imageElement: null,
+        scale: 100,
+        rotate: 0,
+        x: 0,
+        y: 0
+      };
+      updateTextureMap();
+      updateSummary();
+    }
+
+    function clearActiveZoneArtwork() {
+      zoneLayers[activePrintZone] = null;
+      updateTextureMap();
+      updateSummary();
+    }
+
+    function adjustActiveTransform(prop, val) {
+      const layer = zoneLayers[activePrintZone];
+      if (!layer) return;
+
+      if (prop === 'scale') {
+        layer.scale = parseInt(val);
+        document.getElementById('valScale').innerText = val + '%';
+      } else if (prop === 'rotate') {
+        layer.rotate = parseInt(val);
+        document.getElementById('valRotate').innerText = val + '°';
+      } else if (prop === 'x') {
+        layer.x = parseInt(val);
+      } else if (prop === 'y') {
+        layer.y = parseInt(val);
+      }
+      updateTextureMap();
+    }
+
+    function handleDirectUpload(e) {
       const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(evt) {
-          currentArtTitle = 'Client Custom Upload';
-          document.getElementById('renderedArtContent').innerHTML = `
-            <img src="${evt.target.result}" class="w-full h-32 object-contain rounded drop-shadow-md">
-          `;
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const img = new Image();
+        img.onload = function() {
+          zoneLayers[activePrintZone] = {
+            title: 'Custom Upload (' + file.name + ')',
+            type: 'custom_image',
+            imageElement: img,
+            scale: 100,
+            rotate: 0,
+            x: 0,
+            y: 0
+          };
+          updateTextureMap();
+          updateSummary();
         };
-        reader.readAsDataURL(file);
-      }
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
     }
 
-    function changeArtworkScale(val) {
-      document.getElementById('labelScale').innerText = val + '%';
-      const scale = val / 100;
-      document.getElementById('renderedArtContent').style.transform = `scale(${scale})`;
-    }
-
-    // Body Gender & Frame Switching
-    function setGender(g) {
-      currentGender = g;
-      const menBtn = document.getElementById('btnModelMen');
-      const womenBtn = document.getElementById('btnModelWomen');
-      
-      if (g === 'men') {
-        menBtn.className = 'px-3 py-1 rounded-full bg-kc-maroon text-white';
-        womenBtn.className = 'px-3 py-1 rounded-full text-kc-charcoal/70 hover:text-kc-red';
-      } else {
-        womenBtn.className = 'px-3 py-1 rounded-full bg-kc-maroon text-white';
-        menBtn.className = 'px-3 py-1 rounded-full text-kc-charcoal/70 hover:text-kc-red';
-      }
-      applyBodyMorph();
-    }
-
-    function setBodyFrame(frame) {
-      currentFrame = frame;
-      document.querySelectorAll('.frame-btn').forEach(btn => {
-        btn.classList.remove('border-2', 'border-kc-red', 'bg-kc-lightCream', 'active');
-        btn.classList.add('border-kc-red/20');
-      });
-      event.currentTarget.classList.add('border-2', 'border-kc-red', 'bg-kc-lightCream', 'active');
-      applyBodyMorph();
-    }
-
-    function applyBodyMorph() {
-      const bodyPath = document.getElementById('modelBodyPath');
-      const topBody = document.getElementById('svgTopBody');
-      
-      if (currentGender === 'men') {
-        if (currentFrame === 'athletic') {
-          bodyPath.setAttribute('d', 'M105 88 L195 88 L225 135 L205 270 L175 440 L160 440 L152 270 L148 270 L140 440 L125 440 L95 270 L75 135 Z');
-          topBody.setAttribute('d', 'M85 85 L120 110 L180 110 L215 85 L285 125 L255 190 L220 175 L220 285 L80 285 L80 175 L45 190 L15 125 Z');
-        } else if (currentFrame === 'slim') {
-          bodyPath.setAttribute('d', 'M115 88 L185 88 L208 135 L195 270 L170 440 L160 440 L152 270 L148 270 L140 440 L130 440 L105 270 L92 135 Z');
-          topBody.setAttribute('d', 'M95 85 L125 110 L175 110 L205 85 L265 125 L235 190 L210 175 L210 285 L90 285 L90 175 L65 190 L35 125 Z');
-        } else {
-          bodyPath.setAttribute('d', 'M110 88 L190 88 L218 135 L205 270 L175 440 L160 440 L152 270 L148 270 L140 440 L125 440 L95 270 L82 135 Z');
-          topBody.setAttribute('d', 'M90 85 L120 110 L180 110 L210 85 L275 125 L245 190 L215 175 L215 285 L85 285 L85 175 L55 190 L25 125 Z');
-        }
-      } else {
-        // Women Hourglass & Fit Curves
-        bodyPath.setAttribute('d', 'M115 88 L185 88 L205 130 L182 215 L212 280 L175 440 L160 440 L152 280 L148 280 L140 440 L125 440 L88 280 L118 215 L95 130 Z');
-        topBody.setAttribute('d', 'M92 85 L122 110 L178 110 L208 85 L265 125 L235 185 L205 170 L210 280 L90 280 L95 170 L65 185 L35 125 Z');
-      }
-      updatePricing();
-    }
-
-    function toggleHoodCap() {
-      isHoodCapOn = !isHoodCapOn;
-      const overlay = document.getElementById('hoodCapOverlay');
-      const label = document.getElementById('labelHoodCap');
-      if (isHoodCapOn) {
-        overlay.classList.remove('hidden');
-        label.innerText = 'Cap On';
-      } else {
-        overlay.classList.add('hidden');
-        label.innerText = 'Cap Off';
-      }
-    }
-
-    function setAngle(ang) {
-      currentAngle = ang;
-      const btns = { front: 'btnAngFront', side: 'btnAngSide', back: 'btnAngBack' };
-      Object.keys(btns).forEach(k => {
-        const b = document.getElementById(btns[k]);
-        if (k === ang) {
-          b.className = 'px-3 py-1 rounded bg-white font-bold shadow-sm text-kc-red';
-        } else {
-          b.className = 'px-3 py-1 rounded hover:bg-white transition';
-        }
-      });
-
-      const drag = document.getElementById('dragArtwork');
-      if (ang === 'side') {
-        drag.style.left = '120px';
-        drag.style.top = '140px';
-      } else if (ang === 'back') {
-        drag.style.left = '65px';
-        drag.style.top = '105px';
-      } else {
-        drag.style.left = '65px';
-        drag.style.top = '120px';
-      }
-      updatePricing();
-    }
-
-    function updateComboGarments() {
-      const top = document.getElementById('selectTopWear').value;
-      const bottom = document.getElementById('selectBottomWear').value;
-
-      if (top === 'hoodie') { topPrice = 2499; topTitle = '350 GSM Fleece Hoodie'; }
-      if (top === 'tee') { topPrice = 1499; topTitle = '240 GSM Boxy Tee'; }
-      if (top === 'jacket') { topPrice = 3999; topTitle = 'Zip Bomber Jacket'; }
-      if (top === 'shirt') { topPrice = 1999; topTitle = 'Relaxed Atelier Shirt'; }
-
-      const bottomSvg = document.getElementById('bottomGarmentSvg');
-      if (bottom === 'none') {
-        bottomPrice = 0;
-        bottomTitle = 'None';
-        bottomSvg.style.display = 'none';
-      } else {
-        bottomSvg.style.display = 'block';
-        if (bottom === 'denim_flare') { bottomPrice = 2400; bottomTitle = 'Tapestry Flared Denim'; }
-        if (bottom === 'denim_narrow') { bottomPrice = 2100; bottomTitle = 'Narrow Fit Denim'; }
-        if (bottom === 'denim_baggy') { bottomPrice = 2600; bottomTitle = 'Skater Baggy Cargo'; }
-      }
-
-      updatePricing();
-    }
-
-    function setBaseColor(hex, name) {
-      currentColor = hex;
-      currentColorName = name;
-      document.getElementById('svgTopBody').setAttribute('fill', hex);
-      document.getElementById('labelColorName').innerText = `${name} (${hex})`;
-    }
-
-    function setCraftMode(craft, price, title) {
+    function setCraftFinish(craft, price, title) {
       craftPrice = price;
-      currentCraftTitle = title;
+      craftTitle = title;
       document.querySelectorAll('.craft-btn').forEach(b => {
         b.classList.remove('border-2', 'border-kc-red', 'bg-kc-lightCream');
         b.classList.add('border-kc-red/20');
       });
       event.currentTarget.classList.add('border-2', 'border-kc-red', 'bg-kc-lightCream');
-      updatePricing();
+      updateSummary();
     }
 
-    function updateMonogramText(val) {
-      document.getElementById('renderedCustomText').innerText = val.trim() ? val.toUpperCase() : "KAINCHI CLUB";
+    function renderArtworkLibrary(items) {
+      const grid = document.getElementById('artworkLibraryGrid');
+      grid.innerHTML = '';
+      items.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bg-white border border-kc-red/20 rounded p-2 text-center cursor-pointer hover:border-kc-red transition flex flex-col items-center justify-center';
+        div.onclick = () => assignArtworkToActiveZone(item);
+        div.innerHTML = `
+          <span class="text-xl mb-1">${item.icon}</span>
+          <span class="text-[9px] font-bold text-kc-charcoal block truncate w-full">${item.title}</span>
+        `;
+        grid.appendChild(div);
+      });
     }
 
-    function updatePricing() {
-      const total = topPrice + bottomPrice + craftPrice;
-      document.getElementById('labelSpecGarment').innerText = `${topTitle} + ${bottomTitle} (${currentGender.toUpperCase()})`;
-      document.getElementById('labelLivePrice').innerText = `₹${total.toLocaleString('en-IN')}`;
+    function filterArtworks() {
+      const q = document.getElementById('artworkSearchInput').value.toLowerCase();
+      const cat = document.getElementById('artworkCategorySelect').value;
+      const filtered = artworkVault.filter(a => {
+        const matchesCat = (cat === 'all' || a.category === cat);
+        const matchesQ = a.title.toLowerCase().includes(q);
+        return matchesCat && matchesQ;
+      });
+      renderArtworkLibrary(filtered);
     }
 
-    // Drag-and-Drop Handler (Mouse & Mobile Touch)
-    const dragElement = document.getElementById('dragArtwork');
-    const container = document.getElementById('mannequinViewport');
-    let isDragging = false;
-    let startX, startY, initialLeft, initialTop;
-
-    dragElement.addEventListener('mousedown', startDrag);
-    dragElement.addEventListener('touchstart', startDrag, { passive: false });
-
-    function startDrag(e) {
-      isDragging = true;
-      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
-      startX = clientX;
-      startY = clientY;
-      initialLeft = dragElement.offsetLeft;
-      initialTop = dragElement.offsetTop;
-
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('touchmove', onDrag, { passive: false });
-      document.addEventListener('mouseup', stopDrag);
-      document.addEventListener('touchend', stopDrag);
+    function updateSummary() {
+      garmentSize = document.getElementById('selectSize').value;
+      const total = basePrice + craftPrice;
+      const garmentLabel = garmentType === 'hoodie' ? 'Fleece Street Hoodie' : 'Heavyweight Boxy Tee';
+      document.getElementById('labelSpecSummary').innerText = `${garmentLabel} (${gender.toUpperCase()} / Size ${garmentSize})`;
+      document.getElementById('labelPriceQuote').innerText = `₹${total.toLocaleString('en-IN')}`;
     }
 
-    function onDrag(e) {
-      if (!isDragging) return;
-      if (e.cancelable) e.preventDefault();
-      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-      const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+    function dispatchOrderToWhatsApp() {
+      const total = basePrice + craftPrice;
+      const activePlacements = Object.entries(zoneLayers)
+        .filter(([_, layer]) => layer !== null)
+        .map(([zone, layer]) => `• ${zone.toUpperCase().replace(/_/g, ' ')}: ${layer.title} (Scale: ${layer.scale}%, Rot: ${layer.rotate}°)`)
+        .join('%0A');
 
-      let newLeft = initialLeft + (clientX - startX);
-      let newTop = initialTop + (clientY - startY);
+      const placementsText = activePlacements.length > 0 ? activePlacements : '• Standard Clean Finish (No Art)';
+      const garmentLabel = garmentType === 'hoodie' ? '350 GSM Fleece Hoodie' : '240 GSM Heavy Boxy Tee';
 
-      newLeft = Math.max(0, Math.min(newLeft, container.offsetWidth - dragElement.offsetWidth));
-      newTop = Math.max(0, Math.min(newTop, container.offsetHeight - dragElement.offsetHeight));
-
-      dragElement.style.left = newLeft + 'px';
-      dragElement.style.top = newTop + 'px';
-    }
-
-    function stopDrag() {
-      isDragging = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('touchmove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-      document.removeEventListener('touchend', stopDrag);
-    }
-
-    function sendOrderToWhatsApp() {
-      const total = topPrice + bottomPrice + craftPrice;
-      const customTxt = document.getElementById('inputCustomName').value || 'Standard Kainchi Club';
-      const posX = Math.round((dragElement.offsetLeft / container.offsetWidth) * 100);
-      const posY = Math.round((dragElement.offsetTop / container.offsetHeight) * 100);
-
-      const msg = `*NEW BESPOKE ORDER SPECIFICATION - KAINCHI CLUB*%0A` +
+      const msg = `*KAINCHI CLUB — 3D BESPOKE STUDIO ORDER*%0A` +
         `----------------------------------------%0A` +
-        `*Garment Ensemble:* ${topTitle} + ${bottomTitle}%0A` +
-        `*Body Profile:* ${currentGender.toUpperCase()} (${currentFrame.toUpperCase()} FRAME)%0A` +
-        `*Perspective & Hood:* ${currentAngle.toUpperCase()} VIEW (${isHoodCapOn ? 'HOOD ON' : 'HOOD OFF'})%0A` +
-        `*Primary Fabric Hue:* ${currentColorName} (${currentColor})%0A` +
-        `*Craft Finish:* ${currentCraftTitle}%0A` +
-        `*Selected Artwork:* ${currentArtTitle}%0A` +
-        `*Custom Monogram:* ${customTxt}%0A` +
-        `*3D Coordinate Placement:* X: ${posX}%, Y: ${posY}%%0A` +
-        `*Calculated Order Value:* ₹${total.toLocaleString('en-IN')}%0A` +
+        `*Garment Silhouette:* ${garmentLabel}%0A` +
+        `*Size Selection:* ${garmentSize}%0A` +
+        `*Anatomical Avatar:* ${gender.toUpperCase()} FIT%0A` +
+        `*Primary Fabric Dye:* ${fabricColorName} (${fabricColor})%0A` +
+        `*Craft Finish:* ${craftTitle}%0A` +
+        `*Active 3D Print Placements:*%0A${placementsText}%0A` +
+        `*Itemized Valuation:* ₹${total.toLocaleString('en-IN')}%0A` +
         `----------------------------------------%0A` +
-        `Hello Master Cutter, please verify fabric GSM swatch, measurement sizing, and production timeline.`;
+        `Hello Master Cutter, please review this 3D design spec and advise on tailored scheduling.`;
 
       window.open(`https://wa.me/918863075356?text=${msg}`, '_blank');
     }
 
-    // Initialize Default States
-    renderArtVault('all');
-    updatePricing();
+    // Window Resize Handler
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+
+    // Render Loop
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    // Initialize System
+    renderArtworkLibrary(artworkVault);
+    buildProceduralMannequin();
+    buildProceduralGarment();
+    updateSummary();
+    animate();
   </script>
 </body>
 </html>
