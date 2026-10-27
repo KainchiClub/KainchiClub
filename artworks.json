@@ -1,0 +1,1807 @@
+[
+  {
+    "id": "nat-001",
+    "name": "Misty Alpine Ridge",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-001.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-001.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-002",
+    "name": "Cherry Blossom Cascade",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-002.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-002.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-003",
+    "name": "Nordic Aurora Borealis",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-003.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-003.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-004",
+    "name": "Golden Hour Desert Dune",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-004.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-004.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-005",
+    "name": "Pacific Breaking Crest",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-005.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-005.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-006",
+    "name": "Misty Redwood Canopy",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-006.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-006.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-007",
+    "name": "Volcanic Basalt Glow",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-007.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-007.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-008",
+    "name": "Autumn Maple Foliage",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-008.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-008.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-009",
+    "name": "Monsoon Highland Valley",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-009.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-009.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-010",
+    "name": "Glacial Serac Cavern",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-010.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-010.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-011",
+    "name": "Canyon Riverbed Sunset",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-011.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-011.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-012",
+    "name": "Ethereal Cloudbreak",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-012.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-012.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-013",
+    "name": "Silver Birch Grove",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-013.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-013.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-014",
+    "name": "Midnight Coastal Surge",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-014.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-014.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-015",
+    "name": "High Sierra Pine Ridge",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-015.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-015.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-016",
+    "name": "Tropical Monsoon Palms",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-016.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-016.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-017",
+    "name": "Arctic Tundra Thaw",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-017.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-017.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-018",
+    "name": "Bamboo Forest Mist",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-018.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-018.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-019",
+    "name": "Luminescent Sea Cave",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-019.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-019.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-020",
+    "name": "Everest Alpenglow",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-020.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-020.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-021",
+    "name": "Thornwood Briar Branch",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-021.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-021.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-022",
+    "name": "Crater Lake Mirror",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-022.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-022.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-023",
+    "name": "Thunderhead Supercell",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-023.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-023.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-024",
+    "name": "Wild Prairie Sunburst",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-024.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-024.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-025",
+    "name": "Mossy Rainforest Spire",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-025.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-025.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-026",
+    "name": "Nordic Fjord Cliff",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-026.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-026.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-027",
+    "name": "Savannah Acacia Horizon",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-027.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-027.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-028",
+    "name": "Midnight Solar Eclipse",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-028.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-028.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-029",
+    "name": "Great Barrier Reef Azure",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-029.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-029.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "nat-030",
+    "name": "Cascade Waterfall Mist",
+    "category": "nature-scenic",
+    "thumb": "assets/artworks/nature-scenic/thumbs/nat-030.webp",
+    "printFile": "assets/artworks/nature-scenic/prints/nat-030.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+
+  {
+    "id": "wild-001",
+    "name": "Royal Bengal Tiger Portrait",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-001.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-001.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-002",
+    "name": "Imperial Golden Eagle",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-002.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-002.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-003",
+    "name": "Midnight Shadow Panther",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-003.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-003.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-004",
+    "name": "Timber Wolf Howl",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-004.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-004.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-005",
+    "name": "King Cobra Crest",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-005.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-005.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-006",
+    "name": "Crowned Savannah Lion",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-006.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-006.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-007",
+    "name": "Peregrine Falcon Dive",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-007.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-007.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-008",
+    "name": "Grizzly Alpha Roar",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-008.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-008.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-009",
+    "name": "Stalking Snow Leopard",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-009.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-009.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-010",
+    "name": "Majestic Indian Elephant",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-010.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-010.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-011",
+    "name": "Serpent Branch Wrap",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-011.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-011.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-012",
+    "name": "Highland Red Stag",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-012.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-012.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-013",
+    "name": "Midnight Great Horned Owl",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-013.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-013.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-014",
+    "name": "Apex Great White",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-014.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-014.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-015",
+    "name": "Stealth Jaguar Gaze",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-015.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-015.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-016",
+    "name": "Silverback Mountain Gorilla",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-016.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-016.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-017",
+    "name": "Armored One-Horn Rhino",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-017.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-017.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-018",
+    "name": "Arctic Polar Bear Stride",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-018.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-018.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-019",
+    "name": "Speed Cheetah Surge",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-019.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-019.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-020",
+    "name": "Ancient Sea Turtle",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-020.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-020.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-021",
+    "name": "Imperial Peacock Fan",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-021.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-021.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-022",
+    "name": "Onyx Raven Wing",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-022.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-022.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-023",
+    "name": "Rattlesnake Strike",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-023.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-023.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-024",
+    "name": "Orca Depths Breach",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-024.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-024.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-025",
+    "name": "Desert Scorpion Stalker",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-025.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-025.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-026",
+    "name": "Bison Thunder Plains",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-026.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-026.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-027",
+    "name": "Himalayan Snow Yak",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-027.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-027.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-028",
+    "name": "Golden Stallion Gallop",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-028.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-028.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-029",
+    "name": "Chameleon Foliage Blend",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-029.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-029.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "wild-030",
+    "name": "Night Hunter Bobcat",
+    "category": "wildlife-animals",
+    "thumb": "assets/artworks/wildlife-animals/thumbs/wild-030.webp",
+    "printFile": "assets/artworks/wildlife-animals/prints/wild-030.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+
+  {
+    "id": "auto-001",
+    "name": "Apex GT Le Mans Silhouette",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-001.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-001.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-002",
+    "name": "Twin-Turbo Boxer Engine",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-002.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-002.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-003",
+    "name": "Midnight Touge Drift",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-003.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-003.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-004",
+    "name": "Carbon Aerowing Prototype",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-004.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-004.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-005",
+    "name": "Monza Chicane Curvature",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-005.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-005.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-006",
+    "name": "Supercharged V8 Piston Cutaway",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-006.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-006.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-007",
+    "name": "Vintage Mille Miglia Roadster",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-007.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-007.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-008",
+    "name": "Titanium Exhaust Flameback",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-008.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-008.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-009",
+    "name": "Cyberpunk Wangan Night Cruiser",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-009.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-009.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-010",
+    "name": "Nürburgring Karussell Apex",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-010.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-010.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-011",
+    "name": "Tarmac Rally Gravel Spray",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-011.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-011.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-012",
+    "name": "Brembo Ceramic Rotor Glow",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-012.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-012.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-013",
+    "name": "Vintage Monaco GP Speedpost",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-013.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-013.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-014",
+    "name": "Rotary 13B Apex Seal",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-014.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-014.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-015",
+    "name": "Isle of Man TT Superbike Lean",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-015.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-015.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-016",
+    "name": "Sequential Dogleg Shifter Gate",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-016.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-016.png",
+    "supportedZones": ["front_center", "front_left_chest"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-017",
+    "name": "Baja 1000 Trophy Truck Dust",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-017.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-017.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-018",
+    "name": "Aero Diffuser Venturi Tunnel",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-018.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-018.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-019",
+    "name": "Spa Eau Rouge Raidillon Sweep",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-019.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-019.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-020",
+    "name": "Forged Centerlock Monoblock",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-020.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-020.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-021",
+    "name": "Silverstone Copse Corner G-Force",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-021.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-021.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-022",
+    "name": "Dry Sump Billet Oil Pan",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-022.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-022.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-023",
+    "name": "Suzuka Figure-8 Overpass",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-023.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-023.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-024",
+    "name": "Intercooler Charge Core",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-024.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-024.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-025",
+    "name": "Speedway Banked Oval Slipstream",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-025.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-025.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-026",
+    "name": "Twin Sidedraft Carburetor Velocity",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-026.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-026.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-027",
+    "name": "Laguna Seca Corkscrew Plunge",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-027.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-027.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-028",
+    "name": "Carbon Fibre Weave Monocoque",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-028.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-028.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-029",
+    "name": "Midnight Tachometer Redline 9000",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-029.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-029.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "auto-030",
+    "name": "Checkered Flag Victory Laurels",
+    "category": "automotive-racing",
+    "thumb": "assets/artworks/automotive-racing/thumbs/auto-030.webp",
+    "printFile": "assets/artworks/automotive-racing/prints/auto-030.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+
+  {
+    "id": "div-001",
+    "name": "Shri Krishna Sudarshan Chakra",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-001.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-001.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-002",
+    "name": "Mahadev Trishul & Damru Aura",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-002.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-002.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-003",
+    "name": "Vakratunda Ganesha Radiance",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-003.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-003.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-004",
+    "name": "Suryavanshi Ram Kodanda Bow",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-004.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-004.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-005",
+    "name": "Rudra Tandav Cosmic Dance",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-005.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-005.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-006",
+    "name": "Hanuman Sanjeevani Flight",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-006.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-006.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-007",
+    "name": "Maa Durga Simhavahini",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-007.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-007.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-008",
+    "name": "Vedic Gayatri Yantra Mandala",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-008.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-008.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-009",
+    "name": "Cosmic Omkar Resonance",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-009.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-009.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-010",
+    "name": "Kartikeya Vel Spear",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-010.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-010.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-011",
+    "name": "Gita Upadesh Kurukshetra Chariot",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-011.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-011.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-012",
+    "name": "Saraswati Veena Bloom",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-012.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-012.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-013",
+    "name": "Maha Mrityunjaya Shield",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-013.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-013.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-014",
+    "name": "Lakshmi Ashtakam Golden Lotus",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-014.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-014.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-015",
+    "name": "Nandi Bull Devotion Crest",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-015.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-015.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-016",
+    "name": "Garuda Cosmic Wings",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-016.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-016.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-017",
+    "name": "Bhairava Astral Flame",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-017.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-017.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-018",
+    "name": "Venkateswara Tirupati Crown",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-018.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-018.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-019",
+    "name": "Dhyana Buddha Serenity",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-019.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-019.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-020",
+    "name": "Kali Chandi Blood Moon",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-020.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-020.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-021",
+    "name": "Vedic Agni Homa Flame",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-021.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-021.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-022",
+    "name": "Navagraha Planetary Wheel",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-022.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-022.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-023",
+    "name": "Ganga Descending Locks",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-023.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-023.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-024",
+    "name": "Parashurama Battle Axe",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-024.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-024.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-025",
+    "name": "Narasimha Pillar Emergence",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-025.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-025.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-026",
+    "name": "Varaha Earth Uplift",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-026.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-026.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-027",
+    "name": "Matsya Ocean Avatar",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-027.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-027.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-028",
+    "name": "Kurma Cosmic Tortoise Foundation",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-028.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-028.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-029",
+    "name": "Kalki White Stallion Dawn",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-029.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-029.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "div-030",
+    "name": "Shri Ram Mandir Ayodhya Spire",
+    "category": "divine-spiritual",
+    "thumb": "assets/artworks/divine-spiritual/thumbs/div-030.webp",
+    "printFile": "assets/artworks/divine-spiritual/prints/div-030.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+
+  {
+    "id": "str-001",
+    "name": "Kainchi Club Gothic Heavy Lettering",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-001.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-001.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-002",
+    "name": "Neo Tokyo Kanji Underground",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-002.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-002.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-003",
+    "name": "Savile Row Tailor's Manifesto",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-003.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-003.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-004",
+    "name": "Barbed Wire Script Monogram",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-004.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-004.png",
+    "supportedZones": ["front_center", "front_left_chest", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-005",
+    "name": "Chrome Liquid Cyber Script",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-005.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-005.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-006",
+    "name": "Couture Rebel Redacted Type",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-006.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-006.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-007",
+    "name": "Archival Vintage Roman Numeral MMXXVI",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-007.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-007.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-008",
+    "name": "Subversive Streetwear Barcode Seal",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-008.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-008.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-009",
+    "name": "Heavy Metal Jagged Font Logo",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-009.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-009.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-010",
+    "name": "Acid Wash Distressed Stencil",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-010.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-010.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-011",
+    "name": "Minimal Swiss Helvetica Grid",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-011.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-011.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-012",
+    "name": "Glitch Error 404 Tailored Void",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-012.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-012.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-013",
+    "name": "Bespoke Cutters Guild Crest Type",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-013.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-013.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-014",
+    "name": "Parisian Runway Monotype",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-014.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-014.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-015",
+    "name": "Old English Blackletter Heritage",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-015.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-015.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-016",
+    "name": "Cyberpunk Neon Kanji Banner",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-016.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-016.png",
+    "supportedZones": ["front_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-017",
+    "name": "Brutalist Architectural Type Stack",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-017.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-017.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-018",
+    "name": "Graffiti Wildstyle Tag Script",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-018.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-018.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-019",
+    "name": "Bauhaus Geometric Typography",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-019.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-019.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-020",
+    "name": "Dystopian Propaganda Headline",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-020.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-020.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-021",
+    "name": "Vintage Athletic Varsity Block",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-021.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-021.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-022",
+    "name": "Sanskrit Mantra Calligraphy",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-022.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-022.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-023",
+    "name": "Underground Vinyl Record Label Type",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-023.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-023.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-024",
+    "name": "Editorial Magazine Masthead Bold",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-024.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-024.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-025",
+    "name": "Chinatown Neon Signage Script",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-025.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-025.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-026",
+    "name": "Post-Punk Photocopy Zine Type",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-026.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-026.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-027",
+    "name": "Digital Matrix Rain Glyphs",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-027.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-027.png",
+    "supportedZones": ["front_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-028",
+    "name": "Military NATO Stencil Coordinates",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-028.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-028.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-029",
+    "name": "Haute Couture Script Monogram 'KC'",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-029.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-029.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "str-030",
+    "name": "Midnight Tokyo Speed Highway Kanji",
+    "category": "streetwear-typography",
+    "thumb": "assets/artworks/streetwear-typography/thumbs/str-030.webp",
+    "printFile": "assets/artworks/streetwear-typography/prints/str-030.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+
+  {
+    "id": "abs-001",
+    "name": "Prismatic Refraction Polyhedron",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-001.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-001.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-002",
+    "name": "Metatron Cube Sacred Geometry",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-002.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-002.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-003",
+    "name": "Fluid Molten Chrome Swirl",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-003.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-003.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-004",
+    "name": "Dark Renaissance Fractured Bust",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-004.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-004.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-005",
+    "name": "Topographic Elevation Contour",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-005.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-005.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-006",
+    "name": "Fibonacci Golden Spiral Grid",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-006.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-006.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-007",
+    "name": "Vapourwave Sunset Vector Horizon",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-007.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-007.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-008",
+    "name": "Kintsugi Gold Crack Repair",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-008.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-008.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-009",
+    "name": "Surreal Melting Pocket Watch",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-009.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-009.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-010",
+    "name": "Minimalist One-Line Female Portrait",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-010.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-010.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-011",
+    "name": "Quantum Wave Function Dispersion",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-011.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-011.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-012",
+    "name": "De Stijl Primary Color Composition",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-012.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-012.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-013",
+    "name": "Glitch Pixel Disintegration",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-013.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-013.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-014",
+    "name": "Holographic Iridescent Foil Wave",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-014.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-014.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-015",
+    "name": "Mandelbrot Fractal Infinity",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-015.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-015.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-016",
+    "name": "Cubist Musician Collage",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-016.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-016.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-017",
+    "name": "Cosmic Nebular Dust Spill",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-017.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-017.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-018",
+    "name": "Optical Kinetic Moire Illusion",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-018.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-018.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-019",
+    "name": "Sumi-e Ink Splatter Spontaneity",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-019.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-019.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-020",
+    "name": "Marble Vein Gold Leaf Inlay",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-020.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-020.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-021",
+    "name": "Soundwave Amplitude Frequency",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-021.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-021.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-022",
+    "name": "Bauhaus Minimalist Sphere & Cone",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-022.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-022.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-023",
+    "name": "Vortex Black Hole Singularity",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-023.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-023.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-024",
+    "name": "Constructivist Red Wedge Dynamics",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-024.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-024.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-025",
+    "name": "Cybernetic Wireframe Wiremesh",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-025.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-025.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-026",
+    "name": "Surreal Botanical Anatomy Heart",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-026.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-026.png",
+    "supportedZones": ["front_center", "front_left_chest", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-027",
+    "name": "Abstract Geometric Chess Grid",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-027.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-027.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-028",
+    "name": "Luminescent Bio-Flora Tendrils",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-028.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-028.png",
+    "supportedZones": ["front_center", "back_center", "left_sleeve", "right_sleeve"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-029",
+    "name": "Charcoal Smoke Dispersion",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-029.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-029.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  },
+  {
+    "id": "abs-030",
+    "name": "Retro 80s Wireframe Sunset Grid",
+    "category": "abstract-artistic",
+    "thumb": "assets/artworks/abstract-artistic/thumbs/abs-030.webp",
+    "printFile": "assets/artworks/abstract-artistic/prints/abs-030.png",
+    "supportedZones": ["front_center", "back_center"],
+    "license": "Original Studio Asset",
+    "status": "pending_upload"
+  }
+]
