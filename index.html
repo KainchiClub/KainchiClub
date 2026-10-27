@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KAINCHI CLUB | 3D Bespoke Streetwear & Art Vault</title>
+  <title>KAINCHI CLUB | Luxury Bespoke Streetwear & Custom Couture</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Three.js & Controls -->
+  <!-- Three.js & OrbitControls -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <script>
@@ -25,8 +24,8 @@
               lightCream: '#f7f1e6',
               red: '#c52222',
               crimson: '#9b1818',
-              maroon: '#641010',
-              charcoal: '#141212',
+              maroon: '#520d0d',
+              charcoal: '#110f0f',
               cardBg: '#ffffff',
               border: 'rgba(197, 34, 34, 0.22)',
               gold: '#d4af37'
@@ -45,21 +44,22 @@
   <style>
     body {
       background-color: #fcf8f2;
-      color: #141212;
+      color: #110f0f;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
     }
+    /* Understated luxury watermark pattern */
     .kc-brand-watermark-layer {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none; z-index: 0; overflow: hidden;
     }
     .kc-watermark-item {
-      position: absolute; opacity: 0.035; color: #641010;
+      position: absolute; opacity: 0.032; color: #520d0d;
     }
     .custom-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
     .custom-scroll::-webkit-scrollbar-thumb { background: #c52222; border-radius: 4px; }
-    .kc-shadow { box-shadow: 0 16px 40px rgba(100, 16, 16, 0.09); }
+    .kc-shadow { box-shadow: 0 16px 40px rgba(82, 13, 13, 0.08); }
     #viewport3d { width: 100%; height: 100%; touch-action: none; }
   </style>
 </head>
@@ -67,7 +67,7 @@
 
   <!-- LUXURY WATERMARK LAYER -->
   <div class="kc-brand-watermark-layer" aria-hidden="true">
-    <svg class="kc-watermark-item" style="top: 8%; right: -60px; width: 440px; height: 440px; transform: rotate(-15deg);" viewBox="0 0 100 100" fill="currentColor">
+    <svg class="kc-watermark-item" style="top: 5%; right: -60px; width: 440px; height: 440px; transform: rotate(-12deg);" viewBox="0 0 100 100" fill="currentColor">
       <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="currentColor" stroke-width="3"/>
       <path d="M40 28 L60 28 M40 36 L60 36 M40 44 L60 44" stroke="currentColor" stroke-width="2"/>
       <circle cx="50" cy="16" r="4" fill="currentColor"/>
@@ -75,7 +75,7 @@
       <circle cx="52" cy="72" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
       <circle cx="70" cy="74" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/>
     </svg>
-    <svg class="kc-watermark-item" style="top: 50%; left: -50px; width: 320px; height: 320px; transform: rotate(20deg);" viewBox="0 0 100 100" fill="currentColor">
+    <svg class="kc-watermark-item" style="top: 55%; left: -60px; width: 360px; height: 360px; transform: rotate(18deg);" viewBox="0 0 100 100" fill="currentColor">
       <circle cx="52" cy="72" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
       <circle cx="70" cy="74" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
       <path d="M56 60 L78 18 M66 60 L88 24" stroke="currentColor" stroke-width="3.5"/>
@@ -84,10 +84,10 @@
 
   <div class="relative z-10">
 
-    <!-- TOP RUNNING TICKER -->
-    <div class="bg-kc-maroon text-kc-cream py-2 px-4 text-center text-xs tracking-[0.25em] uppercase font-semibold border-b border-kc-red/30 flex items-center justify-center space-x-3">
+    <!-- TOP TICKER -->
+    <div class="bg-kc-maroon text-kc-cream py-2 px-4 text-center text-[11px] tracking-[0.25em] uppercase font-bold border-b border-kc-red/30 flex items-center justify-center space-x-3">
       <i class="fas fa-cut text-kc-gold"></i>
-      <span>KAINCHI CLUB COUTURE • 180+ CURATED BESPOKE PRINTS • GENUINE 3D STUDIO • PAN-INDIA DISPATCH</span>
+      <span>KAINCHI CLUB COUTURE • BESPOKE HEAVYWEIGHT STREETWEAR • PAN-INDIA DISPATCH</span>
       <i class="fas fa-cut text-kc-gold"></i>
     </div>
 
@@ -95,7 +95,7 @@
     <nav class="sticky top-0 z-50 bg-kc-cream/95 backdrop-blur-md border-b border-kc-red/20 shadow-sm">
       <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
         <a href="#" class="flex items-center space-x-3.5 group">
-          <div class="w-12 h-12 rounded-full border-2 border-kc-red bg-kc-lightCream flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition">
+          <div class="w-11 h-11 rounded-full border-2 border-kc-red bg-kc-lightCream flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition">
             <svg viewBox="0 0 100 100" class="w-full h-full text-kc-red fill-current">
               <path d="M42 20 Q52 14 62 20 L58 52 Q48 56 38 52 Z" fill="none" stroke="#c52222" stroke-width="4"/>
               <path d="M40 28 L60 28 M40 36 L60 36 M40 44 L60 44" stroke="#c52222" stroke-width="2.5"/>
@@ -107,14 +107,15 @@
             </svg>
           </div>
           <div>
-            <span class="font-serif text-2xl tracking-[0.2em] font-extrabold text-kc-maroon block leading-none">KAINCHI CLUB</span>
-            <span class="text-[9px] tracking-[0.4em] text-kc-red uppercase block font-semibold mt-1">bespoke 3d studio</span>
+            <span class="font-serif text-2xl tracking-[0.22em] font-extrabold text-kc-maroon block leading-none">KAINCHI CLUB</span>
+            <span class="text-[9px] tracking-[0.4em] text-kc-red uppercase block font-semibold mt-1">clothing brand</span>
           </div>
         </a>
 
         <div class="hidden lg:flex space-x-8 text-xs tracking-widest uppercase font-bold text-kc-charcoal/80">
           <a href="#studio" class="hover:text-kc-red transition">3D Customizer</a>
-          <a href="#gallery" class="hover:text-kc-red transition">180+ Art Vault</a>
+          <a href="#collection" class="hover:text-kc-red transition">Collection</a>
+          <a href="#gallery" class="hover:text-kc-red transition">Artwork Vault</a>
           <a href="#unboxing" class="hover:text-kc-red transition">Unboxing</a>
           <a href="#contact" class="hover:text-kc-red transition">Concierge</a>
         </div>
@@ -126,34 +127,81 @@
       </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="py-12 px-6 text-center border-b border-kc-red/10 relative">
-      <div class="max-w-4xl mx-auto">
-        <span class="text-xs uppercase tracking-[0.35em] text-kc-red font-bold inline-block mb-3 border border-kc-red/30 px-4 py-1.5 rounded-full bg-white/80 shadow-sm">
-          WebGL Interactive Studio • 180+ Curated Print Library
-        </span>
-        <h1 class="font-serif text-3xl sm:text-5xl font-black text-kc-maroon tracking-tight mb-3">
-          GENUINE 3D BESPOKE STUDIO
+    <!-- SECTION 1: REDESIGNED HERO SCREEN (IMMEDIATELY RECOGNIZABLE AS CLOTHING BRAND) -->
+    <section class="relative min-h-[85vh] flex items-center justify-center py-12 px-6 border-b border-kc-red/15 overflow-hidden">
+      <!-- Background subtle glow -->
+      <div class="absolute inset-0 bg-gradient-to-b from-kc-lightCream via-kc-cream to-kc-cream pointer-events-none"></div>
+
+      <!-- Left Floating Garment Cutout (Oversized Hoodie) -->
+      <div class="hidden lg:flex flex-col items-center absolute left-8 xl:left-14 top-1/2 -translate-y-1/2 p-3 bg-white/90 backdrop-blur border border-kc-red/20 rounded-2xl shadow-xl transform -rotate-3 hover:rotate-0 transition duration-300 pointer-events-none">
+        <svg class="w-36 h-40 filter drop-shadow" viewBox="0 0 100 110">
+          <path d="M30 18 L42 28 L58 28 L70 18 L90 32 L80 56 L70 52 L70 100 L30 100 L30 52 L20 56 L10 32 Z" fill="#9b1818" stroke="#520d0d" stroke-width="2"/>
+          <path d="M42 28 Q50 42 58 28 Q50 16 42 28 Z" fill="#520d0d"/>
+          <path d="M35 72 L65 72 L62 92 L38 92 Z" fill="#520d0d" opacity="0.6"/>
+        </svg>
+        <span class="mt-2 text-[10px] font-extrabold uppercase tracking-widest text-kc-maroon">350 GSM Fleece Hoodie</span>
+        <span class="text-[9px] text-kc-red font-bold">Heavyweight Cut</span>
+      </div>
+
+      <!-- Right Floating Garment Cutout (Heavy Boxy Tee) -->
+      <div class="hidden lg:flex flex-col items-center absolute right-8 xl:right-14 top-1/2 -translate-y-1/2 p-3 bg-white/90 backdrop-blur border border-kc-red/20 rounded-2xl shadow-xl transform rotate-3 hover:rotate-0 transition duration-300 pointer-events-none">
+        <svg class="w-36 h-40 filter drop-shadow" viewBox="0 0 100 110">
+          <path d="M32 18 L44 24 L56 24 L68 18 L88 30 L78 48 L70 44 L70 98 L30 98 L30 44 L22 48 L12 30 Z" fill="#110f0f" stroke="#333" stroke-width="2"/>
+          <path d="M44 24 Q50 32 56 24 Z" fill="#333"/>
+          <circle cx="50" cy="55" r="14" fill="#d4af37" opacity="0.85"/>
+        </svg>
+        <span class="mt-2 text-[10px] font-extrabold uppercase tracking-widest text-kc-charcoal">240 GSM Boxy Tee</span>
+        <span class="text-[9px] text-kc-red font-bold">Front Decal Print</span>
+      </div>
+
+      <!-- Main Center Copy -->
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center space-x-2 border border-kc-red/30 bg-white/90 px-4 py-1.5 rounded-full mb-5 shadow-sm">
+          <i class="fas fa-tshirt text-kc-red text-xs"></i>
+          <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-extrabold">Bespoke Streetwear Atelier</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-black text-kc-maroon tracking-tight leading-none mb-4">
+          WEAR YOUR OWN ART.
         </h1>
-        <p class="text-kc-charcoal/70 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed mb-4">
-          Rotate your piece in genuine 3D space. Select from our comprehensive collection of 180 original artworks across 6 curated genres, project them across any print zone, and send your CAD specs directly to WhatsApp.
+
+        <p class="text-kc-charcoal/80 text-base sm:text-lg max-w-xl mx-auto font-normal leading-relaxed mb-8">
+          Heavyweight French terry fleece hoodies, boxy oversized tees, and bespoke jackets. Choose your garment, place original artwork across any zone, and rotate in true 3D space.
         </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#studio" class="w-full sm:w-auto bg-kc-maroon hover:bg-kc-red text-white px-8 py-4 rounded-lg font-serif font-bold text-xs uppercase tracking-[0.2em] transition shadow-xl">
+            Customize Yours in 3D <i class="fas fa-arrow-down ml-2"></i>
+          </a>
+          <a href="#collection" class="w-full sm:w-auto border-2 border-kc-maroon text-kc-maroon hover:bg-kc-maroon hover:text-white px-8 py-4 rounded-lg font-serif font-bold text-xs uppercase tracking-[0.2em] transition">
+            Explore Collection
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- 3D STUDIO SECTION -->
-    <section id="studio" class="py-10 px-4 sm:px-6 max-w-7xl mx-auto">
+    <!-- SECTION 2: 3D CUSTOMIZATION STUDIO -->
+    <section id="studio" class="py-12 px-4 sm:px-6 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Interactive 3D Engine</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-maroon">The Fitting Room & Print Canvas</h2>
+        <p class="text-xs sm:text-sm text-kc-charcoal/60 mt-1">
+          Rotate the 3D model with your finger or mouse. Choose your garment type, inspect front and back, and fine-tune your print placement.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
         <!-- LEFT: 3D VIEWPORT CONTAINER (7 Cols) -->
         <div class="lg:col-span-7 bg-white border border-kc-red/20 rounded-2xl p-4 flex flex-col items-center kc-shadow relative">
           
+          <!-- Viewport Header Toolbar -->
           <div class="w-full flex flex-wrap justify-between items-center gap-2 mb-3">
             <div class="flex items-center space-x-1.5 bg-stone-100 p-1 rounded-lg text-xs font-bold">
               <button onclick="setCameraView('front')" class="px-3 py-1 rounded bg-white shadow-sm text-kc-red hover:bg-kc-red hover:text-white transition">Front</button>
               <button onclick="setCameraView('back')" class="px-3 py-1 rounded hover:bg-white transition">Back</button>
-              <button onclick="setCameraView('left')" class="px-3 py-1 rounded hover:bg-white transition">L-Sleeve</button>
-              <button onclick="setCameraView('right')" class="px-3 py-1 rounded hover:bg-white transition">R-Sleeve</button>
+              <button onclick="setCameraView('left')" class="px-3 py-1 rounded hover:bg-white transition">Left</button>
+              <button onclick="setCameraView('right')" class="px-3 py-1 rounded hover:bg-white transition">Right</button>
               <button onclick="resetCameraView()" class="px-2.5 py-1 rounded hover:bg-white text-stone-500" title="Reset View"><i class="fas fa-undo"></i></button>
             </div>
 
@@ -162,138 +210,159 @@
             </button>
           </div>
 
-          <div class="relative w-full h-[520px] bg-gradient-to-b from-stone-200 via-stone-100 to-stone-200 border border-kc-red/20 rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
+          <!-- WebGL 3D Canvas Viewport -->
+          <div class="relative w-full h-[460px] sm:h-[520px] bg-gradient-to-b from-stone-200 via-stone-100 to-stone-200 border border-kc-red/20 rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
             <div id="viewport3d"></div>
             
             <div id="canvas3dNotice" class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded border border-kc-red/20 text-[11px] text-kc-charcoal/80 pointer-events-none shadow-sm">
-              <i class="fas fa-cube text-kc-red mr-1.5"></i> Left Click / 1 Finger: Rotate | Right Click / 2 Fingers: Pan | Scroll: Zoom
+              <i class="fas fa-cube text-kc-red mr-1.5"></i> 1 Finger / Drag: Rotate | 2 Fingers: Pinch to Zoom
             </div>
 
-            <div id="loaderOverlay" class="absolute inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center transition-opacity duration-300 pointer-events-none opacity-0">
-              <div class="w-10 h-10 border-4 border-kc-red border-t-transparent rounded-full animate-spin mb-2"></div>
-              <span class="text-xs font-bold text-kc-maroon">Projecting Texture Onto 3D Mesh...</span>
+            <!-- Active Layer Notification Overlay -->
+            <div id="activeDecalBadge" class="absolute top-3 left-3 bg-kc-maroon text-white px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow flex items-center space-x-1.5">
+              <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              <span id="activeDecalName">Front: Royal Bengal Tiger</span>
             </div>
           </div>
 
+          <!-- Summary Strip below 3D canvas -->
           <div class="w-full mt-4 pt-3 border-t border-kc-red/10 flex justify-between items-center text-xs">
             <div>
-              <span class="text-kc-red font-bold uppercase text-[10px] block">Selected Piece</span>
-              <span id="labelSpecSummary" class="font-bold text-kc-charcoal">Heavyweight Boxy Tee (Men Athletic)</span>
+              <span class="text-kc-red font-bold uppercase text-[10px] block">Current Silhouette</span>
+              <span id="labelSpecSummary" class="font-bold text-kc-charcoal">Fleece Hoodie (Men Athletic / Size M)</span>
             </div>
             <div class="text-right">
-              <span class="text-kc-red font-bold uppercase text-[10px] block">Estimated Base + Finish</span>
-              <span id="labelPriceQuote" class="text-xl font-black text-kc-maroon">₹1,849</span>
+              <span class="text-kc-red font-bold uppercase text-[10px] block">Itemized Quote</span>
+              <span id="labelPriceQuote" class="text-xl font-black text-kc-maroon">₹2,849</span>
             </div>
           </div>
         </div>
 
         <!-- RIGHT: SELECTION & LAYER CONTROLS (5 Cols) -->
-        <div class="lg:col-span-5 bg-white border border-kc-red/20 rounded-2xl p-5 sm:p-6 space-y-6 kc-shadow">
+        <div class="lg:col-span-5 bg-white border border-kc-red/20 rounded-2xl p-5 sm:p-6 space-y-5 kc-shadow">
           
-          <!-- 1. Garment & Avatar Setup -->
+          <!-- 1. Garment Categories (7 Differentiated Categories) -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">1. Garment & Avatar Spec</label>
-            <div class="grid grid-cols-2 gap-2 mb-3">
-              <button onclick="setGarmentType('tshirt')" id="btnGarmentTee" class="border-2 border-kc-red bg-kc-lightCream p-2.5 rounded-lg text-center text-xs font-bold">
-                <i class="fas fa-tshirt block text-base text-kc-red mb-1"></i> Heavy Boxy Tee
+            <label class="block text-xs font-bold uppercase tracking-wider text-kc-maroon mb-2">1. Garment Category</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-3">
+              <button onclick="setGarmentCategory('hoodie')" id="btnCat_hoodie" class="cat-btn active border-2 border-kc-red bg-kc-lightCream p-2 rounded-lg text-center text-xs font-bold">
+                <i class="fas fa-vest-patches block text-sm text-kc-red mb-1"></i> Fleece Hoodie
               </button>
-              <button onclick="setGarmentType('hoodie')" id="btnGarmentHoodie" class="border border-kc-red/20 p-2.5 rounded-lg text-center text-xs font-bold hover:border-kc-red">
-                <i class="fas fa-vest-patches block text-base text-kc-red mb-1"></i> Fleece Hoodie
+              <button onclick="setGarmentCategory('ziphoodie')" id="btnCat_ziphoodie" class="cat-btn border border-kc-red/20 p-2 rounded-lg text-center text-xs font-bold hover:border-kc-red">
+                <i class="fas fa-file-zipper block text-sm text-kc-red mb-1"></i> Zip-Up Hoodie
+              </button>
+              <button onclick="setGarmentCategory('boxytee')" id="btnCat_boxytee" class="cat-btn border border-kc-red/20 p-2 rounded-lg text-center text-xs font-bold hover:border-kc-red">
+                <i class="fas fa-tshirt block text-sm text-kc-red mb-1"></i> Boxy Tee
+              </button>
+              <button onclick="setGarmentCategory('oversized')" id="btnCat_oversized" class="cat-btn border border-kc-red/20 p-2 rounded-lg text-center text-xs font-bold hover:border-kc-red">
+                <i class="fas fa-expand block text-sm text-kc-red mb-1"></i> Oversized Tee
+              </button>
+              <button onclick="setGarmentCategory('sweatshirt')" id="btnCat_sweatshirt" class="cat-btn border border-kc-red/20 p-2 rounded-lg text-center text-xs font-bold hover:border-kc-red">
+                <i class="fas fa-shirt block text-sm text-kc-red mb-1"></i> Sweatshirt
+              </button>
+              <button onclick="setGarmentCategory('bomber')" id="btnCat_bomber" class="cat-btn border border-kc-red/20 p-2 rounded-lg text-center text-xs font-bold hover:border-kc-red">
+                <i class="fas fa-user-ninja block text-sm text-kc-red mb-1"></i> Bomber Jacket
               </button>
             </div>
 
-            <div class="grid grid-cols-2 gap-2 text-xs">
+            <!-- Avatar Model & Body Presets -->
+            <div class="grid grid-cols-3 gap-2 text-xs">
               <div>
-                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Model Gender</span>
-                <select id="selectGender" onchange="updateAvatarSpec()" class="w-full border border-kc-red/30 rounded p-1.5 text-xs bg-kc-lightCream font-semibold">
-                  <option value="men">Men's Athletic Frame</option>
-                  <option value="women">Women's Tailored Frame</option>
+                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Gender</span>
+                <select id="selectGender" onchange="updateModelFrame()" class="w-full border border-kc-red/30 rounded p-1.5 text-xs bg-kc-lightCream font-semibold">
+                  <option value="men">Men</option>
+                  <option value="women">Women</option>
                 </select>
               </div>
               <div>
-                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Garment Size</span>
+                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Body Frame</span>
+                <select id="selectBodyFrame" onchange="updateModelFrame()" class="w-full border border-kc-red/30 rounded p-1.5 text-xs bg-kc-lightCream font-semibold">
+                  <option value="athletic">Athletic</option>
+                  <option value="slim">Slim</option>
+                  <option value="regular">Regular</option>
+                  <option value="plus">Plus-Size</option>
+                </select>
+              </div>
+              <div>
+                <span class="text-[10px] font-bold text-kc-charcoal/70 block mb-1">Size</span>
                 <select id="selectSize" onchange="updateSummary()" class="w-full border border-kc-red/30 rounded p-1.5 text-xs bg-kc-lightCream font-semibold">
-                  <option value="S">Small (S)</option>
-                  <option value="M" selected>Medium (M)</option>
-                  <option value="L">Large (L - Oversized)</option>
-                  <option value="XL">Extra Large (XL)</option>
-                  <option value="XXL">Double XL (XXL)</option>
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
                 </select>
               </div>
             </div>
           </div>
 
-          <!-- 2. Primary Fabric Color -->
+          <!-- 2. Primary Fabric Dye -->
           <div>
-            <div class="flex justify-between items-center mb-2">
-              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">2. Primary Fabric Dye</label>
-              <span id="labelColorCode" class="text-xs font-semibold text-kc-red">Jet Charcoal (#141212)</span>
+            <div class="flex justify-between items-center mb-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">2. Fabric Color</label>
+              <span id="labelColorCode" class="text-xs font-semibold text-kc-red">Tailor Crimson Red (#9b1818)</span>
             </div>
             <div class="flex flex-wrap gap-2">
-              <button onclick="setFabricColor('#141212', 'Jet Charcoal')" class="w-7 h-7 rounded-full border-2 border-kc-red bg-[#141212] shadow hover:scale-110 transition"></button>
-              <button onclick="setFabricColor('#641010', 'Heritage Maroon')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#641010] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#9b1818', 'Tailor Crimson Red')" class="w-7 h-7 rounded-full border-2 border-kc-red bg-[#9b1818] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#110f0f', 'Jet Charcoal')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#110f0f] shadow hover:scale-110 transition"></button>
+              <button onclick="setFabricColor('#520d0d', 'Heritage Maroon')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#520d0d] shadow hover:scale-110 transition"></button>
               <button onclick="setFabricColor('#112920', 'Forest Emerald')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#112920] shadow hover:scale-110 transition"></button>
               <button onclick="setFabricColor('#fcf8f2', 'Warm Ivory Cream')" class="w-7 h-7 rounded-full border border-gray-400 bg-[#fcf8f2] shadow hover:scale-110 transition"></button>
-              <button onclick="setFabricColor('#9b1818', 'Tailor Crimson Red')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#9b1818] shadow hover:scale-110 transition"></button>
               <button onclick="setFabricColor('#1a2436', 'Midnight Navy')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#1a2436] shadow hover:scale-110 transition"></button>
               <button onclick="setFabricColor('#3a2c27', 'Vintage Cocoa')" class="w-7 h-7 rounded-full border border-gray-300 bg-[#3a2c27] shadow hover:scale-110 transition"></button>
               <button onclick="setFabricColor('#ffffff', 'Optical White')" class="w-7 h-7 rounded-full border border-gray-400 bg-[#ffffff] shadow hover:scale-110 transition"></button>
             </div>
           </div>
 
-          <!-- 3. Active Print Zone & Studio Placement -->
+          <!-- 3. Active Print Zone & Placement Controls -->
           <div>
             <div class="flex justify-between items-center mb-1.5">
-              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">3. Target Print Zone</label>
-              <button onclick="clearActiveZoneArtwork()" class="text-[10px] text-kc-red font-bold hover:underline">Clear Zone</button>
+              <label class="text-xs font-bold uppercase tracking-wider text-kc-maroon">3. Print Placement Zone</label>
+              <button onclick="clearActiveZoneArtwork()" class="text-[10px] text-kc-red font-bold hover:underline">Remove From Zone</button>
             </div>
 
             <div class="mb-3">
               <select id="selectPrintZone" onchange="switchPrintZone()" class="w-full border border-kc-red/30 rounded p-2 text-xs font-bold bg-kc-lightCream">
-                <option value="front_center">Front Center (Main Statement)</option>
-                <option value="front_left_chest">Left Chest (Pocket / Crest)</option>
-                <option value="front_right_chest">Right Chest</option>
+                <option value="front_center">Front Center (Chest / Torso)</option>
                 <option value="back_center">Back Center (Full Tapestry)</option>
-                <option value="left_sleeve">Left Sleeve</option>
-                <option value="right_sleeve">Right Sleeve</option>
               </select>
             </div>
 
-            <!-- Direct Custom File Upload -->
-            <div class="p-2.5 bg-kc-lightCream border border-dashed border-kc-red/30 rounded flex items-center justify-between mb-3">
-              <span class="text-[10px] text-kc-charcoal/70 font-medium">Or Upload Transparent Artwork:</span>
-              <label class="bg-kc-maroon text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded cursor-pointer hover:bg-kc-red transition">
-                Upload File
-                <input type="file" accept="image/png, image/webp, image/jpeg" class="hidden" onchange="handleDirectUpload(event)">
-              </label>
-            </div>
-
-            <!-- Zone Fine-Tuning Controls -->
+            <!-- Fine-Tuning Sliders -->
             <div class="p-3 bg-stone-50 border border-stone-200 rounded-lg space-y-2 text-xs">
               <div class="flex justify-between items-center text-[11px] font-bold text-kc-charcoal">
-                <span>Active Layer Controls</span>
+                <span>Fine-Tune Active Placement</span>
                 <span id="activeZoneLabel" class="text-kc-red uppercase text-[10px]">Front Center</span>
               </div>
               <div class="grid grid-cols-2 gap-2">
                 <div>
-                  <span class="text-[10px] text-stone-500 block">Scale: <b id="valScale">100%</b></span>
-                  <input type="range" min="30" max="220" value="100" oninput="adjustActiveTransform('scale', this.value)" class="w-full accent-kc-red">
+                  <span class="text-[10px] text-stone-500 block">Size / Scale: <b id="valScale">100%</b></span>
+                  <input type="range" min="40" max="220" value="100" oninput="adjustActiveTransform('scale', this.value)" class="w-full accent-kc-red">
                 </div>
                 <div>
                   <span class="text-[10px] text-stone-500 block">Rotation: <b id="valRotate">0°</b></span>
-                  <input type="range" min="0" max="360" value="0" oninput="adjustActiveTransform('rotate', this.value)" class="w-full accent-kc-red">
+                  <input type="range" min="-180" max="180" value="0" oninput="adjustActiveTransform('rotate', this.value)" class="w-full accent-kc-red">
                 </div>
               </div>
               <div class="grid grid-cols-2 gap-2 pt-1">
                 <div>
-                  <span class="text-[10px] text-stone-500 block">Position X</span>
-                  <input type="range" min="-100" max="100" value="0" oninput="adjustActiveTransform('x', this.value)" class="w-full accent-kc-red">
+                  <span class="text-[10px] text-stone-500 block">Position Left/Right</span>
+                  <input type="range" min="-150" max="150" value="0" oninput="adjustActiveTransform('x', this.value)" class="w-full accent-kc-red">
                 </div>
                 <div>
-                  <span class="text-[10px] text-stone-500 block">Position Y</span>
-                  <input type="range" min="-100" max="100" value="0" oninput="adjustActiveTransform('y', this.value)" class="w-full accent-kc-red">
+                  <span class="text-[10px] text-stone-500 block">Position Up/Down</span>
+                  <input type="range" min="-150" max="150" value="0" oninput="adjustActiveTransform('y', this.value)" class="w-full accent-kc-red">
                 </div>
               </div>
+            </div>
+
+            <!-- Custom File Direct Upload -->
+            <div class="mt-2.5 p-2.5 bg-kc-lightCream border border-dashed border-kc-red/30 rounded flex items-center justify-between">
+              <span class="text-[10px] text-kc-charcoal/80 font-medium">Have your own transparent graphic?</span>
+              <label class="bg-kc-maroon text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded cursor-pointer hover:bg-kc-red transition">
+                Upload File
+                <input type="file" accept="image/*" class="hidden" onchange="handleDirectUpload(event)">
+              </label>
             </div>
           </div>
 
@@ -317,10 +386,10 @@
           <div class="pt-2">
             <button onclick="dispatchOrderToWhatsApp()" class="w-full bg-kc-maroon hover:bg-kc-red text-white py-3.5 rounded-lg font-serif font-bold text-xs uppercase tracking-[0.2em] transition shadow-lg flex items-center justify-center space-x-2">
               <i class="fab fa-whatsapp text-lg"></i>
-              <span>Review & Transmit Specification</span>
+              <span>Order Custom Piece Via WhatsApp</span>
             </button>
             <p class="text-center text-[10px] text-kc-charcoal/60 mt-1.5">
-              Directly routes itemized CAD payload to Master Artisan at <strong>+91 8863075356</strong>
+              Sends 3D design coordinates directly to Master Cutter at <strong>+91 8863075356</strong>
             </p>
           </div>
 
@@ -329,66 +398,120 @@
       </div>
     </section>
 
-    <!-- NEW PHASE 3: 180+ ARTWORK GALLERY SECTION -->
-    <section id="gallery" class="py-16 px-4 sm:px-6 max-w-7xl mx-auto border-t border-kc-red/20">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Curated Print Collections</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-maroon">The Kainchi Club Art Vault</h2>
+    <!-- SECTION 3: STREETWEAR PRODUCT COLLECTION -->
+    <section id="collection" class="py-14 px-6 max-w-7xl mx-auto border-t border-kc-red/15">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Our Heavyweight Silhouettes</span>
+        <h2 class="font-serif text-3xl font-extrabold text-kc-maroon">Signature Apparel Collection</h2>
+        <p class="text-xs sm:text-sm text-kc-charcoal/60 mt-1">Each silhouette is cut on-demand from luxury GSM organic cotton fleece.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white border border-kc-red/20 rounded-xl p-5 kc-shadow flex flex-col justify-between hover:border-kc-red transition">
+          <div class="h-44 bg-stone-100 rounded-lg flex items-center justify-center p-3 mb-4">
+            <svg class="w-28 h-32" viewBox="0 0 100 110">
+              <path d="M30 18 L42 28 L58 28 L70 18 L90 32 L80 56 L70 52 L70 100 L30 100 L30 52 L20 56 L10 32 Z" fill="#9b1818"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-kc-red">350 GSM Fleece</span>
+            <h3 class="font-serif text-base font-bold text-kc-charcoal">Fleece Street Hoodie</h3>
+            <p class="text-xs text-stone-500 mt-1">Double-lined structured hood with kangaroo pocket.</p>
+            <div class="mt-4 flex justify-between items-center pt-3 border-t border-stone-100">
+              <span class="font-bold text-kc-maroon">₹2,499</span>
+              <button onclick="quickSelectGarment('hoodie')" class="text-xs font-bold text-kc-red hover:underline">Customize in 3D &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white border border-kc-red/20 rounded-xl p-5 kc-shadow flex flex-col justify-between hover:border-kc-red transition">
+          <div class="h-44 bg-stone-100 rounded-lg flex items-center justify-center p-3 mb-4">
+            <svg class="w-28 h-32" viewBox="0 0 100 110">
+              <path d="M32 18 L44 24 L56 24 L68 18 L88 30 L78 48 L70 44 L70 98 L30 98 L30 44 L22 48 L12 30 Z" fill="#110f0f"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-kc-red">240 GSM Combed Cotton</span>
+            <h3 class="font-serif text-base font-bold text-kc-charcoal">Heavy Boxy Tee</h3>
+            <p class="text-xs text-stone-500 mt-1">Wide ribbed collar with drop-shoulder silhouette.</p>
+            <div class="mt-4 flex justify-between items-center pt-3 border-t border-stone-100">
+              <span class="font-bold text-kc-maroon">₹1,499</span>
+              <button onclick="quickSelectGarment('boxytee')" class="text-xs font-bold text-kc-red hover:underline">Customize in 3D &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white border border-kc-red/20 rounded-xl p-5 kc-shadow flex flex-col justify-between hover:border-kc-red transition">
+          <div class="h-44 bg-stone-100 rounded-lg flex items-center justify-center p-3 mb-4">
+            <svg class="w-28 h-32" viewBox="0 0 100 110">
+              <path d="M28 20 L40 26 L60 26 L72 20 L92 34 L82 56 L72 50 L72 98 L28 98 L28 50 L18 56 L8 34 Z" fill="#520d0d"/>
+              <line x1="50" y1="26" x2="50" y2="98" stroke="#d4af37" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-kc-red">380 GSM Heavy Terry</span>
+            <h3 class="font-serif text-base font-bold text-kc-charcoal">Zip-Up Street Hoodie</h3>
+            <p class="text-xs text-stone-500 mt-1">Antique brass zipper with custom oversized puller.</p>
+            <div class="mt-4 flex justify-between items-center pt-3 border-t border-stone-100">
+              <span class="font-bold text-kc-maroon">₹2,899</span>
+              <button onclick="quickSelectGarment('ziphoodie')" class="text-xs font-bold text-kc-red hover:underline">Customize in 3D &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white border border-kc-red/20 rounded-xl p-5 kc-shadow flex flex-col justify-between hover:border-kc-red transition">
+          <div class="h-44 bg-stone-100 rounded-lg flex items-center justify-center p-3 mb-4">
+            <svg class="w-28 h-32" viewBox="0 0 100 110">
+              <path d="M28 22 L40 28 L60 28 L72 22 L92 36 L82 58 L72 52 L72 96 L28 96 L28 52 L18 58 L8 36 Z" fill="#112920"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-kc-red">Satin / Twill Shell</span>
+            <h3 class="font-serif text-base font-bold text-kc-charcoal">Bomber / Varsity Jacket</h3>
+            <p class="text-xs text-stone-500 mt-1">Ribbed baseball collar with snap closure buttons.</p>
+            <div class="mt-4 flex justify-between items-center pt-3 border-t border-stone-100">
+              <span class="font-bold text-kc-maroon">₹3,999</span>
+              <button onclick="quickSelectGarment('bomber')" class="text-xs font-bold text-kc-red hover:underline">Customize in 3D &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: REAL EMBEDDED ARTWORK VAULT (18 VECTOR MASTERPIECES) -->
+    <section id="gallery" class="py-12 px-4 sm:px-6 max-w-7xl mx-auto border-t border-kc-red/20">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Curated Print Collection</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-kc-maroon">Select Artwork To Print On 3D Garment</h2>
         <p class="text-xs sm:text-sm text-kc-charcoal/60 mt-2">
-          Browse 180 high-definition designs crafted specifically for luxury streetwear apparel. Filter by category, search by motif, and click any piece to bind it onto your active 3D garment.
+          Click any design below to immediately project it onto your garment in real time. Rotate the model in the viewer above to inspect placement and fine-tune sizing.
         </p>
       </div>
 
-      <!-- Controls: Category Pills & Search -->
-      <div class="bg-white border border-kc-red/20 rounded-2xl p-4 sm:p-6 mb-8 kc-shadow">
-        <div class="flex flex-col lg:flex-row gap-4 items-center justify-between mb-5">
-          <!-- Search input -->
-          <div class="relative w-full lg:w-96">
-            <i class="fas fa-search absolute left-3.5 top-3 text-stone-400 text-xs"></i>
-            <input type="text" id="vaultSearchInput" oninput="applyVaultFilters()" placeholder="Search artworks (e.g. Tiger, Chakra, Le Mans)..." class="w-full border border-kc-red/20 rounded-full pl-9 pr-4 py-2 text-xs bg-stone-50 focus:outline-none focus:border-kc-red">
-          </div>
-
-          <!-- Active Print Zone Filter -->
-          <div class="flex items-center space-x-2 text-xs w-full lg:w-auto justify-end">
-            <span class="text-stone-500 font-semibold whitespace-nowrap">Filter Zone:</span>
-            <select id="vaultZoneFilter" onchange="applyVaultFilters()" class="border border-kc-red/30 rounded-lg p-1.5 text-xs font-bold bg-kc-lightCream">
-              <option value="all">All Print Zones</option>
-              <option value="front_center">Front Center</option>
-              <option value="front_left_chest">Left Chest</option>
-              <option value="back_center">Back Center</option>
-              <option value="left_sleeve">Left / Right Sleeve</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Category Filter Buttons -->
-        <div class="flex space-x-2 overflow-x-auto pb-2 custom-scroll text-xs">
-          <button onclick="setVaultCategory('all')" class="vault-cat-btn active px-4 py-1.5 rounded-full bg-kc-red text-white font-bold whitespace-nowrap shadow-sm">All 180 Designs</button>
-          <button onclick="setVaultCategory('nature-scenic')" class="vault-cat-btn px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Nature & Scenic (30)</button>
-          <button onclick="setVaultCategory('wildlife-animals')" class="vault-cat-btn px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Wildlife & Animals (30)</button>
-          <button onclick="setVaultCategory('automotive-racing')" class="vault-cat-btn px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Automotive & Racing (30)</button>
-          <button onclick="setVaultCategory('divine-spiritual')" class="vault-cat-btn px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Divine & Spiritual (30)</button>
-          <button onclick="setVaultCategory('streetwear-typography')" class="vault-cat-btn px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Streetwear & Typography (30)</button>
-          <button onclick="setVaultCategory('abstract-artistic')" class="vault-cat-btn px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Abstract & Artistic (30)</button>
-        </div>
+      <!-- Category Filter Pills -->
+      <div class="flex space-x-2 overflow-x-auto pb-3 custom-scroll text-xs justify-center mb-6">
+        <button onclick="filterVault('all')" class="vault-pill active px-4 py-1.5 rounded-full bg-kc-red text-white font-bold whitespace-nowrap shadow-sm">All Designs</button>
+        <button onclick="filterVault('wildlife')" class="vault-pill px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Wildlife & Predators</button>
+        <button onclick="filterVault('divine')" class="vault-pill px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Divine & Spiritual</button>
+        <button onclick="filterVault('racing')" class="vault-pill px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Automotive & Racing</button>
+        <button onclick="filterVault('streetwear')" class="vault-pill px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Streetwear & Kanji</button>
+        <button onclick="filterVault('abstract')" class="vault-pill px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Abstract & Geometric</button>
+        <button onclick="filterVault('nature')" class="vault-pill px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 font-semibold hover:bg-kc-red/10 whitespace-nowrap">Nature & Scenic</button>
       </div>
 
-      <!-- Artwork Grid Container -->
-      <div id="vaultGalleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <!-- Real Artwork Cards Grid -->
+      <div id="vaultGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         <!-- Rendered dynamically -->
-      </div>
-
-      <!-- Empty / Missing State Message -->
-      <div id="vaultEmptyMessage" class="hidden text-center py-12">
-        <i class="fas fa-palette text-stone-300 text-4xl mb-3"></i>
-        <h4 class="font-serif text-base font-bold text-stone-600">No Matching Artworks Found</h4>
-        <p class="text-xs text-stone-400 mt-1">Try refining your search keyword or selecting a different category filter.</p>
       </div>
     </section>
 
     <!-- UNBOXING SECTION -->
-    <section id="unboxing" class="py-16 px-6 bg-kc-lightCream border-t border-kc-red/20">
-      <div class="max-w-6xl mx-auto text-center mb-10">
+    <section id="unboxing" class="py-14 px-6 bg-kc-lightCream border-t border-kc-red/20">
+      <div class="max-w-6xl mx-auto text-center mb-8">
         <span class="text-xs uppercase tracking-[0.3em] text-kc-red font-bold block mb-1">Bespoke Presentation</span>
         <h2 class="font-serif text-3xl font-extrabold text-kc-maroon">The Kainchi Club Unboxing Experience</h2>
       </div>
@@ -397,14 +520,14 @@
           <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-3 border border-kc-red/30">
             <i class="fas fa-box"></i>
           </div>
-          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">Heritage Rigid Keepsake Box</h3>
+          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">Heritage Keepsake Box</h3>
           <p class="text-xs text-kc-charcoal/70 leading-relaxed">Embossed with our hallmark red scissors and thread spool motif on premium ivory board.</p>
         </div>
         <div class="bg-white p-6 rounded-lg border border-kc-red/20 shadow-sm">
           <div class="w-12 h-12 mx-auto rounded-full bg-kc-lightCream flex items-center justify-center text-kc-red text-xl mb-3 border border-kc-red/30">
             <i class="fas fa-certificate"></i>
           </div>
-          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">GSM Verification Certificate</h3>
+          <h3 class="font-serif text-base font-bold text-kc-maroon mb-1">Fabric GSM Certificate</h3>
           <p class="text-xs text-kc-charcoal/70 leading-relaxed">Genuine thread spool wax seal, fabric weight verification, and master cutter signature.</p>
         </div>
         <div class="bg-white p-6 rounded-lg border border-kc-red/20 shadow-sm">
@@ -418,7 +541,7 @@
     </section>
 
     <!-- FOOTER & CONCIERGE -->
-    <footer id="contact" class="bg-kc-charcoal text-kc-cream py-14 px-6 border-t border-kc-red/40">
+    <footer id="contact" class="bg-kc-charcoal text-kc-cream py-12 px-6 border-t border-kc-red/40">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <div class="flex items-center space-x-2.5 mb-3">
@@ -445,74 +568,218 @@
           </a>
         </div>
       </div>
-      <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-white/10 text-center text-[11px] text-kc-cream/40">
+      <div class="max-w-6xl mx-auto mt-8 pt-4 border-t border-white/10 text-center text-[11px] text-kc-cream/40">
         © 2026 KAINCHI CLUB. All Rights Reserved. Cut with precision.
       </div>
     </footer>
   </div>
 
-  <!-- JAVASCRIPT: REAL THREE.JS 3D ENGINE & COMPOSITE UV DECALS -->
+  <!-- JAVASCRIPT: THREE.JS 3D ENGINE & COMPOSITE UV DECALS -->
   <script>
-    // --- 1. STATE CONFIGURATION ---
-    let garmentType = 'tshirt';
-    let basePrice = 1499;
+    // --- 1. EMBEDDED ARTWORKS (18 ORIGINAL PRODUCTION VECTOR DESIGNS) ---
+    const realArtworkCatalog = [
+      {
+        id: "kc-art-01",
+        category: "wildlife",
+        title: "Royal Bengal Tiger",
+        badge: "Apex Predator",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309"/></linearGradient></defs><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M40 70 Q100 20 160 70 Q140 140 100 170 Q60 140 40 70 Z" fill="url(#tg)"/><path d="M100 45 L90 80 L110 80 Z M65 85 L85 95 L75 105 Z M135 85 L115 95 L125 105 Z M70 120 L90 125 L85 135 Z M130 120 L110 125 L115 135 Z" fill="#110f0f"/><ellipse cx="78" cy="98" rx="8" ry="5" fill="#fef08a"/><ellipse cx="122" cy="98" rx="8" ry="5" fill="#fef08a"/><circle cx="78" cy="98" r="3" fill="#000"/><circle cx="122" cy="98" r="3" fill="#000"/><path d="M90 135 Q100 145 110 135 Q100 155 90 135 Z" fill="#c52222"/><path d="M70 145 Q100 175 130 145" stroke="#fff" stroke-width="3" fill="none"/></svg>`
+      },
+      {
+        id: "kc-art-02",
+        category: "wildlife",
+        title: "Imperial Golden Eagle",
+        badge: "Raptor Crest",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M100 30 L40 110 L100 95 L160 110 Z" fill="#d4af37"/><path d="M100 95 L80 150 L100 175 L120 150 Z" fill="#b45309"/><ellipse cx="88" cy="80" rx="4" ry="3" fill="#000"/><ellipse cx="112" cy="80" rx="4" ry="3" fill="#000"/><path d="M92 90 L100 115 L108 90 Z" fill="#fef08a"/></svg>`
+      },
+      {
+        id: "kc-art-03",
+        category: "divine",
+        title: "Shri Krishna Sudarshan",
+        badge: "Sacred Chakra",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="90" fill="none" stroke="#d4af37" stroke-width="6"/><circle cx="100" cy="100" r="70" fill="#9b1818" stroke="#d4af37" stroke-width="3"/><g fill="#d4af37"><polygon points="100,5 106,30 94,30"/><polygon points="100,195 106,170 94,170"/><polygon points="5,100 30,106 30,94"/><polygon points="195,100 170,106 170,94"/><polygon points="33,33 55,47 47,55"/><polygon points="167,167 145,153 153,145"/><polygon points="167,33 153,55 145,47"/><polygon points="33,167 47,145 55,153"/></g><circle cx="100" cy="100" r="30" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><circle cx="100" cy="100" r="10" fill="#d4af37"/></svg>`
+      },
+      {
+        id: "kc-art-04",
+        category: "divine",
+        title: "Mahadev Trishul Aura",
+        badge: "Divine Power",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M100 25 L100 175" stroke="#d4af37" stroke-width="8" stroke-linecap="round"/><path d="M70 50 Q100 90 130 50" stroke="#d4af37" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M50 45 Q70 120 100 120 Q130 120 150 45" stroke="#d4af37" stroke-width="8" fill="none" stroke-linecap="round"/><ellipse cx="100" cy="138" rx="18" ry="10" fill="#9b1818" stroke="#d4af37" stroke-width="3"/></svg>`
+      },
+      {
+        id: "kc-art-05",
+        category: "racing",
+        title: "Apex GT Silhouette",
+        badge: "Le Mans Track",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M25 125 Q60 120 85 85 Q130 80 165 110 L180 125 Z" fill="#9b1818" stroke="#d4af37" stroke-width="3"/><circle cx="60" cy="130" r="16" fill="#262626" stroke="#d4af37" stroke-width="3"/><circle cx="145" cy="130" r="16" fill="#262626" stroke="#d4af37" stroke-width="3"/><path d="M75 92 Q105 88 135 105 Z" fill="#fcf8f2"/></svg>`
+      },
+      {
+        id: "kc-art-06",
+        category: "racing",
+        title: "Tachometer 9000 RPM",
+        badge: "Redline Speed",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M35 135 A70 70 0 1 1 165 135" fill="none" stroke="#fcf8f2" stroke-width="6"/><path d="M135 65 A70 70 0 0 1 165 135" fill="none" stroke="#c52222" stroke-width="8"/><line x1="100" y1="100" x2="145" y2="70" stroke="#c52222" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="100" r="10" fill="#d4af37"/></svg>`
+      },
+      {
+        id: "kc-art-07",
+        category: "streetwear",
+        title: "Tokyo Underground Kanji",
+        badge: "Neo Cyber",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="30" fill="#110f0f" stroke="#c52222" stroke-width="6"/><text x="100" y="80" font-family="Cinzel" font-size="34" font-weight="900" fill="#d4af37" text-anchor="middle">東京</text><text x="100" y="130" font-family="Cinzel" font-size="28" font-weight="900" fill="#fcf8f2" text-anchor="middle">CLUB</text><line x1="30" y1="150" x2="170" y2="150" stroke="#c52222" stroke-width="4"/></svg>`
+      },
+      {
+        id: "kc-art-08",
+        category: "streetwear",
+        title: "Kainchi Club Gothic",
+        badge: "Atelier Signature",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#520d0d" stroke="#d4af37" stroke-width="4"/><text x="100" y="85" font-family="Cinzel" font-size="22" font-weight="900" fill="#fcf8f2" text-anchor="middle" letter-spacing="3">KAINCHI</text><text x="100" y="115" font-family="Cinzel" font-size="22" font-weight="900" fill="#d4af37" text-anchor="middle" letter-spacing="4">CLUB</text><text x="100" y="142" font-family="sans-serif" font-size="9" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="3">EST. 2026</text></svg>`
+      },
+      {
+        id: "kc-art-09",
+        category: "abstract",
+        title: "Metatron Sacred Geometry",
+        badge: "Cosmic Lattice",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><g stroke="#d4af37" stroke-width="2.5" fill="none"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="60" r="20"/><circle cx="100" cy="140" r="20"/><circle cx="65" cy="80" r="20"/><circle cx="135" cy="80" r="20"/><circle cx="65" cy="120" r="20"/><circle cx="135" cy="120" r="20"/><polygon points="100,40 152,130 48,130"/><polygon points="100,160 152,70 48,70"/></g></svg>`
+      },
+      {
+        id: "kc-art-10",
+        category: "abstract",
+        title: "Storm Lightning Fracture",
+        badge: "Electric Branch",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="30" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M100 20 L70 85 L115 85 L80 180 L145 95 L105 95 Z" fill="#fcf8f2" stroke="#d4af37" stroke-width="3"/></svg>`
+      },
+      {
+        id: "kc-art-11",
+        category: "wildlife",
+        title: "King Cobra Hood",
+        badge: "Venom Guard",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#112920" stroke="#d4af37" stroke-width="4"/><path d="M60 130 Q30 70 100 40 Q170 70 140 130 Q100 120 60 130 Z" fill="#15803d" stroke="#d4af37" stroke-width="3"/><ellipse cx="100" cy="75" rx="14" ry="20" fill="#d4af37"/><circle cx="92" cy="72" r="3" fill="#000"/><circle cx="108" cy="72" r="3" fill="#000"/><path d="M100 95 L96 115 M100 95 L104 115" stroke="#c52222" stroke-width="2.5"/></svg>`
+      },
+      {
+        id: "kc-art-12",
+        category: "nature",
+        title: "Autumn Blossom Branch",
+        badge: "Japanese Cherry",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M20 160 Q80 130 110 80 Q140 40 180 30" stroke="#78350f" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="110" cy="75" r="16" fill="#f43f5e"/><circle cx="140" cy="50" r="14" fill="#fb7185"/><circle cx="170" cy="35" r="12" fill="#fda4af"/><circle cx="75" cy="115" r="14" fill="#f43f5e"/></svg>`
+      },
+      {
+        id: "kc-art-13",
+        category: "nature",
+        title: "Nordic Fjord Pine",
+        badge: "Alpine Peak",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#112920" stroke="#d4af37" stroke-width="4"/><polygon points="100,30 50,150 150,150" fill="#064e3b"/><polygon points="100,50 65,130 135,130" fill="#047857"/><polygon points="100,30 85,70 115,70" fill="#fcf8f2"/></svg>`
+      },
+      {
+        id: "kc-art-14",
+        category: "racing",
+        title: "Monaco GP Laurels",
+        badge: "Victory Wreath",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#520d0d" stroke="#d4af37" stroke-width="4"/><path d="M60 50 Q40 100 65 150 Q75 120 70 80 Z" fill="#d4af37"/><path d="M140 50 Q160 100 135 150 Q125 120 130 80 Z" fill="#d4af37"/><text x="100" y="115" font-family="Cinzel" font-size="34" font-weight="900" fill="#fcf8f2" text-anchor="middle">GP</text></svg>`
+      },
+      {
+        id: "kc-art-15",
+        category: "divine",
+        title: "Cosmic Omkar",
+        badge: "Vedic Sound",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><text x="100" y="130" font-family="serif" font-size="90" font-weight="900" fill="#d4af37" text-anchor="middle">ॐ</text></svg>`
+      },
+      {
+        id: "kc-art-16",
+        category: "streetwear",
+        title: "Barbed Wire Ring",
+        badge: "Hardcore Punk",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="70" fill="none" stroke="#fcf8f2" stroke-width="4"/><circle cx="100" cy="100" r="92" fill="none" stroke="#c52222" stroke-width="4"/><g stroke="#d4af37" stroke-width="3"><line x1="40" y1="70" x2="60" y2="50"/><line x1="140" y1="70" x2="160" y2="50"/><line x1="40" y1="130" x2="60" y2="150"/><line x1="140" y1="130" x2="160" y2="150"/></g></svg>`
+      },
+      {
+        id: "kc-art-17",
+        category: "abstract",
+        title: "Optical Moire Sphere",
+        badge: "Op-Art Kinetic",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><g stroke="#fcf8f2" stroke-width="2" fill="none"><circle cx="100" cy="100" r="20"/><circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="80"/><line x1="10" y1="10" x2="190" y2="190"/><line x1="190" y1="10" x2="10" y2="190"/></g></svg>`
+      },
+      {
+        id: "kc-art-18",
+        category: "wildlife",
+        title: "Serpent Wrap Motif",
+        badge: "Coiled Viper",
+        svg: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="92" fill="#110f0f" stroke="#d4af37" stroke-width="4"/><path d="M40 140 Q60 50 100 60 Q140 70 120 120 Q100 150 140 150" stroke="#d4af37" stroke-width="12" fill="none" stroke-linecap="round"/><circle cx="45" cy="140" r="5" fill="#c52222"/></svg>`
+      }
+    ];
+
+    function svgToImage(svgString) {
+      const img = new Image();
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
+      return img;
+    }
+
+    // --- 2. GLOBAL SIMULATOR STATE ---
+    let currentGarment = 'hoodie';
+    let basePrice = 2499;
     let craftPrice = 350;
-    let fabricColor = '#141212';
-    let fabricColorName = 'Jet Charcoal';
+    let fabricColor = '#9b1818'; // Tailor Crimson Red
+    let fabricColorName = 'Tailor Crimson Red';
     let craftTitle = '3D Heavy Puff Print';
     let gender = 'men';
+    let bodyFrame = 'athletic';
     let garmentSize = 'M';
     let mannequinVisible = true;
     let activePrintZone = 'front_center';
-    let masterArtworks = [];
-    let activeVaultCategory = 'all';
 
-    // Multi-Artwork Layer Registry across UV Print Zones
-    const zoneLayers = {
-      front_center: null,
-      front_left_chest: null,
-      front_right_chest: null,
-      back_center: null,
-      left_sleeve: null,
-      right_sleeve: null
+    const garmentPrices = {
+      hoodie: { name: '350 GSM Fleece Hoodie', price: 2499 },
+      ziphoodie: { name: '380 GSM Zip-Up Street Hoodie', price: 2899 },
+      boxytee: { name: '240 GSM Heavy Boxy Tee', price: 1499 },
+      oversized: { name: '280 GSM Oversized Tee', price: 1699 },
+      sweatshirt: { name: '350 GSM Street Sweatshirt', price: 2199 },
+      bomber: { name: 'Artisan Bomber / Varsity Jacket', price: 3999 }
     };
 
-    // --- 2. THREE.JS SCENE SETUP ---
+    // Layer Storage for Front & Back
+    const zoneLayers = {
+      front_center: {
+        title: realArtworkCatalog[0].title,
+        imageElement: svgToImage(realArtworkCatalog[0].svg),
+        scale: 100,
+        rotate: 0,
+        x: 0,
+        y: 0
+      },
+      back_center: null
+    };
+
+    // --- 3. THREE.JS ENGINE SETUP ---
     const container = document.getElementById('viewport3d');
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf2efe9);
 
     const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
-    camera.position.set(0, 0.4, 2.8);
+    camera.position.set(0, 0.35, 2.7);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.minDistance = 1.2;
-    controls.maxDistance = 4.5;
-    controls.maxPolarAngle = Math.PI / 2 + 0.1;
+    controls.minDistance = 1.3;
+    controls.maxDistance = 4.2;
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    // Studio Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
     scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight(0xfffaed, 0.9);
-    keyLight.position.set(3, 4, 4);
-    keyLight.castShadow = true;
-    scene.add(keyLight);
+    const frontLight = new THREE.DirectionalLight(0xfffaed, 0.85);
+    frontLight.position.set(3, 4, 4);
+    scene.add(frontLight);
 
-    const fillLight = new THREE.DirectionalLight(0xe8f0ff, 0.45);
-    fillLight.position.set(-3, 2, -3);
-    scene.add(fillLight);
+    const rearLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    rearLight.position.set(-3, 2, -4);
+    scene.add(rearLight);
 
-    // Dynamic High-Res Composite Texture (2048 x 2048)
+    // 2048 x 2048 Canvas Texture for true UV baking
     const textureCanvas = document.createElement('canvas');
     textureCanvas.width = 2048;
     textureCanvas.height = 2048;
@@ -524,14 +791,19 @@
     const garmentMaterial = new THREE.MeshStandardMaterial({
       map: garmentTexture,
       roughness: 0.65,
-      metalness: 0.05,
-      bumpScale: 0.02
+      metalness: 0.04
     });
 
     const mannequinMaterial = new THREE.MeshStandardMaterial({
-      color: 0xc8b7a6,
+      color: 0xc4b2a2,
       roughness: 0.8,
-      metalness: 0.1
+      metalness: 0.05
+    });
+
+    const brassZipMaterial = new THREE.MeshStandardMaterial({
+      color: 0xd4af37,
+      roughness: 0.3,
+      metalness: 0.85
     });
 
     let garmentGroup = new THREE.Group();
@@ -539,76 +811,142 @@
     scene.add(mannequinGroup);
     scene.add(garmentGroup);
 
-    // --- 3. PROCEDURAL 3D ANATOMICAL & GARMENT GENERATION ---
-    function buildProceduralMannequin() {
+    // --- 4. REALISTIC CONNECTED ANATOMICAL MANNEQUIN & SILHOUETTES ---
+    function buildRealisticMannequin() {
       while(mannequinGroup.children.length > 0) { 
         mannequinGroup.remove(mannequinGroup.children[0]); 
       }
 
-      const torsoGeo = new THREE.CylinderGeometry(0.32, 0.24, 0.95, 32);
-      const torso = new THREE.Mesh(torsoGeo, mannequinMaterial);
-      torso.position.y = 0.35;
-      mannequinGroup.add(torso);
+      const isMen = gender === 'men';
+      let shoulderWidth = isMen ? 0.44 : 0.37;
+      let chestDepth = isMen ? 0.28 : 0.25;
 
-      const neckGeo = new THREE.CylinderGeometry(0.1, 0.12, 0.22, 24);
+      if (bodyFrame === 'slim') { shoulderWidth *= 0.92; chestDepth *= 0.9; }
+      if (bodyFrame === 'plus') { shoulderWidth *= 1.1; chestDepth *= 1.2; }
+
+      // 1. Natural Connected Torso & Pectorals
+      const torsoGeo = new THREE.CylinderGeometry(shoulderWidth * 0.72, shoulderWidth * 0.58, 0.94, 32);
+      const torsoMesh = new THREE.Mesh(torsoGeo, mannequinMaterial);
+      torsoMesh.position.y = 0.34;
+      mannequinGroup.add(torsoMesh);
+
+      // 2. Trapezius & Neck
+      const neckGeo = new THREE.CylinderGeometry(0.09, 0.12, 0.22, 24);
       const neck = new THREE.Mesh(neckGeo, mannequinMaterial);
-      neck.position.y = 0.9;
+      neck.position.y = 0.88;
       mannequinGroup.add(neck);
 
-      const headGeo = new THREE.SphereGeometry(0.18, 32, 24);
-      const head = new THREE.Mesh(headGeo, mannequinMaterial);
-      head.position.y = 1.12;
+      // 3. Head & Jawline
+      const head = new THREE.Mesh(new THREE.SphereGeometry(0.17, 32, 24), mannequinMaterial);
+      head.position.y = 1.08;
       mannequinGroup.add(head);
 
-      const shoulderWidth = gender === 'men' ? 0.46 : 0.38;
-      const leftArmGeo = new THREE.CylinderGeometry(0.09, 0.075, 0.7, 16);
-      const leftArm = new THREE.Mesh(leftArmGeo, mannequinMaterial);
-      leftArm.position.set(-shoulderWidth, 0.42, 0);
-      leftArm.rotation.z = 0.15;
+      // 4. Anatomically Connected Shoulder Caps & Arms (No disconnected floating limbs)
+      const armLength = 0.68;
+      const armGeo = new THREE.CylinderGeometry(0.08, 0.065, armLength, 16);
+
+      // Left Arm
+      const leftArm = new THREE.Mesh(armGeo, mannequinMaterial);
+      leftArm.position.set(-shoulderWidth, 0.44, 0);
+      leftArm.rotation.z = 0.16;
       mannequinGroup.add(leftArm);
 
-      const rightArm = new THREE.Mesh(leftArmGeo, mannequinMaterial);
-      rightArm.position.set(shoulderWidth, 0.42, 0);
-      rightArm.rotation.z = -0.15;
+      // Left Shoulder Ball
+      const shoulderBall = new THREE.Mesh(new THREE.SphereGeometry(0.085, 16, 16), mannequinMaterial);
+      shoulderBall.position.set(-shoulderWidth + 0.02, 0.76, 0);
+      mannequinGroup.add(shoulderBall);
+
+      // Right Arm
+      const rightArm = new THREE.Mesh(armGeo, mannequinMaterial);
+      rightArm.position.set(shoulderWidth, 0.44, 0);
+      rightArm.rotation.z = -0.16;
       mannequinGroup.add(rightArm);
+
+      // Right Shoulder Ball
+      const rightShoulderBall = new THREE.Mesh(new THREE.SphereGeometry(0.085, 16, 16), mannequinMaterial);
+      rightShoulderBall.position.set(shoulderWidth - 0.02, 0.76, 0);
+      mannequinGroup.add(rightShoulderBall);
     }
 
-    function buildProceduralGarment() {
+    function buildGarmentSilhouette() {
       while(garmentGroup.children.length > 0) { 
         garmentGroup.remove(garmentGroup.children[0]); 
       }
 
-      const isHoodie = garmentType === 'hoodie';
-      const scaleTorso = isHoodie ? 1.08 : 1.03;
+      const isHoodie = (currentGarment === 'hoodie' || currentGarment === 'ziphoodie');
+      const isOversized = (currentGarment === 'oversized');
+      const isBoxy = (currentGarment === 'boxytee');
+      const isBomber = (currentGarment === 'bomber');
 
-      const bodyGeo = new THREE.CylinderGeometry(0.34 * scaleTorso, 0.28 * scaleTorso, isHoodie ? 0.98 : 0.92, 48);
+      let torsoTopRadius = 0.36;
+      let torsoBottomRadius = 0.31;
+      let torsoHeight = 0.94;
+      let sleeveLength = 0.70;
+      let sleeveRadius = 0.13;
+
+      if (isBoxy) {
+        torsoTopRadius = 0.38;
+        torsoBottomRadius = 0.38; // Boxy straight drop
+        sleeveLength = 0.36; // Drop elbow tee sleeve
+      } else if (isOversized) {
+        torsoTopRadius = 0.40;
+        torsoBottomRadius = 0.41;
+        sleeveLength = 0.42;
+      } else if (isBomber) {
+        torsoTopRadius = 0.39;
+        torsoBottomRadius = 0.32; // Tight rib waist
+        sleeveRadius = 0.145;
+      }
+
+      // Torso Mesh
+      const bodyGeo = new THREE.CylinderGeometry(torsoTopRadius, torsoBottomRadius, torsoHeight, 48);
       const bodyMesh = new THREE.Mesh(bodyGeo, garmentMaterial);
       bodyMesh.position.y = 0.34;
       bodyMesh.castShadow = true;
-      bodyMesh.receiveShadow = true;
       garmentGroup.add(bodyMesh);
 
-      const sleeveGeo = new THREE.CylinderGeometry(isHoodie ? 0.14 : 0.12, isHoodie ? 0.11 : 0.1, isHoodie ? 0.72 : 0.38, 24);
+      // Sleeves
+      const sleeveGeo = new THREE.CylinderGeometry(sleeveRadius, sleeveRadius * 0.85, sleeveLength, 24);
+
+      // Left Sleeve
       const leftSleeve = new THREE.Mesh(sleeveGeo, garmentMaterial);
-      leftSleeve.position.set(-0.46, isHoodie ? 0.4 : 0.58, 0);
-      leftSleeve.rotation.z = isHoodie ? 0.18 : 0.25;
+      leftSleeve.position.set(-0.46, (sleeveLength < 0.5) ? 0.58 : 0.42, 0);
+      leftSleeve.rotation.z = (sleeveLength < 0.5) ? 0.28 : 0.18;
       garmentGroup.add(leftSleeve);
 
+      // Right Sleeve
       const rightSleeve = new THREE.Mesh(sleeveGeo, garmentMaterial);
-      rightSleeve.position.set(0.46, isHoodie ? 0.4 : 0.58, 0);
-      rightSleeve.rotation.z = isHoodie ? -0.18 : -0.25;
+      rightSleeve.position.set(0.46, (sleeveLength < 0.5) ? 0.58 : 0.42, 0);
+      rightSleeve.rotation.z = (sleeveLength < 0.5) ? -0.28 : -0.18;
       garmentGroup.add(rightSleeve);
 
+      // Hood or Collar Construction
       if (isHoodie) {
-        const hoodGeo = new THREE.SphereGeometry(0.24, 32, 24, 0, Math.PI * 2, 0, Math.PI * 0.75);
-        const hood = new THREE.Mesh(hoodGeo, garmentMaterial);
-        hood.position.set(0, 0.88, -0.06);
-        hood.rotation.x = -0.3;
-        garmentGroup.add(hood);
+        // Deep structured hood draped naturally over neck and shoulders
+        const hoodGeo = new THREE.SphereGeometry(0.24, 32, 24, 0, Math.PI * 2, 0, Math.PI * 0.72);
+        const hoodMesh = new THREE.Mesh(hoodGeo, garmentMaterial);
+        hoodMesh.position.set(0, 0.86, -0.06);
+        hoodMesh.rotation.x = -0.28;
+        garmentGroup.add(hoodMesh);
+
+        // Hoodie Pocket on Front
+        const pocketGeo = new THREE.BoxGeometry(0.36, 0.24, 0.08);
+        const pocketMesh = new THREE.Mesh(pocketGeo, garmentMaterial);
+        pocketMesh.position.set(0, 0.08, 0.28);
+        garmentGroup.add(pocketMesh);
+
+        // Zip Teeth if Zip-Up Hoodie
+        if (currentGarment === 'ziphoodie') {
+          const zipGeo = new THREE.CylinderGeometry(0.008, 0.008, 0.94, 8);
+          const zipMesh = new THREE.Mesh(zipGeo, brassZipMaterial);
+          zipMesh.position.set(0, 0.34, 0.33);
+          garmentGroup.add(zipMesh);
+        }
       } else {
-        const collarGeo = new THREE.TorusGeometry(0.14, 0.02, 16, 32);
+        // T-Shirt / Sweatshirt Ribbed Collar
+        const collarGeo = new THREE.TorusGeometry(0.14, 0.022, 16, 32);
         const collar = new THREE.Mesh(collarGeo, garmentMaterial);
-        collar.position.set(0, 0.8, 0);
+        collar.position.set(0, 0.81, 0);
         collar.rotation.x = Math.PI / 2;
         garmentGroup.add(collar);
       }
@@ -616,239 +954,155 @@
       updateTextureMap();
     }
 
-    // --- 4. COMPOSITE 2D OFFSCREEN CANVAS TO 3D UV TEXTURE ---
+    // --- 5. SURFACE TEXTURE RENDERING (FRONT & BACK PROJECTION) ---
     function updateTextureMap() {
-      // Primary fabric base
+      // 1. Primary Fabric Color Fill
       ctx.fillStyle = fabricColor;
       ctx.fillRect(0, 0, 2048, 2048);
 
-      // Subtle Textile Weave
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.025)';
-      for (let i = 0; i < 2048; i += 8) {
-        ctx.fillRect(i, 0, 4, 2048);
-        ctx.fillRect(0, i, 2048, 4);
+      // 2. Heavy French Terry Fabric Weave Texture Simulation
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.035)';
+      for (let i = 0; i < 2048; i += 6) {
+        ctx.fillRect(i, 0, 3, 2048);
+        ctx.fillRect(0, i, 2048, 3);
       }
 
-      // UV Zone Projection:
-      // Front Center UV: (512, 1024)
-      renderArtworkToUV('front_center', 512, 1024, 600);
-      // Left Chest UV: (340, 750)
-      renderArtworkToUV('front_left_chest', 340, 750, 260);
-      // Right Chest UV: (680, 750)
-      renderArtworkToUV('front_right_chest', 680, 750, 260);
-      // Back Center UV: (1536, 1024)
-      renderArtworkToUV('back_center', 1536, 1024, 700);
+      // 3. Cylinder UV Front Projection:
+      // Front center is centered at X: 512, Y: 1024
+      renderDecalZone('front_center', 512, 1024, 680);
+
+      // Back center is centered at X: 1536, Y: 1024
+      renderDecalZone('back_center', 1536, 1024, 760);
 
       garmentTexture.needsUpdate = true;
     }
 
-    function renderArtworkToUV(zoneKey, baseX, baseY, baseSize) {
+    function renderDecalZone(zoneKey, centerX, centerY, standardSize) {
       const layer = zoneLayers[zoneKey];
-      if (!layer) return;
+      if (!layer || !layer.imageElement) return;
 
-      ctx.save();
-      const x = baseX + (layer.x * 2.5);
-      const y = baseY + (layer.y * 2.5);
-      const scale = (layer.scale / 100) * baseSize;
-
-      ctx.translate(x, y);
-      ctx.rotate((layer.rotate * Math.PI) / 180);
-
-      if (layer.imageElement && layer.imageElement.complete && layer.imageElement.naturalWidth !== 0) {
-        ctx.drawImage(layer.imageElement, -scale / 2, -scale / 2, scale, scale);
-      } else {
-        // High-contrast clean studio seal if image asset is pending
-        drawStudioSeal(layer.name, scale);
+      const img = layer.imageElement;
+      if (!img.complete && img.naturalWidth === 0) {
+        img.onload = () => updateTextureMap();
+        return;
       }
 
+      ctx.save();
+      const posX = centerX + (layer.x * 2.5);
+      const posY = centerY + (layer.y * 2.5);
+      const dimension = (layer.scale / 100) * standardSize;
+
+      ctx.translate(posX, posY);
+      ctx.rotate((layer.rotate * Math.PI) / 180);
+      ctx.drawImage(img, -dimension / 2, -dimension / 2, dimension, dimension);
       ctx.restore();
     }
 
-    function drawStudioSeal(name, size) {
-      const s = size / 100;
-      ctx.scale(s, s);
-
-      ctx.strokeStyle = '#d4af37';
-      ctx.lineWidth = 3;
-      ctx.strokeRect(-42, -42, 84, 84);
-
-      ctx.fillStyle = 'rgba(100, 16, 16, 0.85)';
-      ctx.fillRect(-40, -40, 80, 80);
-
-      ctx.fillStyle = '#fcf8f2';
-      ctx.font = 'bold 9px Cinzel';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      
-      const words = (name || 'KAINCHI CLUB').split(' ');
-      ctx.fillText(words[0] || 'KAINCHI', 0, -8);
-      ctx.fillText(words[1] || 'CLUB', 0, 8);
-    }
-
-    // --- 5. PHASE 3 GALLERY ENGINE & DATA BINDING ---
-    async function loadArtworkCatalog() {
-      try {
-        const response = await fetch('artworks.json');
-        if (response.ok) {
-          masterArtworks = await response.json();
-        } else {
-          fallbackCatalog();
-        }
-      } catch (e) {
-        fallbackCatalog();
-      }
-      renderVaultGallery();
-    }
-
-    function fallbackCatalog() {
-      // Embedded fallback ensuring immediate zero-latency gallery rendering
-      masterArtworks = [
-        { id: 'nat-001', name: 'Misty Alpine Ridge', category: 'nature-scenic', thumb: 'assets/artworks/nature-scenic/thumbs/nat-001.webp', printFile: 'assets/artworks/nature-scenic/prints/nat-001.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'nat-002', name: 'Cherry Blossom Cascade', category: 'nature-scenic', thumb: 'assets/artworks/nature-scenic/thumbs/nat-002.webp', printFile: 'assets/artworks/nature-scenic/prints/nat-002.png', supportedZones: ['front_center', 'back_center', 'left_sleeve'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'wild-001', name: 'Royal Bengal Tiger', category: 'wildlife-animals', thumb: 'assets/artworks/wildlife-animals/thumbs/wild-001.webp', printFile: 'assets/artworks/wildlife-animals/prints/wild-001.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'wild-002', name: 'Imperial Golden Eagle', category: 'wildlife-animals', thumb: 'assets/artworks/wildlife-animals/thumbs/wild-002.webp', printFile: 'assets/artworks/wildlife-animals/prints/wild-002.png', supportedZones: ['front_center', 'front_left_chest', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'auto-001', name: 'Apex GT Le Mans', category: 'automotive-racing', thumb: 'assets/artworks/automotive-racing/thumbs/auto-001.webp', printFile: 'assets/artworks/automotive-racing/prints/auto-001.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'auto-003', name: 'Midnight Touge Drift', category: 'automotive-racing', thumb: 'assets/artworks/automotive-racing/thumbs/auto-003.webp', printFile: 'assets/artworks/automotive-racing/prints/auto-003.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'div-001', name: 'Shri Krishna Sudarshan', category: 'divine-spiritual', thumb: 'assets/artworks/divine-spiritual/thumbs/div-001.webp', printFile: 'assets/artworks/divine-spiritual/prints/div-001.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'div-002', name: 'Mahadev Trishul Aura', category: 'divine-spiritual', thumb: 'assets/artworks/divine-spiritual/thumbs/div-002.webp', printFile: 'assets/artworks/divine-spiritual/prints/div-002.png', supportedZones: ['front_center', 'front_left_chest', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'str-001', name: 'Kainchi Club Gothic', category: 'streetwear-typography', thumb: 'assets/artworks/streetwear-typography/thumbs/str-001.webp', printFile: 'assets/artworks/streetwear-typography/prints/str-001.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'str-002', name: 'Neo Tokyo Kanji', category: 'streetwear-typography', thumb: 'assets/artworks/streetwear-typography/thumbs/str-002.webp', printFile: 'assets/artworks/streetwear-typography/prints/str-002.png', supportedZones: ['front_center', 'front_left_chest', 'left_sleeve'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'abs-001', name: 'Prismatic Polyhedron', category: 'abstract-artistic', thumb: 'assets/artworks/abstract-artistic/thumbs/abs-001.webp', printFile: 'assets/artworks/abstract-artistic/prints/abs-001.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' },
-        { id: 'abs-002', name: 'Metatron Sacred Cube', category: 'abstract-artistic', thumb: 'assets/artworks/abstract-artistic/thumbs/abs-002.webp', printFile: 'assets/artworks/abstract-artistic/prints/abs-002.png', supportedZones: ['front_center', 'back_center'], license: 'Original Studio Asset', status: 'pending_upload' }
-      ];
-    }
-
-    function setVaultCategory(cat) {
-      activeVaultCategory = cat;
-      document.querySelectorAll('.vault-cat-btn').forEach(btn => {
-        btn.classList.remove('bg-kc-red', 'text-white', 'active');
-        btn.classList.add('bg-stone-100', 'text-stone-700');
-      });
-      event.currentTarget.classList.add('bg-kc-red', 'text-white', 'active');
-      event.currentTarget.classList.remove('bg-stone-100', 'text-stone-700');
-      applyVaultFilters();
-    }
-
-    function applyVaultFilters() {
-      const q = document.getElementById('vaultSearchInput').value.toLowerCase().trim();
-      const zoneFilter = document.getElementById('vaultZoneFilter').value;
-
-      const filtered = masterArtworks.filter(item => {
-        const matchesCategory = (activeVaultCategory === 'all' || item.category === activeVaultCategory);
-        const matchesQuery = item.name.toLowerCase().includes(q) || item.id.toLowerCase().includes(q);
-        const matchesZone = (zoneFilter === 'all' || item.supportedZones.includes(zoneFilter));
-        return matchesCategory && matchesQuery && matchesZone;
-      });
-
-      renderVaultGridItems(filtered);
-    }
-
-    function renderVaultGallery() {
-      applyVaultFilters();
-    }
-
-    function renderVaultGridItems(items) {
-      const grid = document.getElementById('vaultGalleryGrid');
-      const emptyMsg = document.getElementById('vaultEmptyMessage');
+    // --- 6. ARTWORK GALLERY INTERACTION ---
+    function renderVaultGrid(items) {
+      const grid = document.getElementById('vaultGrid');
       grid.innerHTML = '';
 
-      if (items.length === 0) {
-        emptyMsg.classList.remove('hidden');
-        return;
-      }
-      emptyMsg.classList.add('hidden');
-
-      items.forEach(art => {
+      items.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'group bg-white border border-kc-red/20 rounded-xl p-3 flex flex-col justify-between hover:border-kc-red hover:shadow-md transition cursor-pointer';
-        card.onclick = () => selectArtworkInto3D(art);
-
-        const categoryBadge = art.category.replace('-', ' ').toUpperCase();
+        card.className = 'group bg-white border border-kc-red/20 rounded-xl p-3 flex flex-col justify-between hover:border-kc-red hover:shadow-md transition cursor-pointer select-none';
+        card.onclick = () => applyArtworkToStudio(item);
 
         card.innerHTML = `
-          <div class="relative w-full h-36 bg-stone-100 rounded-lg overflow-hidden flex items-center justify-center p-2 mb-2.5">
-            <!-- Image with graceful fallback -->
-            <img src="${art.thumb}" alt="${art.name}" class="w-full h-full object-contain group-hover:scale-105 transition" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'flex flex-col items-center justify-center text-center p-2\\'><i class=\\'fas fa-gem text-kc-gold text-2xl mb-1\\'></i><span class=\\'text-[9px] font-bold text-stone-500 uppercase tracking-wider block\\'>High-Res File</span><span class=\\'text-[8px] text-stone-400\\'>Pending Upload</span></div>';">
-            <span class="absolute top-1.5 right-1.5 bg-kc-maroon text-[8px] font-bold text-white px-2 py-0.5 rounded-full uppercase tracking-wider shadow">${art.id}</span>
+          <div class="w-full h-32 bg-stone-100 rounded-lg overflow-hidden flex items-center justify-center p-2 mb-2 group-hover:scale-105 transition">
+            ${item.svg}
           </div>
           <div>
-            <span class="text-[9px] font-extrabold text-kc-red uppercase tracking-wider block mb-0.5">${categoryBadge}</span>
-            <h4 class="font-serif text-xs font-bold text-kc-charcoal truncate" title="${art.name}">${art.name}</h4>
-            <div class="mt-2.5 pt-2 border-t border-stone-100 flex items-center justify-between">
-              <span class="text-[9px] text-stone-500"><i class="fas fa-layer-group text-stone-400 mr-1"></i>${art.supportedZones.length} Zones</span>
-              <span class="text-[10px] font-bold text-kc-red group-hover:underline">Project to 3D &rarr;</span>
-            </div>
+            <span class="text-[9px] font-extrabold text-kc-red uppercase tracking-wider block">${item.badge}</span>
+            <h4 class="font-serif text-xs font-bold text-kc-charcoal truncate">${item.title}</h4>
+            <button class="mt-2 w-full text-center py-1 bg-kc-lightCream group-hover:bg-kc-red group-hover:text-white rounded text-[10px] font-bold text-kc-maroon transition">
+              Print on 3D Piece &uarr;
+            </button>
           </div>
         `;
         grid.appendChild(card);
       });
     }
 
-    // Connect Gallery Selection to 3D Canvas
-    function selectArtworkInto3D(artItem) {
-      // Check if target zone supports this artwork
-      if (!artItem.supportedZones.includes(activePrintZone)) {
-        activePrintZone = artItem.supportedZones[0];
-        document.getElementById('selectPrintZone').value = activePrintZone;
-        document.getElementById('activeZoneLabel').innerText = activePrintZone.replace(/_/g, ' ');
+    function filterVault(cat) {
+      document.querySelectorAll('.vault-pill').forEach(btn => {
+        btn.classList.remove('bg-kc-red', 'text-white', 'active');
+        btn.classList.add('bg-stone-100', 'text-stone-700');
+      });
+      event.currentTarget.classList.add('bg-kc-red', 'text-white', 'active');
+      event.currentTarget.classList.remove('bg-stone-100', 'text-stone-700');
+
+      if (cat === 'all') {
+        renderVaultGrid(realArtworkCatalog);
+      } else {
+        renderVaultGrid(realArtworkCatalog.filter(a => a.category === cat));
       }
+    }
 
-      // Show temporary loading indicator
-      const loader = document.getElementById('loaderOverlay');
-      loader.classList.remove('opacity-0');
-
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      img.onload = function() {
+    function applyArtworkToStudio(artItem) {
+      const img = svgToImage(artItem.svg);
+      img.onload = () => {
         zoneLayers[activePrintZone] = {
-          name: artItem.name,
+          title: artItem.title,
           imageElement: img,
           scale: 100,
           rotate: 0,
           x: 0,
           y: 0
         };
-        loader.classList.add('opacity-0');
         updateTextureMap();
         updateSummary();
-        // Scroll smoothly to studio viewport
+        updateActiveBadge();
+
+        if (activePrintZone === 'back_center') {
+          setCameraView('back');
+        } else {
+          setCameraView('front');
+        }
+
         document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
       };
-      img.onerror = function() {
-        // Graceful fallback to studio seal without breaking UI
-        zoneLayers[activePrintZone] = {
-          name: artItem.name,
-          imageElement: null,
-          scale: 100,
-          rotate: 0,
-          x: 0,
-          y: 0
-        };
-        loader.classList.add('opacity-0');
-        updateTextureMap();
-        updateSummary();
-        document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
-      };
-      img.src = artItem.printFile;
     }
 
-    // --- 6. CONTROLS & EVENT HANDLERS ---
+    function handleDirectUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const img = new Image();
+        img.onload = function() {
+          zoneLayers[activePrintZone] = {
+            title: 'Custom File: ' + file.name,
+            imageElement: img,
+            scale: 100,
+            rotate: 0,
+            x: 0,
+            y: 0
+          };
+          updateTextureMap();
+          updateSummary();
+          updateActiveBadge();
+          document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // --- 7. CONTROLS, VIEWPOINTS & ORDER SPEC DISPATCH ---
     function setCameraView(view) {
-      const dist = garmentType === 'hoodie' ? 2.6 : 2.4;
-      if (view === 'front') animateCamera(0, 0.4, dist);
-      if (view === 'back') animateCamera(0, 0.4, -dist);
-      if (view === 'left') animateCamera(-dist, 0.4, 0);
-      if (view === 'right') animateCamera(dist, 0.4, 0);
+      const dist = 2.7;
+      if (view === 'front') camera.position.set(0, 0.35, dist);
+      if (view === 'back') camera.position.set(0, 0.35, -dist);
+      if (view === 'left') camera.position.set(-dist, 0.35, 0);
+      if (view === 'right') camera.position.set(dist, 0.35, 0);
+      controls.target.set(0, 0.35, 0);
+      controls.update();
     }
 
     function resetCameraView() {
-      animateCamera(0, 0.4, 2.8);
-    }
-
-    function animateCamera(x, y, z) {
-      camera.position.set(x, y, z);
-      controls.target.set(0, 0.4, 0);
-      controls.update();
+      setCameraView('front');
     }
 
     function toggleMannequin() {
@@ -857,20 +1111,34 @@
       document.getElementById('toggleMannequinBtn').innerHTML = `<i class="fas fa-user mr-1"></i> Avatar: ${mannequinVisible ? 'Visible' : 'Hidden'}`;
     }
 
-    function setGarmentType(type) {
-      garmentType = type;
-      basePrice = (type === 'hoodie') ? 2499 : 1499;
+    function setGarmentCategory(cat) {
+      currentGarment = cat;
+      basePrice = garmentPrices[cat].price;
 
-      const btnTee = document.getElementById('btnGarmentTee');
-      const btnHoodie = document.getElementById('btnGarmentHoodie');
-      if (type === 'tshirt') {
-        btnTee.className = 'border-2 border-kc-red bg-kc-lightCream p-2.5 rounded-lg text-center text-xs font-bold';
-        btnHoodie.className = 'border border-kc-red/20 p-2.5 rounded-lg text-center text-xs font-bold hover:border-kc-red';
-      } else {
-        btnHoodie.className = 'border-2 border-kc-red bg-kc-lightCream p-2.5 rounded-lg text-center text-xs font-bold';
-        btnTee.className = 'border border-kc-red/20 p-2.5 rounded-lg text-center text-xs font-bold hover:border-kc-red';
+      document.querySelectorAll('.cat-btn').forEach(b => {
+        b.classList.remove('border-2', 'border-kc-red', 'bg-kc-lightCream', 'active');
+        b.classList.add('border-kc-red/20');
+      });
+      const activeBtn = document.getElementById('btnCat_' + cat);
+      if (activeBtn) {
+        activeBtn.classList.add('border-2', 'border-kc-red', 'bg-kc-lightCream', 'active');
+        activeBtn.classList.remove('border-kc-red/20');
       }
-      buildProceduralGarment();
+
+      buildGarmentSilhouette();
+      updateSummary();
+    }
+
+    function quickSelectGarment(cat) {
+      setGarmentCategory(cat);
+      document.getElementById('studio').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updateModelFrame() {
+      gender = document.getElementById('selectGender').value;
+      bodyFrame = document.getElementById('selectBodyFrame').value;
+      buildRealisticMannequin();
+      buildGarmentSilhouette();
       updateSummary();
     }
 
@@ -879,24 +1147,23 @@
       fabricColorName = name;
       document.getElementById('labelColorCode').innerText = `${name} (${hex})`;
       updateTextureMap();
-      updateSummary();
-    }
-
-    function updateAvatarSpec() {
-      gender = document.getElementById('selectGender').value;
-      buildProceduralMannequin();
-      updateSummary();
     }
 
     function switchPrintZone() {
       activePrintZone = document.getElementById('selectPrintZone').value;
-      const formatted = activePrintZone.replace(/_/g, ' ');
-      document.getElementById('activeZoneLabel').innerText = formatted;
+      document.getElementById('activeZoneLabel').innerText = activePrintZone.replace(/_/g, ' ');
 
-      const current = zoneLayers[activePrintZone];
-      if (current) {
-        document.getElementById('valScale').innerText = current.scale + '%';
-        document.getElementById('valRotate').innerText = current.rotate + '°';
+      const cur = zoneLayers[activePrintZone];
+      if (cur) {
+        document.getElementById('valScale').innerText = cur.scale + '%';
+        document.getElementById('valRotate').innerText = cur.rotate + '°';
+      }
+      updateActiveBadge();
+
+      if (activePrintZone === 'back_center') {
+        setCameraView('back');
+      } else {
+        setCameraView('front');
       }
     }
 
@@ -904,6 +1171,7 @@
       zoneLayers[activePrintZone] = null;
       updateTextureMap();
       updateSummary();
+      updateActiveBadge();
     }
 
     function adjustActiveTransform(prop, val) {
@@ -924,28 +1192,15 @@
       updateTextureMap();
     }
 
-    function handleDirectUpload(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        const img = new Image();
-        img.onload = function() {
-          zoneLayers[activePrintZone] = {
-            name: 'Client Custom (' + file.name + ')',
-            imageElement: img,
-            scale: 100,
-            rotate: 0,
-            x: 0,
-            y: 0
-          };
-          updateTextureMap();
-          updateSummary();
-        };
-        img.src = evt.target.result;
-      };
-      reader.readAsDataURL(file);
+    function updateActiveBadge() {
+      const layer = zoneLayers[activePrintZone];
+      const zoneTxt = activePrintZone === 'front_center' ? 'Front' : 'Back';
+      if (layer && layer.title) {
+        document.getElementById('activeDecalName').innerText = `${zoneTxt}: ${layer.title}`;
+        document.getElementById('activeDecalBadge').classList.remove('hidden');
+      } else {
+        document.getElementById('activeDecalName').innerText = `${zoneTxt}: Clean Finish`;
+      }
     }
 
     function setCraftFinish(craft, price, title) {
@@ -962,8 +1217,8 @@
     function updateSummary() {
       garmentSize = document.getElementById('selectSize').value;
       const total = basePrice + craftPrice;
-      const garmentLabel = garmentType === 'hoodie' ? 'Fleece Street Hoodie' : 'Heavyweight Boxy Tee';
-      document.getElementById('labelSpecSummary').innerText = `${garmentLabel} (${gender.toUpperCase()} / Size ${garmentSize})`;
+      const gName = garmentPrices[currentGarment].name;
+      document.getElementById('labelSpecSummary').innerText = `${gName} (${gender.toUpperCase()} ${bodyFrame.toUpperCase()} / Size ${garmentSize})`;
       document.getElementById('labelPriceQuote').innerText = `₹${total.toLocaleString('en-IN')}`;
     }
 
@@ -971,23 +1226,23 @@
       const total = basePrice + craftPrice;
       const activePlacements = Object.entries(zoneLayers)
         .filter(([_, layer]) => layer !== null)
-        .map(([zone, layer]) => `• ${zone.toUpperCase().replace(/_/g, ' ')}: ${layer.name} (Scale: ${layer.scale}%, Rot: ${layer.rotate}°)`)
+        .map(([zone, layer]) => `• ${zone.toUpperCase().replace(/_/g, ' ')}: ${layer.title} (Scale: ${layer.scale}%, Rotation: ${layer.rotate}°)`)
         .join('%0A');
 
       const placementsText = activePlacements.length > 0 ? activePlacements : '• Standard Clean Silhouette (No Artwork)';
-      const garmentLabel = garmentType === 'hoodie' ? '350 GSM Fleece Hoodie' : '240 GSM Heavy Boxy Tee';
+      const gName = garmentPrices[currentGarment].name;
 
-      const msg = `*KAINCHI CLUB — 3D BESPOKE STUDIO ORDER*%0A` +
+      const msg = `*KAINCHI CLUB — 3D BESPOKE APPAREL ORDER*%0A` +
         `----------------------------------------%0A` +
-        `*Garment Silhouette:* ${garmentLabel}%0A` +
+        `*Garment Silhouette:* ${gName}%0A` +
         `*Size Selection:* ${garmentSize}%0A` +
-        `*Anatomical Avatar:* ${gender.toUpperCase()} FIT%0A` +
+        `*Model Anatomy:* ${gender.toUpperCase()} (${bodyFrame.toUpperCase()} FIT)%0A` +
         `*Primary Fabric Dye:* ${fabricColorName} (${fabricColor})%0A` +
         `*Craft Finish:* ${craftTitle}%0A` +
-        `*Active 3D Print Placements:*%0A${placementsText}%0A` +
+        `*Active 3D Decal Placements:*%0A${placementsText}%0A` +
         `*Itemized Valuation:* ₹${total.toLocaleString('en-IN')}%0A` +
         `----------------------------------------%0A` +
-        `Hello Master Cutter, please review this 3D design spec and advise on tailored scheduling.`;
+        `Hello Master Cutter, please review my 3D custom design spec and advise on tailored scheduling.`;
 
       window.open(`https://wa.me/918863075356?text=${msg}`, '_blank');
     }
@@ -999,7 +1254,7 @@
       renderer.setSize(container.clientWidth, container.clientHeight);
     });
 
-    // Render Loop
+    // Render Animation Loop
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
@@ -1007,10 +1262,11 @@
     }
 
     // Initialize System
-    buildProceduralMannequin();
-    buildProceduralGarment();
+    buildRealisticMannequin();
+    buildGarmentSilhouette();
+    renderVaultGrid(realArtworkCatalog);
     updateSummary();
-    loadArtworkCatalog();
+    updateActiveBadge();
     animate();
   </script>
 </body>
